@@ -1,8 +1,17 @@
 package mul.camp.a.dao;
 
-import mul.camp.a.dto.UserDto;
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+import mul.camp.a.dto.UserDto;
+@Repository
 public class UserDaoImpl implements UserDao{
+	
+	@Autowired
+	SqlSession session;
+	
+	String ns ="User.";
 
 	@Override
 	public int addUser(UserDto dto) {
@@ -12,8 +21,8 @@ public class UserDaoImpl implements UserDao{
 
 	@Override
 	public int upsdateUser(UserDto dto) {
-		// TODO Auto-generated method stub
-		return 0;
+		int count = session.update(ns + "updateUserInfo",dto); 
+		return count;
 	}
 
 	@Override
@@ -24,8 +33,8 @@ public class UserDaoImpl implements UserDao{
 
 	@Override
 	public UserDto getUser(int uid) {
-		// TODO Auto-generated method stub
-		return null;
+		UserDto dto = session.selectOne(ns + "userInfo", uid);
+		return dto;
 	}
 
 	@Override

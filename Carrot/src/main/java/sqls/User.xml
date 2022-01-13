@@ -4,5 +4,20 @@
         
 <mapper namespace="User">
 
+<select id="userInfo" parameterType="Integer" resultType="mul.camp.a.dto.UserDto">
+	SELECT *
+	FROM USER
+	WHERE UID = #{uid}
+</select>
+
+<update id="updateUserInfo" parameterType="mul.camp.a.dto.UserDto">
+	UPDATE USER
+	SET 
+	EMAIL = #{email},
+	LOCATION = #{location},
+	PHONE = #{phone},
+	WHERE UID = #{uid}
+</update>
+
 
 </mapper>
