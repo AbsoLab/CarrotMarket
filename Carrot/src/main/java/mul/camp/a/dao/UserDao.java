@@ -1,5 +1,7 @@
 package mul.camp.a.dao;
 
+import java.util.List;
+
 import mul.camp.a.dto.UserDto;
 
 public interface UserDao {
@@ -20,5 +22,5 @@ public interface UserDao {
     public UserDto getUser(String id);
 
     // 모든 유저의 정보 배열 반환
-    public UserDto[] getUserList();
+    public List<UserDto> getUserList();
 }
