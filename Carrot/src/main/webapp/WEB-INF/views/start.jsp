@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
- <h1>처음 페이지</h1>
+ <h1>희애님이 작성해주실 첫 페이지</h1>
+ 
+ <a href="login.do">로그인창으로 이동</a>
+ 
 </body>
 </html>

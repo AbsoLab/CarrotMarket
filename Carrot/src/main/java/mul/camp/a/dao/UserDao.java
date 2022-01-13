@@ -21,4 +21,7 @@ public interface UserDao {
 
     // 모든 유저의 정보 배열 반환
     public UserDto[] getUserList();
+    
+    // 로그인
+    public UserDto login(UserDto dto);
 }
