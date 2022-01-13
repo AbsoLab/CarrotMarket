@@ -13,6 +13,9 @@ public class ContentDto {
     private int bid;
     private ReplyDto[] reply;
     
+    public ContentDto() {
+	}
+    
     public ContentDto(int cid, String title, String content, Date writedate, int uid, int bid) {
         this.cid = cid;
         this.title = title;

@@ -1,6 +1,11 @@
+<%@page import="mul.camp.a.dto.BoardDto"%>
+<%@page import="java.util.List"%>
+<%@page import="mul.camp.a.dto.ContentDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%
+	List<BoardDto> qna = (List<BoardDto>)request.getAttribute("qna");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +19,7 @@
 
 <style>
 
+/* FAQ 목록 css */
 .d-flex {
   background-color: rgba(255,0,0,.1);
   margin-bottom: 2rem;
@@ -24,6 +30,7 @@
   border: 1px solid #ccc;
 }
 
+/* 내용에 커서를 올려놓으면 손가락 모양으로 바꾸기. */
 dt {
 	cursor: pointer;
 }
@@ -46,10 +53,12 @@ dt {
 	<!-- FAQ 목록  -->
 	<div class="container">
 	  	<div class="row row-cols-3 d-flex flex-row">
-		    <div class="col">Column</div>
-		    <div class="col">Column</div>
-		    <div class="col">Column</div>
-
+		   	<%for (int i=0; i < qna.size(); i++) { 
+		   		BoardDto list = qna.get(i);
+		   	%>
+		    <div class="col"><%=list.getName() %></div>
+			<%} %>
+			
 	  	</div>
 	</div>
 	
@@ -72,10 +81,12 @@ dt {
 </div>
 
 <script type="text/javascript">
+
+/* FAQ 내용 접었다 펴기 */
 $(document).ready(function() {
 	$("dd").hide();
 	$("dt").click(function() {
-		if($(this).next().css("display")=="none") {	// this는 dt를 의미. next는 다음태그인 dt가 css display가 none 일때와 같을때를 의미.
+		if($(this).next().css("display")=="none") {	/* this는 dt를 의미. next는 다음태그인 dt가 css display가 none 일때와 같을때를 의미. */
 			$(this).next().slideDown("fast");
 		} else {
 			$(this).next().slideUp("fast");

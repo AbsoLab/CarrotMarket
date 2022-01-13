@@ -24,4 +24,5 @@ public interface UserService {
      
      // 유저 목록 (관리자 페이지)
      public UserDto[] userList();
+
 }

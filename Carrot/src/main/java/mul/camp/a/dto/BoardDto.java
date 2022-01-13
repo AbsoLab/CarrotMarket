@@ -5,6 +5,9 @@ public class BoardDto {
     private int bid;
     private String name;
     
+    public BoardDto() {
+	}
+    
     public BoardDto(int bid, String name) {
         this.bid = bid;
         this.name = name;

@@ -1,5 +1,8 @@
 package mul.camp.a.service;
 
+import java.util.List;
+
+import mul.camp.a.dto.BoardDto;
 import mul.camp.a.dto.ContentDto;
 import mul.camp.a.dto.ReplyDto;
 
@@ -28,4 +31,7 @@ public interface BoardService {
 
     // 댓글 삭제
     public boolean deleteReply(int uid, int rid);
+    
+    // DB로부터 qna 목록 내용 리스트로 반환
+    public List<BoardDto> qnalist();
 }
