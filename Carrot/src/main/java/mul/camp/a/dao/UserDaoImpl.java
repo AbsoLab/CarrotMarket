@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import mul.camp.a.dto.UserDto;
 
+@Repository
 public class UserDaoImpl implements UserDao {
 
     // 네임스페이스
