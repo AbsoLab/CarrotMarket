@@ -8,7 +8,7 @@ public interface UserDao {
     public int addUser(UserDto dto);
 
     // 입력받은 내용으로 DB에 수정
-    public int upsdateUser(UserDto dto);
+    public int updateUser(UserDto dto);
 
     // uid(유저)에 해당하는 유저를 DB에서 제거
     public int deleteUser(int uid);
