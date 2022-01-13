@@ -18,4 +18,11 @@ public class IndexController {
 
 		return "start";
 	}
+	
+	@RequestMapping(value = "qnaBoard.do", method = RequestMethod.GET)
+	public String qnaBoard() {
+		logger.info("IndexController qnaBoard()" + new Date());
+
+		return "qnaBoard";
+	}
 }

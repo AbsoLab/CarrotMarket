@@ -8,5 +8,6 @@
 </head>
 <body>
  <h1>처음 페이지</h1>
+ <a href="qnaBoard.do">자주찾는질문</a>
 </body>
 </html>
