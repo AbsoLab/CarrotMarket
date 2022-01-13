@@ -1,11 +1,13 @@
 package mul.camp.a.dao;
 
+import java.util.List;
+
 import mul.camp.a.dto.ContentDto;
 
 public interface ContentDao {
     
     // bid(게시판)에 해당하는 게시글 데이터 배열 반환
-    public ContentDto[] getList(int bid);
+    public List<ContentDto> getList(int bid);
 
     // cid(게시글)에 해당하는 게시글 데이터 반환
     public ContentDto getContent(int cid);
