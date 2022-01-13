@@ -19,7 +19,7 @@
 <table border="1">
 	<tr>
 		<th>ID</th>
-		<td></td>
+		<td><%dto.getId()%></td>
 	</tr>
 	<tr>
 		<th>PW</th>
@@ -31,19 +31,19 @@
 		
 	<tr>
 		<th>이름</th>
-		<td>NAME</td>
+		<td><%=dto.getName() %></td>
 	</tr>
 	<tr>
 		<th>생년월일</th>
-		<td>BIR</td>
+		<td><%=dto.getBirtdate() %></td>
 	</tr>
 	<tr>
 		<th>이메일</th>
 		<td>
 			<input type="hidden" id="email" name="email" value="">
-			<input type="text" id="email_id"  value="meek34">
+			<input type="text" id="email_id"  value="<%=dto.getEmail().split('@')[0]%>">
 			@
-			<input type="text" id="email_domain"  value="">
+			<input type="text" id="email_domain"  value="<%=dto.getEmail().split('@')[1]%>">
 			<select  id="domain" onchange="setdomain()">
 				<option value="1">-직접입력-</option>
 			    <option value="naver.com">naver.com</option>
@@ -69,9 +69,9 @@
 				<option value="019">019</option>
 			</select>
 			-
-			<input id="phone2" type="text" size="6" value="">
+			<input id="phone2" type="text" size="6" value="" maxlength="4">
 			-
-			<input id="phone3" type="text" size="6" value="">
+			<input id="phone3" type="text" size="6" value="" maxlength="4">
 		</td>
 	</tr>
 	<tr>
@@ -151,7 +151,7 @@ function update(){
 		alert('주소를 선택해주세요');
 	}
 	
-	else if($("#pwcheck").val()=='123'){
+	else if($("#pwcheck").val()=='<%=dto.getPw() %>'){
 		let email = $("#email_id").val() +'@' + $("#email_domain").val();
 		let phone = $("#phone1").val() + '-' + $("#phone2").val() + '-' + $("#phone3").val();
 		let location = $("#sido1").val() +'/'+ $("#gugun1").val()
@@ -166,9 +166,11 @@ function update(){
 
 //페이지 로딩시 세팅
 $(document).ready(function() {
-	$("#phone1").val("017").prop("selected", true);
 	
-	$("#sido1").val("서울특별시").onclick;
+	
+	$("#phone1").val("<%=dto.getPhone().split('-')[0]%>").prop("selected", true);
+	
+	$("#sido1").val("<%=dto.getLocation()%>").prop("selected", true);
 	
 	
 	
