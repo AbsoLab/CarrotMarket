@@ -18,4 +18,10 @@ public interface ReplyDao {
     // rid(댓글)에 해당하는 댓글을 DB에서 제거
     public int deleteReply(int rid);
 
+    // 댓글의 답글 추가
+    public int addReplyAnswer(ReplyDto dto);
+
+    // Step Count 추가
+    public int addStepCount(ReplyDto dto);
+
 }
