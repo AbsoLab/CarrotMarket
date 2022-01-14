@@ -34,5 +34,9 @@ public interface BoardService {
     
     // DB로부터 qna 목록 내용 리스트로 반환
     public List<BoardDto> qnalist();
-    public List<ContentDto> qnaCont();
+    public List<ContentDto> qnaCont(int bid);
+    
+    // 선택한 faq목록을 컨텐트 리스트로 변환 -> 위에 있는 boardList는 기본 게시판 뿌려주는 형태같아서 따로 만들었습니다.
+    public List<ContentDto> qnaSel(int bid);
+    
 }

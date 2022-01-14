@@ -12,5 +12,8 @@ public interface BoardDao {
     
     // DB로부터 qna 목록 내용 리스트로 반환
     public List<BoardDto> qnalist();
-    public List<ContentDto> qnaCont();
+    public List<ContentDto> qnaCont(int bid);
+    
+    // DB로부터 qna content 내용 리스트로 반환 --> 이거 나중에 서비스 생기면 바꿀게요.
+    public List<ContentDto> qnaSel(int bid);
 }

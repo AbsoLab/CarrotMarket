@@ -30,25 +30,31 @@ public class IndexController {
 	}
 	
 	@RequestMapping(value = "qnaBoard.do", method = RequestMethod.GET)
-	public String qnaBoard(Model model) {
+	public String qnaBoard(Model model, int bid) {
 		logger.info("IndexController qnaBoard()" + new Date());
 		
 		List<BoardDto> qna = bs.qnalist();
 		model.addAttribute("qna", qna);
 		System.out.println(qna.toString());
 		
-		List<ContentDto> qnaCont = bs.qnaCont();
+		List<ContentDto> qnaCont = bs.qnaCont(bid);
 		model.addAttribute("qnaCont", qnaCont);
-		
+		System.out.println(qnaCont.toString());
 		return "qnaBoard";
 	}
 	
 	@RequestMapping(value = "qnaClick.do", method = RequestMethod.GET)
-	public String qnaClick(Model model, BoardDto board) {
+	public String qnaClick(Model model, int bid) {
 		logger.info("IndexController qnaClick()" + new Date());
-		System.out.println(board.toString());
+		System.out.println(bid);
 		
+		List<BoardDto> qna = bs.qnalist();
+		model.addAttribute("qna", qna);
+		System.out.println(qna.toString());
 		
+		List<ContentDto> sel = bs.qnaSel(bid); 
+		model.addAttribute("qnaSel", sel);
+		System.out.println(sel.toString());
 		return "qnaBoard";
 	}
 }

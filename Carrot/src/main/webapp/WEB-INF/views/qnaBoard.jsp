@@ -59,7 +59,7 @@ dt {
 		   	<%for (int i=0; i < qna.size(); i++) { 
 		   		BoardDto list = qna.get(i);
 		   	%>
-		    <div id="qnaList<%=i%>" class="col"><a href="qnaClick.do?name=<%=list.getName()%>"><%=list.getName() %></a></div>
+		    <div class="col"><a href="qnaClick.do?bid=<%=list.getBid()%>"><%=list.getName() %></a></div>
 			<%} %>
 			
 	  	</div>

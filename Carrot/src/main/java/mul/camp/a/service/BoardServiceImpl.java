@@ -71,8 +71,15 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public List<ContentDto> qnaCont() {
-		return dao.qnaCont();
+	public List<ContentDto> qnaCont(int bid) {
+		return dao.qnaCont(bid);
 	}
+
+	@Override
+	public List<ContentDto> qnaSel(int bid) {
+		
+		return dao.qnaSel(bid);
+	}
+	
     
 }

@@ -10,10 +10,22 @@
 	WHERE BID > 6
 </select>
 
-<select id="qnaCont" resultType="mul.camp.a.dto.ContentDto">
+<select id="qnaCont" parameterType="Integer" resultType="mul.camp.a.dto.ContentDto">
+	SELECT *
+	FROM CONTENT
+	<if test = "bid = 0">
+		WHERE BID > 1
+	</if>
+	
+	<if test = "bid > 0">
+		WHERE BID = #{BID}
+	</if>
+</select>
+
+<select id="qnaSel" parameterType="Integer" resultType="mul.camp.a.dto.ContentDto">
 	SELECT TITLE, CONTENT
 	FROM CONTENT
-	WHERE BID > 1
+	WHERE BID = #{BID}
 </select>
 
 </mapper>
