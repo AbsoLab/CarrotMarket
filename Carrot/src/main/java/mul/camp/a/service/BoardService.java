@@ -29,7 +29,7 @@ public interface BoardService {
     public boolean writeReply(ReplyDto dto);
 
     // 답글 작성
-    public boolean writeReplyReply(ReplyDto dto);
+    public boolean writeReplyAnswer(ReplyDto dto);
 
     // 댓글 수정
     public boolean updateReply(ReplyDto dto);
