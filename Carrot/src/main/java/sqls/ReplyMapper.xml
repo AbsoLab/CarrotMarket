@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Reply">
+    <select id="getReplyList" parameterType="int" resultType="mul.camp.a.dto.ReplyDto">
+        SELECT * FROM reply
+        WHERE cid=#{cid}
+    </select>
+
+    <insert id="addReply" parameterType="mul.camp.a.dto.ReplyDto">
+        INSERT INTO reply(content, writedate, ref, step, depth, uid, cid)
+        VALUES (#{content}, SYSDATE(), (SELECT IFNULL(MAX(ref) + 1, 0) FROM reply ALIAS_FOR_SUBQUERY), 0, 0, uid=#{uid}, cid=#{cid})
+    </insert>
+
+    <update id="updateReply" parameterType="mul.camp.a.dto.ReplyDto">
+        UPDATE reply
+        SET content=#{content}
+        WHERE rid=#{rid}
+    </update>
+
+    <delete id="deleteReply" parameterType="int">
+        DELETE FROM reply
+        WHERE rid=#{rid}
+    </delete>
+
+    <!-- 댓글의 답글 -->
+    <!-- 댓글은 밑으로 갈수록 최신인걸로 둔다. 꽤 바껴야 할 수도 있음 -->
+    <insert id="addReplyAnswer" parameterType="mul.camp.a.dto.ReplyDto">
+        INSERT INTO reply(content, wirtedate, ref, step, depth, uid, cid)
+        VALUES (#{content}, SYSDATE(), #{ref}, #{step}+1, #{depth}+1, #{uid}, #{cid})
+    </insert>
+
+    <update id="addReplyStep">
+        UPDATE reply
+        SET step = step + 1
+        WEHRE ref=#{ref} AND step > #{step}
+    </update>
+    
+</mapper>
