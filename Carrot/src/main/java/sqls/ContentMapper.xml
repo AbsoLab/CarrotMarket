@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="Content">
+    <select id="getList" parameterType="int" resultType="mul.camp.a.dto.ContentDto">
+        SELECT * FROM content
+        WHERE bid=#{bid}
+    </select>
+
+    <select id="getContent" parameterType="int" resultType="mul.camp.a.dto.ContentDto">
+        SELECT * FROM content
+        WHERE cid=#{cid}
+    </select>
+
+    <insert id="addContent" parameterType="mul.camp.a.dto.ContentDto">
+        INSERT INTO content (title, content, writedate, uid, bid)
+        VALUES (#{title}, #{content}, SYSDATE(), #{uid}, #{bid})
+    </insert>
+
+    <update id="updateContent" parameterType="mul.camp.a.dto.ContentDto">
+        UPDATE content
+        SET title=#{title}, content=#{content}
+        WHERE cid=#{cid}
+    </update>
+
+    <delete id="deleteContent" parameterType="int">
+        DELETE FROM content
+        WHERE cid=#{cid}
+    </delete>
+
+    <!-- 이미지를 위한 -->
+    <select id="getImg" parameterType="int" resultType="String">
+        SELECT src FROM img
+        WHERE cid=#{cid}
+    </select>
+</mapper>
