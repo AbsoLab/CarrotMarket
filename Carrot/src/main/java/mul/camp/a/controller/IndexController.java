@@ -44,4 +44,18 @@ public class IndexController {
 		
 		return "qnaBoard";
 	}
+	
+	@RequestMapping(value = "qnaClick.do", method = RequestMethod.GET)
+	public String qnaClick(Model model, BoardDto board) {
+		logger.info("IndexController qnaCilick()" + new Date());
+		
+		List<BoardDto> qna = bs.qnalist();
+		model.addAttribute("qna", qna);
+		System.out.println(qna.toString());
+		
+		List<ContentDto> qnaCont = bs.qnaCont();
+		model.addAttribute("qnaCont", qnaCont);
+		
+		return "qnaBoard";
+	}
 }
