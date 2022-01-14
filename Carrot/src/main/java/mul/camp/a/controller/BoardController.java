@@ -19,11 +19,11 @@ public class BoardController {
 //	@Autowired
 //	BoardService service;
 //	
-	@RequestMapping(value = "sellBoard.do", method = RequestMethod.GET)
-	public String sellBoard() {
-		logger.info("BoardController sellBoard() " + new Date());
-		
-		return "sellBoard";
-	}
+//	@RequestMapping(value = "sellBoard.do", method = RequestMethod.GET)
+//	public String sellBoard() {
+//		logger.info("BoardController sellBoard() " + new Date());
+//		
+//		return "sellBoard";
+//	}
     
 }

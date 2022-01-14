@@ -15,7 +15,7 @@ List<UserDto> userinfo = (List<UserDto>)request.getAttribute("login");
 </head>
 <body>
 
-<h1>메인페이지 입니다(index로 예상)</h1>
+<h1>로그인 후 화면</h1>
 <h2><a href="sellBoard.do">판매게시판으로 이동</a></h2>
 
 </body>
