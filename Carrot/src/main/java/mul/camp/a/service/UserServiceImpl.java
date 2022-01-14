@@ -12,42 +12,60 @@ import mul.camp.a.dto.UserDto;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    UserDao dao;
+    private UserDao dao;
     
     @Override
-    public boolean login(UserDto dto) {
-        // TODO Auto-generated method stub
-        return false;
+    public UserDto login(UserDto dto) {
+        
+        String id = dto.getId();
+        String pw = dto.getPw();
+
+        UserDto userDto = dao.getUser(id);
+
+        // 아이디가 틀림
+        if (userDto == null) {
+            
+            return null;
+
+        } else if (userDto.getId() == id && userDto.getPw() == pw) {
+
+            return userDto;
+
+        // 비밀번호가 틀림
+        } else {
+
+            return null;
+        }
     }
 
     @Override
     public boolean register(UserDto dto) {
-        // TODO Auto-generated method stub
-        return false;
+        
+        return dao.addUser(dto) > 0;
     }
 
     @Override
     public boolean checkIdDup(String id) {
-        // TODO Auto-generated method stub
-        return false;
+        
+        return dao.getUser(id) != null;
     }
 
     @Override
     public boolean updateUserInfo(UserDto dto) {
-        // TODO Auto-generated method stub
-        return false;
+
+        return dao.updateUser(dto) > 0;
     }
 
     @Override
     public UserDto userInfo(int uid) {
-        // TODO Auto-generated method stub
-        return null;
+        
+        return dao.getUser(uid);
     }
 
     @Override
     public boolean deleteAccount(int uid) {
-        // TODO Auto-generated method stub
-        return false;
+        
+        return dao.deleteUser(uid) > 0;
     }
 
     @Override
