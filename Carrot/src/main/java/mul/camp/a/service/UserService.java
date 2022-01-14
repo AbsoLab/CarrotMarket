@@ -1,5 +1,7 @@
 package mul.camp.a.service;
 
+import java.util.List;
+
 import mul.camp.a.dto.UserDto;
 
 public interface UserService {
@@ -23,5 +25,5 @@ public interface UserService {
      public boolean deleteAccount(int uid);
      
      // 유저 목록 (관리자 페이지)
-     public UserDto[] userList();
+     public List<UserDto> userList();
 }
