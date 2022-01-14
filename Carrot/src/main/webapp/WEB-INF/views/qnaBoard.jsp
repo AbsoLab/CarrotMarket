@@ -13,10 +13,10 @@
 <meta charset="UTF-8">
 <title>질문게시판</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <style>
 
@@ -41,7 +41,7 @@ dt {
 </style>
 </head>
 <body>
-<h1>자주 묻는 질문</h1>
+<h1>고객센터</h1>
 
 <!-- FAQ 검색 -->
 <div align="center">
@@ -59,24 +59,26 @@ dt {
 		   	<%for (int i=0; i < qna.size(); i++) { 
 		   		BoardDto list = qna.get(i);
 		   	%>
-		    <div id="qnaList<%=i%>" class="col"><%=list.getName() %></div>
+		    <div id="qnaList<%=i%>" class="col"><a href="qnaClick.do?name=<%=list.getName()%>"><%=list.getName() %></a></div>
 			<%} %>
 			
 	  	</div>
 	</div>
 	
 	<!-- FAQ 내용 -->
-	<h3>위로부터 밑으로(flex-column)</h3>
+	<h3>자주 찾는 질문</h3>
 	<div>
+		<table>
 		<%for(int i=0; i < cont.size(); i++) { 
 			ContentDto conList = cont.get(i);
 		%>
 			
 		<div>
 			<dt><%=conList.getTitle() %></dt>
-			<dd><%=conList.getContent() %></dd>
+			<textarea rows="15" cols="100" readonly="readonly"><%=conList.getContent() %></textarea>
 		</div>
 		<%} %>
+		</table>
 	</div>
 </div>
 
@@ -84,7 +86,7 @@ dt {
 
 /* FAQ 내용 접었다 펴기 */
 $(document).ready(function() {
-	$("dd").hide();
+	$("textarea").hide();
 	$("dt").click(function() {
 		if($(this).next().css("display")=="none") {	/* this는 dt를 의미. next는 다음태그인 dt가 css display가 none 일때와 같을때를 의미. */
 			$(this).next().slideDown("fast");
@@ -93,13 +95,7 @@ $(document).ready(function() {
 		}
 	});
 });
-<%for (int i=0; i < qna.size(); i++) { 
-		BoardDto list = qna.get(i);
-%>
-$("#qnaList<%=i%>").click(function() {
-	
-});
-<%}%>
+
 </script>
 
 </body>

@@ -26,8 +26,6 @@ public class IndexController {
 	public String login() {
 		logger.info("IndexController login()" + new Date());
 		
-		
-		
 		return "start";
 	}
 	
@@ -47,14 +45,9 @@ public class IndexController {
 	
 	@RequestMapping(value = "qnaClick.do", method = RequestMethod.GET)
 	public String qnaClick(Model model, BoardDto board) {
-		logger.info("IndexController qnaCilick()" + new Date());
+		logger.info("IndexController qnaClick()" + new Date());
+		System.out.println(board.toString());
 		
-		List<BoardDto> qna = bs.qnalist();
-		model.addAttribute("qna", qna);
-		System.out.println(qna.toString());
-		
-		List<ContentDto> qnaCont = bs.qnaCont();
-		model.addAttribute("qnaCont", qnaCont);
 		
 		return "qnaBoard";
 	}
