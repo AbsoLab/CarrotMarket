@@ -27,4 +27,10 @@
         DELETE FROM content
         WHERE cid=#{cid}
     </delete>
+
+    <!-- 이미지를 위한 -->
+    <select id="getImg" parameterType="int" resultType="String">
+        SELECT src FROM img
+        WHERE cid=#{cid}
+    </select>
 </mapper>
