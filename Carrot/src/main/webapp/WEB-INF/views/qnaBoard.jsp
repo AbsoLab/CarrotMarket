@@ -5,12 +5,13 @@
     pageEncoding="UTF-8"%>
 <%
 	List<BoardDto> qna = (List<BoardDto>)request.getAttribute("qna");
+	List<ContentDto> cont = (List<ContentDto>)request.getAttribute("qnaCont");
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>질문게시판</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -29,6 +30,8 @@
   padding: .5em;
   border: 1px solid #ccc;
 }
+
+
 
 /* 내용에 커서를 올려놓으면 손가락 모양으로 바꾸기. */
 dt {
@@ -56,7 +59,7 @@ dt {
 		   	<%for (int i=0; i < qna.size(); i++) { 
 		   		BoardDto list = qna.get(i);
 		   	%>
-		    <div class="col"><%=list.getName() %></div>
+		    <div id="qnaList<%=i%>" class="col"><%=list.getName() %></div>
 			<%} %>
 			
 	  	</div>
@@ -65,18 +68,15 @@ dt {
 	<!-- FAQ 내용 -->
 	<h3>위로부터 밑으로(flex-column)</h3>
 	<div>
+		<%for(int i=0; i < cont.size(); i++) { 
+			ContentDto conList = cont.get(i);
+		%>
+			
 		<div>
-			<dt>제목</dt>
-			<dd>내용</dd>
+			<dt><%=conList.getTitle() %></dt>
+			<dd><%=conList.getContent() %></dd>
 		</div>
-		<div>
-			<dt>제목</dt>
-			<dd>내용</dd>
-		</div>
-		<div>
-			<dt>제목</dt>
-			<dd>내용</dd>
-		</div>
+		<%} %>
 	</div>
 </div>
 
@@ -93,7 +93,13 @@ $(document).ready(function() {
 		}
 	});
 });
-
+<%for (int i=0; i < qna.size(); i++) { 
+		BoardDto list = qna.get(i);
+%>
+$("#qnaList<%=i%>").click(function() {
+	
+});
+<%}%>
 </script>
 
 </body>

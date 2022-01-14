@@ -39,6 +39,9 @@ public class IndexController {
 		model.addAttribute("qna", qna);
 		System.out.println(qna.toString());
 		
+		List<ContentDto> qnaCont = bs.qnaCont();
+		model.addAttribute("qnaCont", qnaCont);
+		
 		return "qnaBoard";
 	}
 }

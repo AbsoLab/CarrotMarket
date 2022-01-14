@@ -10,4 +10,10 @@
 	WHERE BID > 6
 </select>
 
+<select id="qnaCont" resultType="mul.camp.a.dto.ContentDto">
+	SELECT TITLE, CONTENT
+	FROM CONTENT
+	WHERE BID > 1
+</select>
+
 </mapper>

@@ -33,6 +33,12 @@ public class BoardDaoImpl implements BoardDao {
 		
 		return session.selectList(ns+"qnaList");
 	}
+
+	@Override
+	public List<ContentDto> qnaCont() {
+		
+		return session.selectList(ns+"qnaCont");
+	}
     
     
     
