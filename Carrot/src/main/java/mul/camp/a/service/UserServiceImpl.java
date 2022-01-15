@@ -1,9 +1,17 @@
 package mul.camp.a.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import mul.camp.a.dao.UserDao;
 import mul.camp.a.dto.UserDto;
 
+@Service
 public class UserServiceImpl implements UserService {
-
+	
+	@Autowired
+	UserDao dao;
+	
 	@Override
 	public boolean login(UserDto dto) {
 		// TODO Auto-generated method stub
@@ -13,13 +21,16 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean register(UserDto dto) {
 		// TODO Auto-generated method stub
-		return false;
+		int count = dao.addUser(dto);		
+		
+		return count>0?true:false;
 	}
 
 	@Override
 	public boolean checkIdDup(String id) {
 		// TODO Auto-generated method stub
-		return false;
+		int count = dao.idchk(id);
+		return count>0?true:false;
 	}
 
 	@Override
