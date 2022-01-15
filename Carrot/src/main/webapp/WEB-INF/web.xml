@@ -35,7 +35,7 @@
   </servlet-mapping>
   
   <!-- DB 관련 -->
-  <context-param>
+  <!--  <context-param>
 	  <param-name>contextConfigLocation</param-name>
 	  <param-value>
 	  		/WEB-INF/spring/applicationContext.xml
@@ -44,10 +44,10 @@
   
   <listener>
   	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>
+  </listener>-->
   
   <!-- 한글설정 -->
-  <filter>
+ <filter>
   	<filter-name>encodingFilter</filter-name>
   	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
   	
@@ -66,8 +66,7 @@
   	<filter-name>encodingFilter</filter-name>
   	<url-pattern>/*</url-pattern>
   </filter-mapping>
-  
-  
+    
 </web-app>
 
 
