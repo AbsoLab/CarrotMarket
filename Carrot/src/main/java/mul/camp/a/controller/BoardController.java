@@ -1,5 +1,7 @@
 package mul.camp.a.controller;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+
 import java.util.Date;
 import java.util.List;
 
@@ -51,6 +53,45 @@ public class BoardController {
     	}else {
     		System.out.println("실패");
     	}
+    	return "redirect:/buyBoard.do?bid=2"; // 구매게시판으로 가기위함
+    }
+    @RequestMapping(value = "boardDetail.do", method = RequestMethod.GET)
+    public String boardDetail(Model model, int cid) {
+    	logger.info("BoardController boardDetail()" + new Date());
+    	ContentDto dto = service.content(cid);
+    	model.addAttribute("detail",dto);
+    	
+    	return "boardDetail";
+    }
+    
+    @RequestMapping (value = "updateBoard.do", method = RequestMethod.GET)
+    public String updateboard(Model model,int cid) {
+    	logger.info("BoardController updateboard()" + new Date());
+    	ContentDto dto = service.content(cid);
+    	model.addAttribute("content", dto);
+    	
+    	return "boardUpdate";
+    }
+    @RequestMapping (value = "updateboardAf.do", method = RequestMethod.POST)
+    public String updateAf(ContentDto dto) {
+    	logger.info("BoardController updateAf()" + new Date());
+    	boolean b = service.updateContent(0, dto);
+    	if(b) {
+    		System.out.println("성공");
+    	}else {
+    		System.out.println("실패");
+    	}
     	return "redirect:/buyBoard.do?bid=2";
     }
-}
+    @RequestMapping(value = "deleteBoard.do", method = RequestMethod.GET)
+    public String deleteBoard(int cid) {
+    	logger.info("BoardController deleteBoard()" + new Date());
+    	boolean b = service.deleteContent(0, cid);
+    	if(b) {
+    		System.out.println("성공");
+    	}else {
+    		System.out.println("실패");
+    	}
+    	return "redirect:/buyBoard.do?bid=2";
+    }
+}	

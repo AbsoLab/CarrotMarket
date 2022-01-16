@@ -46,8 +46,8 @@ public class BoardServiceImpl implements BoardService{
 
 	@Override
 	public boolean deleteContent(int uid, int cid) {
-		
-		return false;
+		int count = cdao.deleteContent(cid);
+		return count > 0 ?true:false;
 	}
 
 	@Override

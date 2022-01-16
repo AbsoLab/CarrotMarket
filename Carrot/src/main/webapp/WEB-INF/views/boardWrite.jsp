@@ -3,9 +3,9 @@
     pageEncoding="UTF-8"%>
     
 <%
-//uidrk ,session에서 사용자 정보를 산출 
+//bid ,session에서 사용자 정보를 산출 
 int bid = (Integer)request.getAttribute("bid");
-//UserDto user = (UserDto)request.getSession().getAttribute("login");
+//UserDto user = (UserDto)request.getSession().getAttribute("login");//test를 위해 주석처리
 %>
 <!DOCTYPE html>
 <html>
@@ -35,7 +35,7 @@ int bid = (Integer)request.getAttribute("bid");
 <h3>글쓰기</h3>
 <form id ="frm" action="boardWriteAf.do" method="post">
   <div class="form-group">
-  	<input type="hidden" name = "uid" value="1">
+  	<input type="hidden" name = "uid" value="1"> <!-- 수정필요 -->
   	<input type="hidden" name = "bid" value="<%=bid%>">
     <label for="title">제목</label>
     <input type="text" name = "title" class="form-control" id="title" placeholder="제목을 입력하세요">
