@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class IndexController {
-    @RequestMapping (value = "buyBoard.do", method = RequestMethod.GET)
+    @RequestMapping (value = "start.do", method = RequestMethod.GET)
     public String index() {
     	
-    	return "buyBoard";
+    	return "start";
     }
     
 }

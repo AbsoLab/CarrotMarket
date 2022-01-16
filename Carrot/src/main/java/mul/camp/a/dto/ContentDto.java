@@ -4,6 +4,9 @@ import java.util.Arrays;
 import java.util.Date;
 
 public class ContentDto {
+	public ContentDto() {
+		// TODO Auto-generated constructor stub
+	}
     
     private int cid;
     private String title;

@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
- <h1>처음 페이지</h1>
- <a href="buyBoard.do?bid=2">구매</a>
+
 </body>
 </html>
