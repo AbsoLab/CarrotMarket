@@ -2,5 +2,5 @@
     pageEncoding="UTF-8"%>
 
 <%
-	response.sendRedirect("start.do");
+	response.sendRedirect("buyBoard.do");
 %>
