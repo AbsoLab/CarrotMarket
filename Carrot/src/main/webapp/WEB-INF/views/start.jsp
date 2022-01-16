@@ -36,7 +36,11 @@
     <meta property="og:title" content="구매게시판">
     <meta property="og:type" content="website">
   </head>
-  <body data-home-page="구매게시판.html" data-home-page-title="구매게시판" class="u-body"><header class="u-clearfix u-header u-header" id="sec-75b6"><div class="u-clearfix u-sheet u-sheet-1">
+  
+  
+  <body data-home-page="구매게시판.html" data-home-page-title="구매게시판" class="u-body">
+  <header class="u-clearfix u-header u-header" id="sec-75b6">
+  <div class="u-clearfix u-sheet u-sheet-1">
         <a href="https://nicepage.com/website-templates" class="u-image u-logo u-image-1" data-image-width="354" data-image-height="255">
           <img src="images/logo.png" class="u-logo-image u-logo-image-1">
         </a>
