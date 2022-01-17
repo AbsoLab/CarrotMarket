@@ -85,7 +85,7 @@
                     </li>
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                            href="#" style="padding: 12px 0px;">문의사항</a>
+                            href="#contact" style="padding: 12px 0px;">문의사항</a>
                     </li>
                 </ul>
             </div>
@@ -107,7 +107,7 @@
                                                       style="padding: 10px 0px;">공지사항</a>
                             </li>
                             <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" href="#"
+                                <a class="u-button-style u-nav-link" href="contact"
                                                       style="padding: 10px 0px;">문의사항</a>
                             </li>
                         </ul>
@@ -420,6 +420,7 @@
 </section>
 
 <%--6번째 페이지 코드--%>
+<a name="contact"></a>
 <section class="u-align-center-xs u-clearfix u-custom-color-5 u-section-6" id="carousel_949f">
     <div class="u-custom-color-6 u-expanded-width u-shape u-shape-rectangle u-shape-1"></div>
     <div class="u-container-style u-group u-shape-rectangle u-white u-group-1">
