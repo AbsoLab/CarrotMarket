@@ -1,8 +1,9 @@
 package mul.camp.a.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class ReplyDto {
+public class ReplyDto implements Serializable{
     
     private int rid;
     private String content;

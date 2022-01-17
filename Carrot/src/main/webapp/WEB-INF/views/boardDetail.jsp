@@ -81,7 +81,7 @@
 					<td>
 						<a href="answer.do?rid=<%=reply.getRid()%>">답글</a>
 						<%
-						if(reply.getUid()== 1){ // user.getUid() 대신 1
+						if(reply.getUid()== 1){ // user.getUid() 대신 test를 위해 1대입
 												// 같아야만 수정 삭제 가능 
 							%>
 							<a href ="updateReply.do?rid=<%=reply.getRid()%>">수정</a>

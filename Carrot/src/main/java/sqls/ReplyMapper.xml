@@ -5,6 +5,7 @@
     <select id="getReplyList" parameterType="int" resultType="mul.camp.a.dto.ReplyDto">
         SELECT * FROM reply
         WHERE cid=#{cid}
+        ORDER BY REF DESC, STEP ASC
     </select>
     
     <select id="getReply" parameterType="int" resultType="mul.camp.a.dto.ReplyDto">
@@ -33,14 +34,17 @@
     <insert id="addReplyAnswer" parameterType="mul.camp.a.dto.ReplyDto">
         INSERT INTO reply(content, writedate, ref, step, depth, uid, cid)
         VALUES (#{content}, SYSDATE(), 
-        #{ref}, #{step}+1, #{depth}+1, 
+        (SELECT ref  FROM reply r WHERE rid=#{rid}),  <!--REF-->
+        (SELECT step FROM reply r WHERE rid=#{rid})+1, <!--step-->
+        (SELECT depth FROM reply r WHERE rid=#{rid})+1, <!--depth-->
         #{uid}, #{cid})
     </insert>
 
     <update id="addReplyStep" parameterType="mul.camp.a.dto.ReplyDto">
         UPDATE reply
         SET step = step + 1
-        WEHRE ref=#{ref} AND step > #{step}
+        WEHRE ref=(SELECT REF FROM reply r WHERE rid=#{rid}) 
+        	AND step > (SELECT step FROM reply r WHERE rid=#{rid})
     </update>
     
 </mapper>

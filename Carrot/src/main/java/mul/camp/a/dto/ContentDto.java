@@ -1,9 +1,10 @@
 package mul.camp.a.dto;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Date;
 
-public class ContentDto {
+public class ContentDto implements Serializable{
 	public ContentDto() {
 		// TODO Auto-generated constructor stub
 	}

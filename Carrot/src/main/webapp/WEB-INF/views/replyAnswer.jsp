@@ -42,6 +42,7 @@
 	<input type="hidden" name="rid" value="<%=reply.getRid() %>"> <!-- rid를 넘겨준다.  -->
 	<input type="hidden" name="cid" value="<%=reply.getCid() %>"> <!-- cid 넘겨준다 -->
 	
+	
 	<table class="table table-bordered" style="width: 1000px">
 <tr>
 	<th>UID</th>
