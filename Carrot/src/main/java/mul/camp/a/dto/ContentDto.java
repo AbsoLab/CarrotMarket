@@ -13,6 +13,13 @@ public class ContentDto {
     private int bid;
     private ReplyDto[] reply;
     
+    public ContentDto(String title, String content, int uid, int bid) {
+        this.setTitle(title);
+        this.setContent(content);
+        this.setUid(uid);
+        this.setBid(bid);
+    }
+
     public ContentDto(int cid, String title, String content, Date writedate, int uid, int bid) {
         this.cid = cid;
         this.title = title;
