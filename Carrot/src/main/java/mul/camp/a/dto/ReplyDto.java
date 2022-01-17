@@ -15,6 +15,13 @@ public class ReplyDto {
     private int uid;
     private int cid;
     
+    public ReplyDto(String content, int ref, int uid, int cid) {
+        this.setContent(content);
+        this.setRef(ref);
+        this.setUid(uid);
+        this.setCid(cid);
+    }
+
     public ReplyDto(int rid, String content, Date writedate, int ref, int step, int depth, int uid, int cid) {
         this.rid = rid;
         this.content = content;
