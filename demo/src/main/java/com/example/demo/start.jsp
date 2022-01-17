@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html style="font-size: 16px;">
 <head>
@@ -12,15 +10,15 @@
     <title>당근나라</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
     <link rel="stylesheet" href="buy.css" media="screen">
-    <script class="u-script" type="text/javascript" src="src/main/webapp/WEB-INF/jquery/jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="src/main/webapp/WEB-INF/jquery/nicepage.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 4.2.6, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|PT+Sans:400,400i,700,700i">
 
-<%--script 첨부--%>
+<!--script 첨부-->
     <script type="application/ld+json">{
         "@context": "http://schema.org",
         "@type": "Organization",
@@ -35,13 +33,13 @@
     <meta name="theme-color" content="#5090f7">
     <meta name="twitter:site" content="@">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="당근나라">
+    <meta name="twitter:title" content="구매게시판">
     <meta name="twitter:description" content="">
-    <meta property="og:title" content="당근나라">
-    <meta property="og:type" content="당근나라">
+    <meta property="og:title" content="구매게시판">
+    <meta property="og:type" content="website">
 </head>
 
-<%--header 코드--%>
+<!--header 코드-->
 <header class="u-clearfix u-header u-header" id="sec-75b6">
     <div class="u-clearfix u-sheet u-sheet-1">
         <a href="https://nicepage.com/website-templates" class="u-image u-logo u-image-1" data-image-width="354"
@@ -49,6 +47,7 @@
             <img src="images/logo.png" class="u-logo-image u-logo-image-1">
         </a>
 
+        <!--nav 코드-->
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
             <div class="menu-collapse"
                  style="font-size: 1rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
@@ -131,18 +130,18 @@
                 <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
             </div>
         </nav>
-            <span class="u-border-2 u-border-black u-file-icon u-icon u-icon-circle u-spacing-5 u-text-black u-icon-1">
+        <span class="u-border-2 u-border-black u-file-icon u-icon u-icon-circle u-spacing-5 u-text-black u-icon-1">
             <img src="images/8.png" data-href="#"></span>
     </div>
 </header>
 
-<%--body 코드--%>
+<!--body 코드-->
 <body>
 <section class="u-align-left u-clearfix u-image u-shading u-section-1" id="carousel_a69a" data-image-width="1280"
          data-image-height="853">
     <div class="u-clearfix u-sheet u-sheet-1">
         <h2 class="u-text u-text-custom-color-2 u-text-1" data-animation-name="slideIn" data-animation-duration="2500"
-            data-animation-direction="Down"> 당근<span class="u-icon"></span>나라<br>
+            data-animation-direction="Down"> 당근&nbsp;<span class="u-icon"></span>나라<br>
         </h2>
         <h2 class="u-text u-text-custom-color-2 u-text-2" data-animation-name="slideIn" data-animation-duration="2000"
             data-animation-direction="Down"> 당신 근처의 나라</h2>
@@ -161,7 +160,7 @@
                 <div class="u-container-style u-list-item u-opacity u-opacity-70 u-palette-5-dark-3 u-repeater-item u-video-cover u-list-item-2">
                     <div class="u-container-layout u-similar-container u-container-layout-2">
                         <span class="u-file-icon u-icon u-text-custom-color-2 u-icon-3">
-                            <img src="src/main/webapp/WEB-INF/images/4.png" alt=""></span>
+                            <img src="images/4.png" alt=""></span>
                         <h3 class="u-text u-text-5">판매게시판</h3>
                         <p class="u-text u-text-6">당근나라에서 판매하기</p>
                         <a href="#"
@@ -183,7 +182,7 @@
     </div>
 </section>
 
-<%--2번째 페이지 코드--%>
+<!--2번째 페이지 코드-->
 <section class="u-clearfix u-section-2" id="sec-bcf9">
     <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
@@ -208,7 +207,7 @@
     </div>
 </section>
 
-<%--3번째 페이지 코드--%>
+<!--3번째 페이지 코드-->
 <section class="u-align-center u-clearfix u-grey-5 u-section-3" id="carousel_03b4">
     <div class="u-clearfix u-sheet u-sheet-1">
         <h2 class="u-text u-text-default u-text-1"> 당근나라 운영 서비스</h2>
@@ -325,9 +324,9 @@
             </div>
         </div>
     </div>
-</section>
 
-<%--4번째 페이지 코드--%>
+<!--4번째 페이지 코드-->
+</section>
 <section class="u-align-center u-clearfix u-image u-shading u-section-4" id="carousel_cb64" data-image-width="1280"
          data-image-height="853">
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
@@ -402,7 +401,7 @@
     </div>
 </section>
 
-<%--5번째 페이지 코드--%>
+<!--5번째 페이지 코드-->
 <section class="u-align-center u-clearfix u-section-5" id="carousel_2a40">
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <h2 class="u-text u-text-default u-text-1">소비자 만족 후기</h2>
@@ -434,7 +433,7 @@
     </div>
 </section>
 
-<%--6번째 페이지 코드--%>
+<!--6번째 페이지 코드-->
 <section class="u-align-center-xs u-clearfix u-custom-color-5 u-section-6" id="carousel_949f">
     <div class="u-custom-color-6 u-expanded-width u-shape u-shape-rectangle u-shape-1"></div>
     <div class="u-container-style u-group u-shape-rectangle u-white u-group-1">
@@ -507,12 +506,12 @@
 		            C1.065,15.799,1.065,9.72,4.802,5.983z"></path>
                     <path d="M9.013,6.569c-0.391-0.391-1.023-0.391-1.414,0c-1.615,1.614-2.504,3.764-2.504,6.052s0.889,4.438,2.504,6.053
 		            c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414
-		            c-1.237-1.237-1.918-2.885-1.918-4.639S7.775,9.22,9.013,7.983C9.403,7.593,9.403,6.96,9.013,6.569z"></path>
-		            <circle cx="30" cy="53" r="2"></circle>
+		            c-1.237-1.237-1.918-2.885-1.918-4.639S7.775,9.22,9.013,7.983C9.403,7.593,9.403,6.96,9.013,6.569z"></path><circle
+                    cx="30" cy="53" r="2"></circle>
                     <path d="M42.595,0H17.405C14.976,0,13,1.977,13,4.405v51.189C13,58.023,14.976,60,17.405,60h25.189C45.024,60,47,58.023,47,55.595
 		            V4.405C47,1.977,45.024,0,42.595,0z M33,3h1c0.552,0,1,0.447,1,1s-0.448,1-1,1h-1c-0.552,0-1-0.447-1-1S32.448,3,33,3z M26,3h4
 		            c0.552,0,1,0.447,1,1s-0.448,1-1,1h-4c-0.552,0-1-0.447-1-1S25.448,3,26,3z M30,57c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4
-		            S32.206,57,30,57z M45,46H15V8h30V46z"></path></g></svg></span>;(02)222-2222
+		            S32.206,57,30,57z M45,46H15V8h30V46z"></path></g></svg></span>(02)222-2222
             </p>
             <p class="u-text u-text-5"><span class="u-file-icon u-icon u-icon-3">
                 <img src="images/149989.png" alt=""></span>dfjoi@korea.com
@@ -524,7 +523,7 @@
     </h2>
 </section>
 
-<%--7번째 페이지 코드--%>
+<!--7번째 페이지 코드-->
 <footer class="u-align-center u-black u-clearfix u-footer u-footer" id="sec-9346">
     <div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-align-left u-small-text u-text u-text-variant u-text-1">고객 문의 cs@korea.com 제휴문의
@@ -543,7 +542,7 @@
             </a>
             <a class="u-social-url" title="twitter" target="_blank" href="https://twitter.com/name">
                 <span class="u-icon u-social-icon u-social-twitter u-text-white u-icon-2">
-                    <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112"style="">
+                    <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style="">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-6479"></use></svg>
                     <svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-6479">
                         <path fill="currentColor" d="M92.2,38.2c0,0.8,0,1.6,0,2.3c0,24.3-18.6,52.4-52.6,52.4c-10.6,0.1-20.2-2.9-28.5-8.2
@@ -552,8 +551,8 @@
 	                    c9.1,11.1,22.7,18.5,38,19.2c-0.2-1.4-0.4-2.8-0.4-4.3c0.1-10,8.3-18.2,18.5-18.2c5.4,0,10.1,2.2,13.5,5.7c4.3-0.8,8.1-2.3,11.7-4.5
 	                    c-1.4,4.3-4.3,7.9-8.1,10.1c3.7-0.4,7.3-1.4,10.6-2.9C98.9,32.3,95.7,35.5,92.2,38.2z"></path></svg></span>
             </a>
-            <a class="u-social-url" title="instagram" target="_blank" href="https://instagram.com/name">
-            <spa class="u-icon u-social-icon u-social-instagram u-text-white u-icon-3">
+            <a class="u-social-url" title="instagram" target="_blank" href="https://instagram.com/name"><span
+                    class="u-icon u-social-icon u-social-instagram u-text-white u-icon-3">
                 <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style="">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-a97d"></use></svg>
                 <svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-a97d">
