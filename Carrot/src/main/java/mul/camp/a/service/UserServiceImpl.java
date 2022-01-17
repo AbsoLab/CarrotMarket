@@ -1,26 +1,26 @@
 package mul.camp.a.service;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import mul.camp.a.dao.UserDao;
+
+import org.springframework.stereotype.Service;
+
 import mul.camp.a.dto.UserDto;
 
 @Service
 public class UserServiceImpl implements UserService {
 
-	
-	@Autowired
-	UserDao dao;
 
-//	// 로그인 serviceImpl
-//	@Override
-//	public UserDto login(UserDto dto) {		
-//		System.out.println("service진입 성공");
-//		return dao.login(dto);
-//	}
+	@Override
+	public boolean login(UserDto dto) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 	@Override
 	public boolean register(UserDto dto) {
@@ -57,4 +57,5 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+    
 }
