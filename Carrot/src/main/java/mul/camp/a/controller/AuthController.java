@@ -38,34 +38,28 @@ public class AuthController {
 	
 	// 회원정보 확인 후 로그인
 	@RequestMapping(value = "loginAf.do", method = RequestMethod.POST)
-	public String loginAf(Model model/*UserDto dto, HttpServletRequest req*/) {
+	public String loginAf(Model model/*UserDto dto*/, HttpServletRequest req) {
 		logger.info("AuthController loginAf() " + new Date());
 		
-//		UserDto user = service.login(dto);
-//		if(user != null) {
-//			req.getSession().setAttribute("login", user);
-//			System.out.println("로그인성공");
-//			
-//			return "main";
-//		}
-//		else {	// 조금 더 보완필요
-//			System.out.println("회원정보없음");
-//			return "login";
-//		}
-		ArrayList<String> user = new ArrayList<String>();
-		user.add("id");
-		user.add("pw");
-		user.add("name");
-		user.add("birthdate");
-		user.add("email");
-		user.add("phone");
-		user.add("location");
+		ArrayList<UserDto> user = new ArrayList<UserDto>();
 		
-		for(int i=0; i < user.size(); i++) {
-			System.out.print(user.get(i) + " /");
+		UserDto dto = new UserDto(1, "admin", "admin", "admin", new Date(), "admin", "admin", "admin");
+		user.add(dto);
+		
+//		UserDto user = service.login(dto);
+		
+		// 로그인 성공시
+		if(user != null) {
+			req.getSession().setAttribute("login", user);
+			System.out.println("로그인성공");
+			
+			return "main";
 		}
-		System.out.println("로그인성공");
-		return "main";
+		else {	// 조금 더 보완필요
+			System.out.println("회원정보없음");
+			return "login";
+		}
+		
 		
 		
 	}
