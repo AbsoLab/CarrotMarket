@@ -35,10 +35,13 @@ public class BoardDaoImpl implements BoardDao {
 
 	@Override
 	public List<ContentDto> qnaCont(int bid, String search) {
+		
 		if (search != null && search != " ") {
+			// 검색시
 			System.out.println("qnaSearch");
 			return session.selectList(ns+ "qnaSearch", search);
 		}else {
+			// 목록 선택시
 			System.out.println("qnaCont");
 			return session.selectList(ns+ "qnaCont", bid);
 		}

@@ -31,4 +31,11 @@
     <select id="getUserList" resultType="mul.camp.a.dto.UserDto">
         SELECT * FROM user
     </select>
+    
+    <!-- 통합검색으로 유저 정보 반환. 노승현작성 -->
+    <select id="getTotal" parameterType="String" resultType="mul.camp.a.dto.UserDto">
+    SELECT uid, id, name, birthdate, email, phone, location 
+    FROM user
+    WHERE id = #{total}
+    </select>
 </mapper>

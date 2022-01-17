@@ -9,5 +9,6 @@
 <body>
  <h1>처음 페이지</h1>
  <a href="qnaBoard.do?bid=0">자주찾는질문</a>
+  <a href="admin.do?bid=0">관리자 전용 페이지</a>
 </body>
 </html>

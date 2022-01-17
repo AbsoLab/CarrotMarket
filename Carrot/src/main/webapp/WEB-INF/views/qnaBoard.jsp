@@ -33,15 +33,16 @@
 
 
 
+
 /* 내용에 커서를 올려놓으면 손가락 모양으로 바꾸기. */
-dt {
+dt, #home {
 	cursor: pointer;
 }
 
 </style>
 </head>
 <body>
-<h1>고객센터</h1>
+<h1 id="home">고객센터</h1>
 
 <!-- FAQ 검색 -->
 <div align="center">
@@ -84,7 +85,7 @@ dt {
 
 <script type="text/javascript">
 
-/* FAQ 내용 접었다 펴기 */
+// FAQ 내용 접었다 펴기
 $(document).ready(function() {
 	$("textarea").hide();
 	$("dt").click(function() {
@@ -96,6 +97,11 @@ $(document).ready(function() {
 	});
 });
 
+$("#home").click(function() {
+	location.href="qnaBoard.do?bid=0";
+})
+
+// FAQ 검색
 function searchQna() {
 	let search = document.getElementById("search").value;
 	location.href= "qnaBoard.do?search="+search + "&bid=1";

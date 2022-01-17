@@ -4,12 +4,14 @@
  
 <mapper namespace="QnaBoard">
 
+<!-- 처음 들어갔을때 뿌려주는 쿼리 -->
 <select id="qnaList" resultType="mul.camp.a.dto.BoardDto">
 	SELECT BID, NAME
 	FROM BOARD
 	WHERE BID > 6
 </select>
 
+<!-- 목록 클릭했을때 뿌려주는 쿼리 -->
 <select id="qnaCont" parameterType="Integer" resultType="mul.camp.a.dto.ContentDto">
 	SELECT CID, TITLE, CONTENT, UID, BID
 	FROM CONTENT
@@ -22,6 +24,7 @@
 	</if>
 </select>
 
+<!-- 검색했을때 뿌려주는 쿼리 -->
 <select id="qnaSearch" parameterType="String" resultType="mul.camp.a.dto.ContentDto">
 	SELECT CID, TITLE, CONTENT, UID, BID
 	FROM CONTENT
