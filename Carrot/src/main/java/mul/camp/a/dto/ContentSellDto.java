@@ -38,6 +38,6 @@ public class ContentSellDto extends ContentDto {
 
     @Override
     public String toString() {
-        return "ContentSellDto [location=" + location + ", src=" + Arrays.toString(src) + "]";
+        return super.toString() + "ContentSellDto [location=" + location + ", src=" + Arrays.toString(src) + "]";
     }    
 }
