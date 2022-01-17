@@ -70,7 +70,6 @@ public class AdminController {
 		}
 	}
 	
-	@ResponseBody
 	@RequestMapping(value = "admUpdate.do", method = RequestMethod.GET)
 	public String admUpdate(Model model, int uid) {
 		logger.info("AdminController admUpdate()" + new Date());
@@ -81,5 +80,21 @@ public class AdminController {
 		System.out.println(user.toString());
 		
 		return "adminupd";
+	}
+	
+	@RequestMapping(value = "admUpdateAf.do", method = RequestMethod.GET)
+	public String admUpdateAf(Model model, UserDto user) {
+		logger.info("AdminController admUpdateAf()" + new Date());
+		System.out.println(user.toString());
+		
+		boolean b = us.updateUser(user);
+		if(b==true) {
+			System.out.println("게시글이 수정되었습니다.");
+			return "redirect:/admin.do";
+		}else {
+			return "adminupd";
+		}
+		
+		
 	}
 }

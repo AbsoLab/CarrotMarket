@@ -36,4 +36,7 @@ public interface UserService {
      
      // uid(유저)에 해당하는 유저 정보 반환 노승현 작성
      public UserDto getUser(int uid);
+     
+     // 입력받은 내용으로 DB에 수정 노승현 작성
+     public boolean updateUser(UserDto dto);
 }

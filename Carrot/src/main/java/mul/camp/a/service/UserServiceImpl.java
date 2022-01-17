@@ -28,4 +28,11 @@ public class UserServiceImpl implements UserService {
     public UserDto getUser(int uid) {
     	return dao.getUser(uid);
     }
+    
+    // 입력받은 내용으로 DB에 수정 노승현 작성
+    public boolean updateUser(UserDto dto) {
+    	int n = dao.updateUser(dto);
+    	return n>0 ? true:false;
+    	
+    }
 }

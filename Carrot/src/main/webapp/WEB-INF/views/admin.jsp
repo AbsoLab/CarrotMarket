@@ -126,7 +126,7 @@ function selUpd() {
 		location.href= "admUpdate.do?uid="+ uid;
 		
 	} else if ($("input[name='chkUser']:checked").length == 0) {
-		alert('0');
+		alert('수정할 회원을 선택해주세요.');
 	}
 	
 	
