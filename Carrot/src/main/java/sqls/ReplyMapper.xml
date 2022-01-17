@@ -31,11 +31,13 @@
     <!-- 댓글의 답글 -->
     <!-- 댓글은 밑으로 갈수록 최신인걸로 둔다. 꽤 바껴야 할 수도 있음 -->
     <insert id="addReplyAnswer" parameterType="mul.camp.a.dto.ReplyDto">
-        INSERT INTO reply(content, wirtedate, ref, step, depth, uid, cid)
-        VALUES (#{content}, SYSDATE(), #{ref}, #{step}+1, #{depth}+1, #{uid}, #{cid})
+        INSERT INTO reply(content, writedate, ref, step, depth, uid, cid)
+        VALUES (#{content}, SYSDATE(), 
+        #{ref}, #{step}+1, #{depth}+1, 
+        #{uid}, #{cid})
     </insert>
 
-    <update id="addReplyStep">
+    <update id="addReplyStep" parameterType="mul.camp.a.dto.ReplyDto">
         UPDATE reply
         SET step = step + 1
         WEHRE ref=#{ref} AND step > #{step}

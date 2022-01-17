@@ -79,13 +79,13 @@
 					<td><%=reply.getWritedate() %></td>
 					<td><%=reply.getRef()%> - <%=reply.getDepth()%> - <%=reply.getStep() %></td>
 					<td>
-						<a href="answerReply.do">답글</a>
+						<a href="answer.do?rid=<%=reply.getRid()%>">답글</a>
 						<%
 						if(reply.getUid()== 1){ // user.getUid() 대신 1
 												// 같아야만 수정 삭제 가능 
 							%>
 							<a href ="updateReply.do?rid=<%=reply.getRid()%>">수정</a>
-							<a href="deleteReply.do?rid=<%=reply.getRid()%>">삭제</a>
+							<a href="deleteReply.do?rid=<%=reply.getRid()%>&&cid=<%=reply.getCid()%>">삭제</a>
 							<%
 						}
 						%>

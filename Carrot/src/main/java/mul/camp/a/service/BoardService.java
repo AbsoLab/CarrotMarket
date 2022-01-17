@@ -35,4 +35,6 @@ public interface BoardService {
 
     // 댓글 삭제
     public boolean deleteReply(int rid);
+    // 답글 
+    public void reply(ReplyDto dto) ;
 }

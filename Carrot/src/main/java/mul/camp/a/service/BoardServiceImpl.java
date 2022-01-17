@@ -77,6 +77,18 @@ public class BoardServiceImpl implements BoardService{
 		return count > 0 ?true:false;
 	}
 
+	@Override
+	public void reply(ReplyDto dto) {
+		int n = rdao.replyAnswerInsert(dto);
+		if (n == 0) {
+			System.out.println("실패");
+		}
+		n= rdao.updateReply(dto);
+		if (n == 0) {
+			System.out.println("실패");
+		}
+	}
+
 	
 	
 

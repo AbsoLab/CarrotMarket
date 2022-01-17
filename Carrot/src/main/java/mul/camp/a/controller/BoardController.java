@@ -112,7 +112,7 @@ public class BoardController {
     	return "redirect:/boardDetail.do?cid=" + dto.getCid();
     }
     @RequestMapping(value= "deleteReply.do", method = RequestMethod.GET)
-    public String deleteReply(int rid) {
+    public String deleteReply(int rid, int cid) {
     	logger.info("BoardController deleteBoard()" + new Date());
     	boolean b = service.deleteReply(rid);
     	if(b) {
@@ -120,7 +120,7 @@ public class BoardController {
     	}else {
     		System.out.println("실패");
     	}
-    	return "start";
+    	return "redirect:/boardDetail.do?cid=" +cid;
     }
     @RequestMapping(value = "updateReply.do", method = RequestMethod.GET)
     public String updateReply(Model model, int rid) {
@@ -141,7 +141,20 @@ public class BoardController {
     	}
     	return "redirect:/boardDetail.do?cid=" + dto.getCid();
     }
-    
+    @RequestMapping(value = "answer.do", method = RequestMethod.GET)
+    public String answer(Model model, int rid) {
+    	logger.info("BoardController answer()" + new Date());
+    	 ReplyDto dto = service.getReply(rid);
+    	 model.addAttribute("reply", dto);
+    	 
+    	 return "replyAnswer";
+    }
+    @RequestMapping(value="answerAf.do", method = RequestMethod.GET)
+    public String answerAf(ReplyDto dto) {
+    	logger.info("BoardController answer()" + new Date());
+    	service.reply(dto);
+    	return "redirect:/boardDetail.do?cid=" + dto.getCid();
+    }
   
    
 }	
