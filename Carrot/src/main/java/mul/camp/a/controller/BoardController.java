@@ -9,13 +9,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import mul.camp.a.dao.ContentDao;
 import mul.camp.a.dto.BoardDto;
 import mul.camp.a.dto.ContentDto;
+import mul.camp.a.dto.ReplyDto;
 import mul.camp.a.service.BoardService;
 
 @Controller
@@ -58,8 +61,11 @@ public class BoardController {
     @RequestMapping(value = "boardDetail.do", method = RequestMethod.GET)
     public String boardDetail(Model model, int cid) {
     	logger.info("BoardController boardDetail()" + new Date());
-    	ContentDto dto = service.content(cid);
-    	model.addAttribute("detail",dto);
+    	ContentDto detail = service.content(cid);
+    	List<ReplyDto> reply = service.replyList(cid);
+    	System.out.println(reply.toString());
+    	model.addAttribute("reply", reply);
+    	model.addAttribute("detail",detail);
     	
     	return "boardDetail";
     }
@@ -75,7 +81,7 @@ public class BoardController {
     @RequestMapping (value = "updateboardAf.do", method = RequestMethod.POST)
     public String updateAf(ContentDto dto) {
     	logger.info("BoardController updateAf()" + new Date());
-    	boolean b = service.updateContent(0, dto);
+    	boolean b = service.updateContent(dto);
     	if(b) {
     		System.out.println("성공");
     	}else {
@@ -86,7 +92,7 @@ public class BoardController {
     @RequestMapping(value = "deleteBoard.do", method = RequestMethod.GET)
     public String deleteBoard(int cid) {
     	logger.info("BoardController deleteBoard()" + new Date());
-    	boolean b = service.deleteContent(0, cid);
+    	boolean b = service.deleteContent(cid);
     	if(b) {
     		System.out.println("성공");
     	}else {
@@ -94,4 +100,6 @@ public class BoardController {
     	}
     	return "redirect:/buyBoard.do?bid=2";
     }
+   
+   
 }	

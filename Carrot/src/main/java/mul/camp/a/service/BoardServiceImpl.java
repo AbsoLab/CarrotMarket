@@ -17,8 +17,7 @@ public class BoardServiceImpl implements BoardService{
 	ContentDao cdao;
 	@Autowired
 	ReplyDao rdao;
-	@Autowired
-	BoardDao bdao;
+	
 
 	@Override
 	public List<ContentDto> boardList(int bid) {
@@ -39,33 +38,40 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public boolean updateContent(int uid, ContentDto dto) {
+	public boolean updateContent(ContentDto dto) {
 		int count = cdao.updateContent(dto);
 		return count > 0 ?true:false;
 	}
 
 	@Override
-	public boolean deleteContent(int uid, int cid) {
+	public boolean deleteContent(int cid) {
 		int count = cdao.deleteContent(cid);
 		return count > 0 ?true:false;
+	}
+	@Override
+	public List<ReplyDto> replyList(int cid) {
+		List<ReplyDto> list = rdao.getReplyList(cid);
+		return list;
 	}
 
 	@Override
 	public boolean writeReply(ReplyDto dto) {
-		// TODO Auto-generated method stub
-		return false;
+		int count = rdao.addReply(dto);
+		return count > 0 ?true:false;
 	}
 
 	@Override
-	public boolean updateReply(int uid, ReplyDto dto) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean updateReply(ReplyDto dto) {
+		int count = rdao.updateReply(dto);
+		return count > 0 ?true:false;
 	}
 
 	@Override
-	public boolean deleteReply(int uid, int rid) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean deleteReply(int rid) {
+		int count = rdao.deleteReply(rid);
+		return count > 0 ?true:false;
 	}
+
+	
 
 }

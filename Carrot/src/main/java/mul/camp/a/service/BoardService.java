@@ -17,17 +17,20 @@ public interface BoardService {
     public boolean writeContent(ContentDto dto);
 
     // 글 수정
-    public boolean updateContent(int uid, ContentDto dto);
+    public boolean updateContent(ContentDto dto);
 
     // 글 삭제
-    public boolean deleteContent(int uid, int cid);
+    public boolean deleteContent(int cid);
+    
+    //댓글 리스트
+    public List<ReplyDto> replyList(int cid);
 
     // 댓글 작성
     public boolean writeReply(ReplyDto dto);
 
     // 댓글 수정
-    public boolean updateReply(int uid, ReplyDto dto);
+    public boolean updateReply(ReplyDto dto);
 
     // 댓글 삭제
-    public boolean deleteReply(int uid, int rid);
+    public boolean deleteReply(int rid);
 }
