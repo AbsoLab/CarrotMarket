@@ -10,36 +10,35 @@ import mul.camp.a.dto.ReplyDto;
 @Repository
 public class ReplyDaoImpl implements ReplyDao {
 
-    private final static String NAMESPACE = "Board.";
-
-    private final static String NAMESPACE_GET_REPLY_LIST = NAMESPACE + "getReplyList";
-    private final static String NAMESPACE_ADD_REPLY = NAMESPACE + "addReply";
-    private final static String NAMESPACE_UPDATE_REPLY = NAMESPACE + "updateReply";
-    private final static String NAMESPACE_DELETE_REPLY = NAMESPACE + "deleteReply";
+    
     
     private SqlSession session;
 
     @Override
-    public List<ReplyDto> getReplyList(int cid) {
-        
-        return session.selectList(NAMESPACE_GET_REPLY_LIST, cid);
+    public List<ReplyDto>getReplyList(int cid) {
+    	
+        return session.selectList("Reply.getReplyList", cid);
     }
-
+    @Override
+	public ReplyDto getReply(int rid) {
+		
+		return session.selectOne("Reply.getReply", rid);
+	}
     @Override
     public int addReply(ReplyDto dto) {
         
-        return session.insert(NAMESPACE_ADD_REPLY, dto);
+        return session.insert("Reply.addReply", dto);
     }
 
     @Override
     public int updateReply(ReplyDto dto) {
         
-        return session.update(NAMESPACE_UPDATE_REPLY, dto);
+        return session.update("Reply.updateReply", dto);
     }
 
     @Override
     public int deleteReply(int rid) {
 
-        return session.delete(NAMESPACE_DELETE_REPLY, rid);
+        return session.delete("Reply.deleteReply", rid);
     }
 }

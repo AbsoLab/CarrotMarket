@@ -18,4 +18,6 @@ public interface ReplyDao {
     // rid(댓글)에 해당하는 댓글을 DB에서 제거
     public int deleteReply(int rid);
 
+	public ReplyDto getReply(int rid);
+
 }

@@ -1,10 +1,11 @@
 package mul.camp.a.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class UserDto {
+public class UserDto implements Serializable{
     
-    private int uid         = -1;        
+    private int uid;        
     private String id       = "";
     private String pw       = "";
     private String name     = "";
@@ -12,7 +13,10 @@ public class UserDto {
     private String email    = "";
     private String phone    = "";
     private String location = "";
-
+    
+    public UserDto(){
+    	
+    }
     // 기본 생성자
     public UserDto(int uid, String id, String pw, String name, Date birthdate, String email, String phone, String location) {
         this.setUid(uid);

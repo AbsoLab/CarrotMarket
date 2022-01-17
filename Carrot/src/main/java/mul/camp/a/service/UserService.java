@@ -5,7 +5,7 @@ import mul.camp.a.dto.UserDto;
 public interface UserService {
     
      // 로그인
-     public boolean login(UserDto dto);
+     public UserDto login(UserDto dto);
     
      // 회원가입
      public boolean register(UserDto dto);

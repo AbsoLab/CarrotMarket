@@ -28,7 +28,23 @@ public class UserDaoImpl implements UserDao {
         
         return session.insert(NAMESPACE_ADD_USER, dto);
     }
-
+    
+    //회원가입 아이디 입력란 나갈때 regi id쪽에 표시
+    @Override
+	public int idchk(String id) {
+		
+    	int count = session.selectOne(NAMESPACE + "idchk", id);
+    	System.out.println(count);
+    	
+		return count;
+	}
+    
+    @Override
+	public UserDto login(UserDto dto) {
+		return session.selectOne(NAMESPACE + "login", dto);
+	}
+    
+    
     @Override
     public int updateUser(UserDto dto) {
         
@@ -58,5 +74,7 @@ public class UserDaoImpl implements UserDao {
         
         return session.selectList(NAMESPACE_GET_USER_LIST);
     }
+
+	
     
 }
