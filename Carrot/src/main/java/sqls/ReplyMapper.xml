@@ -6,6 +6,11 @@
         SELECT * FROM reply
         WHERE cid=#{cid}
     </select>
+    
+    <select id="getReply" parameterType="int" resultType="mul.camp.a.dto.ReplyDto">
+    	SELECT * FROM reply
+    	WHERE rid=#{rid}
+    </select>
 
     <insert id="addReply" parameterType="mul.camp.a.dto.ReplyDto">
         INSERT INTO reply(content, writedate, ref, step, depth, uid, cid)

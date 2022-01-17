@@ -122,6 +122,25 @@ public class BoardController {
     	}
     	return "start";
     }
+    @RequestMapping(value = "updateReply.do", method = RequestMethod.GET)
+    public String updateReply(Model model, int rid) {
+    	logger.info("BoardController updateReply()" + new Date());
+    	ReplyDto dto = service.getReply(rid);
+    	model.addAttribute("reply", dto);
+    	return "replyUpdate";
+    }
+    @RequestMapping(value = "updateReplyAf.do", method = RequestMethod.POST)
+    public String updateReplyAf(ReplyDto dto) {
+    	logger.info("BoardController updateReplyAf()" + new Date());
+    	System.out.println(dto.toString());
+    	boolean b = service.updateReply(dto);
+    	if(b) {
+    		System.out.println("성공");
+    	}else {
+    		System.out.println("실패");
+    	}
+    	return "redirect:/boardDetail.do?cid=" + dto.getCid();
+    }
     
   
    

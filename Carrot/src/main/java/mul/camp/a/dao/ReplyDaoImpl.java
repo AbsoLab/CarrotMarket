@@ -14,6 +14,7 @@ public class ReplyDaoImpl implements ReplyDao {
     private final static String NAMESPACE = "Reply.";
 
     private final static String NAMESPACE_GET_REPLY_LIST = NAMESPACE + "getReplyList";
+    private final static String NAMESPACE_GET_REPLY = NAMESPACE + "getReply";
     private final static String NAMESPACE_ADD_REPLY = NAMESPACE + "addReply";
     private final static String NAMESPACE_UPDATE_REPLY = NAMESPACE + "updateReply";
     private final static String NAMESPACE_DELETE_REPLY = NAMESPACE + "deleteReply";
@@ -26,6 +27,11 @@ public class ReplyDaoImpl implements ReplyDao {
         
         return session.selectList(NAMESPACE_GET_REPLY_LIST, cid);
     }
+    @Override
+	public ReplyDto getReply(int rid) {
+		
+		return session.selectOne(NAMESPACE_GET_REPLY, rid);
+	}
 
     @Override
     public int addReply(ReplyDto dto) {
@@ -44,4 +50,6 @@ public class ReplyDaoImpl implements ReplyDao {
 
         return session.delete(NAMESPACE_DELETE_REPLY, rid);
     }
+
+
 }

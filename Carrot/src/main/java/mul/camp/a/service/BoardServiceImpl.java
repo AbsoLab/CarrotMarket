@@ -53,6 +53,11 @@ public class BoardServiceImpl implements BoardService{
 		List<ReplyDto> list = rdao.getReplyList(cid);
 		return list;
 	}
+	@Override
+	public ReplyDto getReply(int rid) {
+		ReplyDto dto = rdao.getReply(rid);
+		return dto;
+	}
 
 	@Override
 	public boolean writeReply(ReplyDto dto) {
@@ -72,6 +77,7 @@ public class BoardServiceImpl implements BoardService{
 		return count > 0 ?true:false;
 	}
 
+	
 	
 
 }
