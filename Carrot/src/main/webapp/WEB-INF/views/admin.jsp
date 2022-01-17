@@ -87,7 +87,7 @@ function admSearch() {
 	
 		location.href= "admSearch.do?total="+ total;
 	
-}
+};
 
 function selDel() {
 	var arrDel = new Array();
@@ -114,14 +114,26 @@ function selDel() {
 	});
 };
 
-funtion selUpd() {
+function selUpd() {
 	var arrUpd = new Array();
+	if($("input[name='chkUser']:checked").length > 1) {
+		alert("수정은 1개만 가능합니다.");
+	} else if ($("input[name='chkUser']:checked").length == 1) {
+		let uid = 0;
+		$("input[name='chkUser']:checked").each(function () {
+			uid = this.value;
+		});
+		location.href= "admUpdate.do?uid="+ uid;
+		
+	} else if ($("input[name='chkUser']:checked").length == 0) {
+		alert('0');
+	}
 	
-	$("input[name='chkUser']:checked").each(function() {
-		alert('test');
-		arrUpd.push(this.value);
-	});
-}
+	
+	/* $.ajax({
+		url:
+	}) */
+};
 
 //나중에하기.
 

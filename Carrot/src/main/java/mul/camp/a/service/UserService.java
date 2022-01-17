@@ -33,4 +33,7 @@ public interface UserService {
      
      // 유저 삭제 노승현작성
      public boolean deleteUser(int uid);
+     
+     // uid(유저)에 해당하는 유저 정보 반환 노승현 작성
+     public UserDto getUser(int uid);
 }

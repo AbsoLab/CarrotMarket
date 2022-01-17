@@ -69,4 +69,17 @@ public class AdminController {
 			return "N";
 		}
 	}
+	
+	@ResponseBody
+	@RequestMapping(value = "admUpdate.do", method = RequestMethod.GET)
+	public String admUpdate(Model model, int uid) {
+		logger.info("AdminController admUpdate()" + new Date());
+		System.out.println("uid: " + uid);
+		
+		UserDto user = us.getUser(uid);
+		model.addAttribute("upUser", user);
+		System.out.println(user.toString());
+		
+		return "adminupd";
+	}
 }

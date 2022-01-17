@@ -23,4 +23,9 @@ public class UserServiceImpl implements UserService {
 		int n = dao.deleteUser(uid);
 		return n>0 ? true:false;
 	}
+	
+	// uid(유저)에 해당하는 유저 정보 반환 노승현 작성
+    public UserDto getUser(int uid) {
+    	return dao.getUser(uid);
+    }
 }
