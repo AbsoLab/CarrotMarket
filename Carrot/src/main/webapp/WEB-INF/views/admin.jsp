@@ -40,10 +40,44 @@
 			</table>
 			<button type="button" onclick="admSearch()">검색</button>
 			<h3>회원리스트</h3>
-			
 			<table>
 				<tr>
+					<th>
+						<input type="checkbox" id="chkbox">
+					</th>
+					<th>회원번호</th>
+					<th>아이디</th>
+					<th>이름</th>
+					<th>생년월일</th>
+					<th>이메일</th>
+					<th>폰번호</th>
+					<th>지역</th>
+				</tr>
+				<% if(total == null) {
+					
+				} else {%>
+					<% for(int i=0; i < total.size(); i++) {
+							UserDto tUser = total.get(i);
+					%>
+						
+						<tr>
+							<th>
+								<input type="checkbox" id="chkbox" name="chkUser" value="<%=tUser.getUid()%>">
+							</th>
+							<td><%=tUser.getUid()%></td>
+							<td><%=tUser.getId()%></td>
+							<td><%=tUser.getName()%></td>
+							<td><%=tUser.getBirthdate()%></td>
+							<td><%=tUser.getEmail()%></td>
+							<td><%=tUser.getPhone()%></td>
+							<td><%=tUser.getLocation()%></td>
+						</tr>
+						
+					<% } 
+				}		%>
 			</table>
+			<button type="button" onclick="selDel()">선택삭제</button>
+			<button type="button" onclick="selUpd()">선택수정</button>
 		</div>
 	</div>
 
@@ -54,6 +88,44 @@ function admSearch() {
 		location.href= "admSearch.do?total="+ total;
 	
 }
+
+function selDel() {
+	var arrDel = new Array();
+	
+	$("input[name='chkUser']:checked").each(function() {
+		arrDel.push(this.value);
+	});
+	
+	$.ajax({
+		url:"admDel.do",
+		type:"post",
+		data: { param: arr},
+		success: function(rep) {
+			alert('rep');
+			if(rep == "Y") {
+				alert('선택한 회원 정보가 삭제되었습니다.');
+			}else {
+				alert('회원 정보가 일치하지 않습니다.');
+			}
+		},
+		error: function() {
+			alert('error');
+		}
+	});
+};
+
+funtion selUpd() {
+	var arrUpd = new Array();
+	
+	$("input[name='chkUser']:checked").each(function() {
+		alert('test');
+		arrUpd.push(this.value);
+	});
+}
+
+//나중에하기.
+
+
 </script>
 </body>
 </html>

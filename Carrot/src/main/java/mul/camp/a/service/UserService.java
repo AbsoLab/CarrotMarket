@@ -30,4 +30,7 @@ public interface UserService {
      
      // 통합 검색으로 유저정보 반환
      public List<UserDto> getTotal(String total);
+     
+     // 유저 삭제 노승현작성
+     public boolean deleteUser(int uid);
 }

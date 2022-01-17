@@ -18,4 +18,9 @@ public class UserServiceImpl implements UserService {
 	public List<UserDto> getTotal(String total) {
 		return dao.getTotal(total);
 	}
+	
+	public boolean deleteUser(int uid) {
+		int n = dao.deleteUser(uid);
+		return n>0 ? true:false;
+	}
 }

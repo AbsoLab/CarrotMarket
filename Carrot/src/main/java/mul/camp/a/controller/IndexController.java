@@ -35,12 +35,12 @@ public class IndexController {
 		logger.info("IndexController qnaBoard()" + new Date());
 		System.out.println("bid: "+bid+" search: "+search);
 		
-		//처음 들어갔을 때 화면 내용들
+		//처음 들어갔을 때 FAQ목록
 		List<BoardDto> qna = bs.qnalist();
 		model.addAttribute("qna", qna);
 		System.out.println(qna.toString());
 		
-		// 처음 들어갔을 때 화면 내용들 or 목록 클릭했을 때, 검색했을때
+		// 처음 들어갔을 때 FAQ 내용, 목록 클릭했을 때, 검색했을때
 		List<ContentDto> qnaCont = bs.qnaCont(bid, search);
 		model.addAttribute("qnaCont", qnaCont);
 		System.out.println(qnaCont.toString());

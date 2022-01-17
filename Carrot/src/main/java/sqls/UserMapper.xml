@@ -36,6 +36,12 @@
     <select id="getTotal" parameterType="String" resultType="mul.camp.a.dto.UserDto">
     SELECT uid, id, name, birthdate, email, phone, location 
     FROM user
-    WHERE id = #{total}
+    WHERE 
+    id = #{total} or
+    name = #{total} or
+    email = #{total} or
+    phone = #{total} or
+    location = #{total}
+    
     </select>
 </mapper>

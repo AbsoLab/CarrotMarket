@@ -12,7 +12,9 @@ public class UserDto {
     private String email    = "";
     private String phone    = "";
     private String location = "";
-
+    
+    public UserDto() {}
+    
     // 기본 생성자
     public UserDto(int uid, String id, String pw, String name, Date birthdate, String email, String phone, String location) {
         this.setUid(uid);
