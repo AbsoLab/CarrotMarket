@@ -3,6 +3,7 @@ package mul.camp.a.dao;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import mul.camp.a.dto.ReplyDto;
@@ -10,7 +11,7 @@ import mul.camp.a.dto.ReplyDto;
 @Repository
 public class ReplyDaoImpl implements ReplyDao {
 
-    private final static String NAMESPACE = "Board.";
+    private final static String NAMESPACE = "Reply.";
 
     private final static String NAMESPACE_GET_REPLY_LIST = NAMESPACE + "getReplyList";
     private final static String NAMESPACE_ADD_REPLY = NAMESPACE + "addReply";
@@ -19,6 +20,7 @@ public class ReplyDaoImpl implements ReplyDao {
     private final static String NAMESPACE_ADD_REPLY_ANSWER = NAMESPACE + "addReplyAnswer";
     private final static String NAMESPACE_UPDATE_REPLY_STEP = NAMESPACE + "addReplyStep";
     
+    @Autowired
     private SqlSession session;
 
     @Override
