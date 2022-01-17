@@ -41,11 +41,7 @@ public class BoardDaoImpl implements BoardDao {
 	}
 	
 	// DB로부터 qna content 내용 리스트로 반환 --> 이거 나중에 서비스 생기면 바꿀게요.
-	@Override
-	public List<ContentDto> qnaSel(int bid) {
-		
-		return session.selectList(ns + "qnaSel", bid);
-	}
+	
     
     
     

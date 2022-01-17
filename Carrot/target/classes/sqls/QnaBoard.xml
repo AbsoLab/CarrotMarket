@@ -22,10 +22,4 @@
 	</if>
 </select>
 
-<select id="qnaSel" parameterType="Integer" resultType="mul.camp.a.dto.ContentDto">
-	SELECT TITLE, CONTENT
-	FROM CONTENT
-	WHERE BID = #{BID}
-</select>
-
 </mapper>
