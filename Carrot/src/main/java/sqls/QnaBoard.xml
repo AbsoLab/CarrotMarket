@@ -11,9 +11,9 @@
 </select>
 
 <select id="qnaCont" parameterType="Integer" resultType="mul.camp.a.dto.ContentDto">
-	SELECT *
+	SELECT CID, TITLE, CONTENT, UID, BID
 	FROM CONTENT
-	<if test = "bid = 0">
+	<if test = "bid == 0">
 		WHERE BID > 1
 	</if>
 	
