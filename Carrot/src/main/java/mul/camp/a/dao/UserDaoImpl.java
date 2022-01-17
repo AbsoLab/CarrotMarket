@@ -63,6 +63,7 @@ public class UserDaoImpl implements UserDao {
     // 통합 검색으로 유저정보 반환
 	@Override
 	public List<UserDto> getTotal(String total) {
+		System.out.println("dao total: "+total);
 		return session.selectList(NAMESPACE_GET_USER_LIST_T, total);
 	}
     

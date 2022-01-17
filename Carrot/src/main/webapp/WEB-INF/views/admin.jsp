@@ -1,5 +1,10 @@
+<%@page import="mul.camp.a.dto.UserDto"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	List<UserDto> total = (List<UserDto>)request.getAttribute("totalUser");
+%>
 <!DOCTYPE html>
 <html>
 <head>
