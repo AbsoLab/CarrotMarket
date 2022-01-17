@@ -7,12 +7,55 @@
 <title>login page</title>
 
 <style type="text/css">
-.center{
-	margin: auto;
-	width: 30%;
-	border: 1px solid black;
+
+#mainLogo{
+	display: flex;
+	justify-content:center;
+	margin-top : 100px;
+	/* border: 1px solid black; */
+}
+#loginBox{
+	display: flex;
+	justify-content:center;
+	margin-top : 20px;
+	/* border: 1px solid black; */
+}
+#loginBoxLine{
+	border: 1px solid orange;
+	border-radius: 10px;
+	padding: 20px
+}
+#loginBtn{
+	text-align: center;
+	background-color: orange;
+}
+.textBox{
+	border:none;
+	font-size: 25px;
+	height: 35px;
 	padding: 10px;
 }
+.textBorder{
+	border: 1px solid orange;
+	border-radius: 10px;
+	margin: 10px;
+	padding: 5px;
+}
+.display{
+	display: flex;
+	justify-content: space-between;
+	padding: 0px 10px;
+}
+img{
+	width: 247px;
+	height: 178px;
+}
+input:focus {outline:none;}
+a { text-decoration:none;} 
+/* div{
+border: 1px solid black;
+} */
+
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="http://lab.alexcican.com/set_cookies/cookie.js" type="text/javascript" ></script>
@@ -21,35 +64,38 @@
 <body>
 
 <!-- 메인로고 이미지파일 삽입 -->
-<div class="center">
- <img src="resources/image/mainLogo.png">
+<div id="mainLogo">
+	<div>
+ 		<img src="resources/image/mainLogo.png">
+ 	</div>
 </div>
 
 <!-- 로그인 정보입력 박스 -->
-<div class="center">
-	<form id="frm" action="loginAf.do" method="post">
-		<table border="1">
-			<tr>
-				<th>아이디</th>
-				<td>
-					<input type="text" id="id" name="id" size="20"><br>
+<div id="loginBox">
+	<div id="loginBoxLine">
+		<form id="frm" action="loginAf.do" method="post">
+			<div class="textBorder">
+				<input type="text" id="id" name="id" size="25" placeholder="아이디" class="textBox">
+			</div>
+			<div class="textBorder">
+				<input type="password" id="pw" name="pw" size="25" placeholder="비밀번호" class="textBox">
+			</div>
+			<div class="textBorder" style="background-color: orange">
+				<!-- <button type="button" onclick="login()">로그인</button> -->
+				<input id="loginBtn" type="text" readonly="readonly" size="25" placeholder="로그인" onclick="login()" class="textBox" style="cursor:pointer;">
+			</div>
+			
+			<div class="display">
+				<div>
 					<input type="checkbox" id="chk_save_id"> 아이디 저장
-				</td>
-			</tr>		
-			<tr>
-				<th>패스워드</th>
-				<td>
-					<input type="password" id="pw" name="pw" size="20"><br>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2">
-					<button type="button" onclick="login()">로그인</button>
-					<a href="regi.do">회원가입</a>
-				</td>
-			</tr>	
-		</table>
-	</form>
+				</div>
+				<div>
+					<a href="regi.do" style="color: gray">회원가입</a>
+				</div>
+			</div>
+				
+		</form>
+	</div>
 </div>
 
 <script type="text/javascript">
@@ -69,6 +115,7 @@
 			$("#frm").submit();	//form실행
 		}
 	}
+	
 
 	let user_id = $.cookie("user_id");
 	
