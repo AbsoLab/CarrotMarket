@@ -34,7 +34,7 @@ public interface BoardService {
     
     // DB로부터 qna 목록 내용 리스트로 반환
     public List<BoardDto> qnalist();
-    public List<ContentDto> qnaCont(int bid);
+    public List<ContentDto> qnaCont(int bid, String search);
     
     
     

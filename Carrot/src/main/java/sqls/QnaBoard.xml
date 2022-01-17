@@ -22,4 +22,10 @@
 	</if>
 </select>
 
+<select id="qnaSearch" parameterType="String" resultType="mul.camp.a.dto.ContentDto">
+	SELECT CID, TITLE, CONTENT, UID, BID
+	FROM CONTENT
+	WHERE TITLE LIKE Concat('%' , #{search} , '%')
+</select>
+
 </mapper>

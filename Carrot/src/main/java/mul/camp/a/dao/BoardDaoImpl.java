@@ -30,19 +30,20 @@ public class BoardDaoImpl implements BoardDao {
  // DB로부터 qna 목록 내용 리스트로 반환
 	@Override
 	public List<BoardDto> qnalist() {
-		
 		return session.selectList(ns+"qnaList");
 	}
 
 	@Override
-	public List<ContentDto> qnaCont(int bid) {
+	public List<ContentDto> qnaCont(int bid, String search) {
+		if (search != null && search != " ") {
+			System.out.println("qnaSearch");
+			return session.selectList(ns+ "qnaSearch", search);
+		}else {
+			System.out.println("qnaCont");
+			return session.selectList(ns+ "qnaCont", bid);
+		}
 		
-		return session.selectList(ns+"qnaCont", bid);
-	}
-	
-	// DB로부터 qna content 내용 리스트로 반환 --> 이거 나중에 서비스 생기면 바꿀게요.
-	
-    
-    
+		
+	}    
     
 }

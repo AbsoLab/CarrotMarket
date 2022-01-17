@@ -46,7 +46,7 @@ dt {
 <!-- FAQ 검색 -->
 <div align="center">
 	<input type="text" id="search" value="">
-	<button type="button" onclick="searchQna()"></button>
+	<button type="button" onclick="searchQna()">검색</button>
 </div>
 
 <!-- FAQ -->
@@ -95,6 +95,11 @@ $(document).ready(function() {
 		}
 	});
 });
+
+function searchQna() {
+	let search = document.getElementById("search").value;
+	location.href= "qnaBoard.do?search="+search + "&bid=1";
+}
 
 </script>
 
