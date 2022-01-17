@@ -38,7 +38,10 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public ContentDto content(int cid) {
 
-       return contentDao.getContent(cid);
+        ContentDto item = contentDao.getContent(cid);
+        item.setReply(replyDao.getReplyList(cid));
+
+        return item;
     }
 
     @Override
