@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html style="font-size: 16px;">
 <head>
@@ -10,10 +11,10 @@
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
     <title>당근나라</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-    <link rel="stylesheet" href="buy.css" media="screen">
-    <script class="u-script" type="text/javascript" src="src/main/webapp/jquery/jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="src/main/webapp/jquery/nicepage.js" defer=""></script>
+    <link rel="stylesheet" href="./css/nicepage.css" media="screen">
+    <link rel="stylesheet" href="./css/buy.css" media="screen">
+    <script class="u-script" type="text/javascript" src="./jquery/jquery.js" ></script>
+    <script class="u-script" type="text/javascript" src="./jquery/nicepage.js" ></script>
     <meta name="generator" content="Nicepage 4.2.6, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
@@ -46,7 +47,7 @@
     <div class="u-clearfix u-sheet u-sheet-1">
         <a href="https://nicepage.com/website-templates" class="u-image u-logo u-image-1" data-image-width="354"
            data-image-height="255">
-            <img src="src/main/webapp/images/logo.png" class="u-logo-image u-logo-image-1">
+            <img src="./images/logo.png" class="u-logo-image u-logo-image-1">
         </a>
 
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
@@ -132,7 +133,7 @@
             </div>
         </nav>
             <span class="u-border-2 u-border-black u-file-icon u-icon u-icon-circle u-spacing-5 u-text-black u-icon-1">
-            <img src="src/main/webapp/images/8.png" data-href="#"></span>
+            <img src="./images/8.png" data-href="#"></span>
     </div>
 </header>
 
@@ -151,7 +152,7 @@
                 <div class="u-container-style u-list-item u-opacity u-opacity-70 u-palette-5-dark-3 u-repeater-item u-list-item-1">
                     <div class="u-container-layout u-similar-container u-container-layout-1">
                         <span class="u-file-icon u-icon u-text-custom-color-2 u-icon-2">
-                            <img src="src/main/webapp/images/3.png" alt=""></span>
+                            <img src="./images/3.png" alt=""></span>
                         <h3 class="u-text u-text-3">구매게시판</h3>
                         <p class="u-text u-text-4">당근나라에서 구매하기</p>
                         <a href="#"
@@ -161,7 +162,7 @@
                 <div class="u-container-style u-list-item u-opacity u-opacity-70 u-palette-5-dark-3 u-repeater-item u-video-cover u-list-item-2">
                     <div class="u-container-layout u-similar-container u-container-layout-2">
                         <span class="u-file-icon u-icon u-text-custom-color-2 u-icon-3">
-                            <img src="src/main/webapp/images/4.png" alt=""></span>
+                            <img src="./images/4.png" alt=""></span>
                         <h3 class="u-text u-text-5">판매게시판</h3>
                         <p class="u-text u-text-6">당근나라에서 판매하기</p>
                         <a href="#"
@@ -171,9 +172,9 @@
                 <div class="u-container-style u-list-item u-opacity u-opacity-70 u-palette-5-dark-3 u-repeater-item u-video-cover u-list-item-3">
                     <div class="u-container-layout u-similar-container u-container-layout-3">
                         <span class="u-file-icon u-icon u-text-custom-color-2 u-icon-4">
-                            <img src="src/main/webapp/images/5.png" alt=""></span>
+                            <img src="./images/5.png" alt=""></span>
                         <h3 class="u-text u-text-7">문의사항</h3>
-                        <p class="u-text u-text-8">당근나라에 문의하기&nbsp;</p>
+                        <p class="u-text u-text-8">당근나라에 문의하기</p>
                         <a href="#"
                            class="u-border-2 u-border-custom-color-2 u-border-hover-white u-btn u-btn-round u-button-style u-none u-radius-25 u-text-body-alt-color u-btn-3">문의사항</a>
                     </div>
@@ -224,7 +225,7 @@
                                     <div class="u-container-style u-expanded-width u-group u-group-1">
                                         <div class="u-container-layout">
                                             <span class="u-border-10 u-border-grey-75 u-file-icon u-hover-feature u-icon u-icon-rounded u-radius-35 u-spacing-13 u-text-black u-icon-1">
-                                                <img src="images/6.png" alt=""></span>
+                                                <img src="./images/6.png" alt=""></span>
                                             <h3 class="u-align-center u-text u-text-body-color u-text-default u-text-3">구매게시판</h3>
                                             <p class="u-align-center u-text u-text-body-color u-text-4">
                                                 다양한 물건을 가까운 지역 소비자를 통해
@@ -240,7 +241,7 @@
                                     <div class="u-container-style u-expanded-width u-group u-group-2">
                                         <div class="u-container-layout">
                                             <span class="u-border-10 u-border-grey-75 u-file-icon u-hover-feature u-icon u-icon-rounded u-radius-35 u-spacing-13 u-icon-2">
-                                                <img src="src/main/webapp/images/994430.png" alt=""></span>
+                                                <img src="./images/994430.png" alt=""></span>
                                             <h3 class="u-align-center u-text u-text-body-color u-text-default u-text-5">
                                                 판매게시판</h3>
                                             <p class="u-align-center u-text u-text-body-color u-text-6">
@@ -257,7 +258,7 @@
                                     <div class="u-container-style u-expanded-width u-group u-group-3">
                                         <div class="u-container-layout"><span
                                                 class="u-border-10 u-border-grey-75 u-file-icon u-hover-feature u-icon u-icon-rounded u-radius-35 u-spacing-13 u-icon-3"><img
-                                                src="src/main/webapp/images/589708.png" alt=""></span>
+                                                src="./images/589708.png" alt=""></span>
                                             <h3 class="u-align-center u-text u-text-body-color u-text-default u-text-7">
                                                 자유게시판</h3>
                                             <p class="u-align-center u-text u-text-body-color u-text-8">
@@ -277,7 +278,7 @@
                                     <div class="u-container-style u-expanded-width u-group u-group-4">
                                         <div class="u-container-layout"><span
                                                 class="u-border-10 u-border-grey-75 u-file-icon u-hover-feature u-icon u-icon-rounded u-radius-35 u-spacing-13 u-icon-4"><img
-                                                src="images/709846.png" alt=""></span>
+                                                src="./images/709846.png" alt=""></span>
                                             <h3 class="u-align-center u-text u-text-body-color u-text-default u-text-9">
                                                 신고게시판</h3>
                                             <p class="u-align-center u-text u-text-body-color u-text-10">
@@ -293,7 +294,7 @@
                                     <div class="u-container-style u-expanded-width u-group u-group-5">
                                         <div class="u-container-layout"><span
                                                 class="u-border-10 u-border-white u-file-icon u-hover-feature u-icon u-icon-rounded u-radius-35 u-spacing-13 u-icon-5"><img
-                                                src="src/main/webapp/images/3447661.png" alt=""></span>
+                                                src="./images/3447661.png" alt=""></span>
                                             <h3 class="u-align-center u-text u-text-body-color u-text-default u-text-11">
                                                 문의사항</h3>
                                             <p class="u-align-center u-text u-text-body-color u-text-12">
@@ -309,7 +310,7 @@
                                     <div class="u-container-style u-expanded-width u-group u-group-6">
                                         <div class="u-container-layout"><span
                                                 class="u-border-10 u-border-grey-75 u-file-icon u-hover-feature u-icon u-icon-rounded u-radius-35 u-spacing-13 u-icon-6"><img
-                                                src="src/main/webapp/images/681443.png" alt=""></span>
+                                                src="./images/681443.png" alt=""></span>
                                             <h3 class="u-align-center u-text u-text-body-color u-text-default u-text-13">
                                                 공지사항</h3>
                                             <p class="u-align-center u-text u-text-body-color u-text-14">
@@ -336,7 +337,7 @@
                 <div class="u-align-center u-container-style u-list-item u-repeater-item">
                     <div class="u-container-layout u-similar-container u-container-layout-1"><span
                             class="u-file-icon u-icon u-icon-rounded u-radius-10 u-text-white u-icon-1"><img
-                            src="src/main/webapp/images/12.png" alt=""></span>
+                            src="./images/12.png" alt=""></span>
                         <h3 class="u-text u-text-default u-text-1" data-animation-name="counter"
                             data-animation-event="scroll" data-animation-duration="3000">1823092</h3>
                         <h6 class="u-text u-text-default u-text-white u-text-2">소비자 만족 거래</h6>
@@ -391,7 +392,7 @@
                 <div class="u-align-center u-container-style u-list-item u-repeater-item">
                     <div class="u-container-layout u-similar-container u-container-layout-4">
                         <span class="u-file-icon u-icon u-icon-rounded u-radius-10 u-text-white u-icon-4">
-                            <img src="src/main/webapp/images/13.png" alt=""></span>
+                            <img src="./images/13.png" alt=""></span>
                         <h3 class="u-text u-text-default u-text-7" data-animation-name="counter"
                             data-animation-event="scroll" data-animation-duration="3000">32</h3>
                         <h6 class="u-text u-text-default u-text-white u-text-8">수상 이력</h6>
@@ -515,7 +516,7 @@
 		            S32.206,57,30,57z M45,46H15V8h30V46z"></path></g></svg></span>;(02)222-2222
             </p>
             <p class="u-text u-text-5"><span class="u-file-icon u-icon u-icon-3">
-                <img src="images/149989.png" alt=""></span>dfjoi@korea.com
+                <img src="./images/149989.png" alt=""></span>dfjoi@korea.com
             </p>
         </div>
     </div>

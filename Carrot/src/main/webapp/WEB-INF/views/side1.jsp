@@ -7,6 +7,6 @@
 <title>당근나라</title>
 </head>
 <body>
-ㅇㅇㅇㅇㅇㅇㅇ
+당근나라
 </body>
 </html>
