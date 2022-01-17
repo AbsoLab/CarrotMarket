@@ -100,6 +100,29 @@ public class BoardController {
     	}
     	return "redirect:/buyBoard.do?bid=2";
     }
-   
+    @RequestMapping(value = "addReply.do", method = RequestMethod.POST)
+    public String addReply(ReplyDto dto) {
+    	logger.info("BoardController deleteBoard()" + new Date());
+    	boolean b = service.writeReply(dto);
+    	if(b) {
+    		System.out.println("성공");
+    	}else {
+    		System.out.println("실패");
+    	}
+    	return "redirect:/boardDetail.do?cid=" + dto.getCid();
+    }
+    @RequestMapping(value= "deleteReply.do", method = RequestMethod.GET)
+    public String deleteReply(int rid) {
+    	logger.info("BoardController deleteBoard()" + new Date());
+    	boolean b = service.deleteReply(rid);
+    	if(b) {
+    		System.out.println("성공");
+    	}else {
+    		System.out.println("실패");
+    	}
+    	return "start";
+    }
+    
+  
    
 }	

@@ -56,52 +56,57 @@
 	List<ReplyDto> rplist = (List<ReplyDto>)request.getAttribute("reply");
 	//댓글 창 구현
 %>	
- 
-	<table class="table table-bordered" style="width:1000px" >
-		<thead>
-			<tr>
-				<th>작성자</th><th>댓글</th><th>작성일시</th>
-			</tr>
-		</thead>
-		<tbody>
-		<%
-		if(rplist == null || rplist.size()== 0){
-		%>
-		<tr>
-			<td colspan ="3">댓글이 없습니다.</td>
-		</tr>
-		<%
-		}else{
-			for(int i = 0; i < rplist.size(); i++){
-				ReplyDto reply = rplist.get(i);
-		%>
-		<tr>
-			<script type="text/javascript">
-			commentList();
-			</script>
-		</tr>
-		<% 
-			}
-		}
-		%>
-		</tbody>
-		<tfoot >
-			<tr>
-				<td colspan = "2">
-				<!-- cid와 댓글작성자의 uid(세션에서 가져옴) -->
-				<form id = frm action="addReply.do">
-				<input type="hidden" id = "cid" name = "cid" value="<%=detail.getCid()%>">
-				<input type="hidden" id = "uid" name = "uid" value="1"> <!-- user.getUid()  -->
-				
-				<textarea id = "content" name = "content" rows="10" cols="100" placeholder="댓글을 입력해주세요">
-				</textarea>
-				</td>
-				</form>
-				<td><button id ="btn" type="button" onclick="addreply()">댓글 작성</button> </td>
-				
-			</tr>
-		</tfoot>
-	</table>
+ 	<form id="frm" action="addReply.do" method="post">
+ 		<table class="table table-hover" style="width: 1000px">
+ 			<thead>
+ 				<th>작성자</th><th>내용</th><th>작성일</th><th>정보</th><th>삭제-수정-답글</th>
+ 			</thead>
+ 			<tbody>
+ <%
+ 	if(rplist == null || rplist.size() == 0){
+ %>				
+			 	<tr>
+			 		<td colspan="4">댓글이 없습니다.</td>
+			 	</tr>
+<%
+ 	} else{
+ 		for(int i=0; i < rplist.size(); i++){
+ 			ReplyDto reply = rplist.get(i);
+%>
+				<tr>
+					<th><%=reply.getUid() %></th>
+					<td><%=reply.getContent() %></td>
+					<td><%=reply.getWritedate() %></td>
+					<td><%=reply.getRef()%> - <%=reply.getDepth()%> - <%=reply.getStep() %></td>
+					<td>
+						<a href="answerReply.do">답글</a>
+						<%
+						if(reply.getUid()== 1){ // user.getUid() 대신 1
+												// 같아야만 수정 삭제 가능 
+							%>
+							<a href ="updateReply.do?rid=<%=reply.getRid()%>">수정</a>
+							<a href="deleteReply.do?rid=<%=reply.getRid()%>">삭제</a>
+							<%
+						}
+						%>
+					</td>
+				</tr>
+
+<% 			
+ 		}
+ 	}
+%>
+ 			</tbody>
+ 			<tfoot>
+ 				<input type="hidden" name = "uid" value="1"><!-- user.getUid 를 1로 대체 -->
+ 				<input type="hidden" name = "cid" value = "<%=detail.getCid()%>">
+ 				<td colspan="3"><textarea id ="content" name="content" rows="10" cols="100"></textarea></td>
+ 				<td><button type="button" onclick="addreply()">댓글작성</button></td>
+ 			</tfoot>
+ 		</table>
+ 			
+ 	</form>
+	
 	
 	</div>
 <script type="text/javascript">
@@ -111,95 +116,15 @@
 	function deleteboard(cid){
 		location.href = "deleteBoard.do?cid=" + cid;
 	}
-	$(document).ready(function(){
-		$("#btn").click(function(){
-			var insertData = $('[name=commentInsertForm]').serialize(); //commentInsertForm의 내용을 가져옴
-		    commentInsert(insertData); //Insert 함수호출(아래)
-		});
-		  
-		//댓글 목록 
-		function commentList(){
-		    $.ajax({
-		        url : 'addReply.do',
-		        type : 'get',
-		        data : {'bno':bno},
-		        success : function(data){
-		            var a =''; 
-		            $.each(data, function(key, value){ 
-		                a += '<div class="commentArea" style="border-bottom:1px solid darkgray; margin-bottom: 15px;">';
-		                a += '<div class="commentInfo'+value.cno+'">'+'댓글번호 : '+value.cno+' / 작성자 : '+value.writer;
-		                a += '<a onclick="commentUpdate('+value.cno+',\''+value.content+'\');"> 수정 </a>';
-		                a += '<a onclick="commentDelete('+value.cno+');"> 삭제 </a> </div>';
-		                a += '<div class="commentContent'+value.cno+'"> <p> 내용 : '+value.content +'</p>';
-		                a += '</div></div>';
-		            });
-		            
-		            $(".commentList").html(a);
-		        }
-		    });
+	function addreply(){
+		if($("#content").val() ==''){
+			alert('댓글내용을 작성해주세요')
 		}
-		 
-		//댓글 등록
-		function commentInsert(insertData){
-		    $.ajax({
-		        url : '/comment/insert',
-		        type : 'post',
-		        data : insertData,
-		        success : function(data){
-		            if(data == 1) {
-		                commentList(); //댓글 작성 후 댓글 목록 reload
-		                $('[name=content]').val('');
-		            }
-		        }
-		    });
+		else{
+			$("#frm").submit();
 		}
-		 
-		//댓글 수정 - 댓글 내용 출력을 input 폼으로 변경 
-		function commentUpdate(cno, content){
-		    var a ='';
-		    
-		    a += '<div class="input-group">';
-		    a += '<input type="text" class="form-control" name="content_'+cno+'" value="'+content+'"/>';
-		    a += '<span class="input-group-btn"><button class="btn btn-default" type="button" onclick="commentUpdateProc('+cno+');">수정</button> </span>';
-		    a += '</div>';
-		    
-		    $('.commentContent'+cno).html(a);
-		    
-		}
-		 
-		//댓글 수정
-		function commentUpdateProc(cno){
-		    var updateContent = $('[name=content_'+cno+']').val();
-		    
-		    $.ajax({
-		        url : '/comment/update',
-		        type : 'post',
-		        data : {'content' : updateContent, 'cno' : cno},
-		        success : function(data){
-		            if(data == 1) commentList(bno); //댓글 수정후 목록 출력 
-		        }
-		    });
-		}
-		 
-		//댓글 삭제 
-		function commentDelete(cno){
-		    $.ajax({
-		        url : '/comment/delete/'+cno,
-		        type : 'post',
-		        success : function(data){
-		            if(data == 1) commentList(bno); //댓글 삭제후 목록 출력 
-		        }
-		    });
-		}
-		 
-		 
-		 
-		 
-		$(document).ready(function(){
-		    commentList(); //페이지 로딩시 댓글 목록 출력 
-		});
+	}
 	
-	});
 </script>
 </body>
 </html>

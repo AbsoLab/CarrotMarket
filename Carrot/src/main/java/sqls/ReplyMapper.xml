@@ -9,7 +9,7 @@
 
     <insert id="addReply" parameterType="mul.camp.a.dto.ReplyDto">
         INSERT INTO reply(content, writedate, ref, step, depth, uid, cid)
-        VALUES (#{content}, SYSDATE(), (SELECT IFNULL(MAX(ref) + 1, 0) FROM reply ALIAS_FOR_SUBQUERY), 0, 0, uid=#{uid}, cid=#{cid})
+        VALUES (#{content}, SYSDATE(), (SELECT IFNULL(MAX(ref) + 1, 0) FROM reply ALIAS_FOR_SUBQUERY), 0, 0, #{uid},#{cid})
     </insert>
 
     <update id="updateReply" parameterType="mul.camp.a.dto.ReplyDto">
