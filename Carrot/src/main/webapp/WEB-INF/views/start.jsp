@@ -11,8 +11,8 @@
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
     <title>당근나라</title>
-    <link rel="stylesheet" href="./css/nicepage.css" media="screen">
     <link rel="stylesheet" href="./css/buy.css" media="screen">
+    <link rel="stylesheet" href="./css/nicepage.css" media="screen">
     <script class="u-script" type="text/javascript" src="./jquery/jquery.js" ></script>
     <script class="u-script" type="text/javascript" src="./jquery/nicepage.js" ></script>
     <meta name="generator" content="Nicepage 4.2.6, nicepage.com">
@@ -81,15 +81,7 @@
                     </li>
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                            href="#" style="padding: 12px 0px;">자유게시판</a>
-                    </li>
-                    <li class="u-nav-item">
-                        <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                            href="#" style="padding: 12px 0px;">공지</a>
-                    </li>
-                    <li class="u-nav-item">
-                        <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                            href="#" style="padding: 12px 0px;">신고</a>
+                            href="#" style="padding: 12px 0px;">공지사항</a>
                     </li>
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
@@ -112,15 +104,7 @@
                             </li>
                             <li class="u-nav-item">
                                 <a class="u-button-style u-nav-link" href="#"
-                                                      style="padding: 10px 0px;">자유게시판</a>
-                            </li>
-                            <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" href="#"
-                                                      style="padding: 10px 0px;">공지</a>
-                            </li>
-                            <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" href="#"
-                                                      style="padding: 10px 0px;">신고</a>
+                                                      style="padding: 10px 0px;">공지사항</a>
                             </li>
                             <li class="u-nav-item">
                                 <a class="u-button-style u-nav-link" href="#"
@@ -152,7 +136,7 @@
                 <div class="u-container-style u-list-item u-opacity u-opacity-70 u-palette-5-dark-3 u-repeater-item u-list-item-1">
                     <div class="u-container-layout u-similar-container u-container-layout-1">
                         <span class="u-file-icon u-icon u-text-custom-color-2 u-icon-2">
-                            <img src="./images/3.png" alt=""></span>
+                            <img src="./image/3.png" alt=""></span>
                         <h3 class="u-text u-text-3">구매게시판</h3>
                         <p class="u-text u-text-4">당근나라에서 구매하기</p>
                         <a href="#"
@@ -162,7 +146,7 @@
                 <div class="u-container-style u-list-item u-opacity u-opacity-70 u-palette-5-dark-3 u-repeater-item u-video-cover u-list-item-2">
                     <div class="u-container-layout u-similar-container u-container-layout-2">
                         <span class="u-file-icon u-icon u-text-custom-color-2 u-icon-3">
-                            <img src="./images/4.png" alt=""></span>
+                            <img src="./image/4.png" alt=""></span>
                         <h3 class="u-text u-text-5">판매게시판</h3>
                         <p class="u-text u-text-6">당근나라에서 판매하기</p>
                         <a href="#"
@@ -172,7 +156,7 @@
                 <div class="u-container-style u-list-item u-opacity u-opacity-70 u-palette-5-dark-3 u-repeater-item u-video-cover u-list-item-3">
                     <div class="u-container-layout u-similar-container u-container-layout-3">
                         <span class="u-file-icon u-icon u-text-custom-color-2 u-icon-4">
-                            <img src="./images/5.png" alt=""></span>
+                            <img src="./image/5.png" alt=""></span>
                         <h3 class="u-text u-text-7">문의사항</h3>
                         <p class="u-text u-text-8">당근나라에 문의하기</p>
                         <a href="#"
@@ -225,7 +209,7 @@
                                     <div class="u-container-style u-expanded-width u-group u-group-1">
                                         <div class="u-container-layout">
                                             <span class="u-border-10 u-border-grey-75 u-file-icon u-hover-feature u-icon u-icon-rounded u-radius-35 u-spacing-13 u-text-black u-icon-1">
-                                                <img src="./images/6.png" alt=""></span>
+                                                <img src="./image/6.png" alt=""></span>
                                             <h3 class="u-align-center u-text u-text-body-color u-text-default u-text-3">구매게시판</h3>
                                             <p class="u-align-center u-text u-text-body-color u-text-4">
                                                 다양한 물건을 가까운 지역 소비자를 통해
