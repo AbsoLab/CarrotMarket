@@ -22,6 +22,7 @@ public class BoardController {
 	@Autowired
 	BoardService bs;
 	
+	
 	// QnA(FAQ) 컨트롤러
 		@RequestMapping(value = "qnaBoard.do", method = RequestMethod.GET)
 		public String qnaBoard(Model model, int bid, String search) {
