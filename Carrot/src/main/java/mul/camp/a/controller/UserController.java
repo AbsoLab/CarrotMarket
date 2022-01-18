@@ -27,9 +27,20 @@ public class UserController {
 	@RequestMapping(value = "userInfo.do", method = RequestMethod.GET)
 	public String userInfo(Model model, HttpServletRequest req) {
 		logger.info("UserController userInfo()" + new Date());
-		int uid = ((UserDto)req.getSession().getAttribute("login")).getUid();
+		
+		// 로그인 없이 접근 하기 위해 임시로 분리 시켜놓음 (아래는 원문)
+		UserDto data = (UserDto)req.getSession().getAttribute("login");
+		if (data != null) {
+			int uid = data.getUid();
+			UserDto dto = service.userInfo(uid);
+			model.addAttribute("user", dto);
+		}
+/*
+	 	int uid = (UserDto)req.getSession().getAttribute("login").getUid();
 		UserDto dto = service.userInfo(uid);
-		model.addAttribute("user", dto);
+		model.addAttribute("user", dto);		
+ */
+		
 		return "userInfo";
 	}
 	
