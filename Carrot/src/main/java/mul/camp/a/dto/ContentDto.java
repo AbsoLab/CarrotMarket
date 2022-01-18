@@ -1,9 +1,11 @@
 package mul.camp.a.dto;
 
+import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-public class ContentDto {
+public class ContentDto implements Serializable{
     
     private int cid;
     private String title;
