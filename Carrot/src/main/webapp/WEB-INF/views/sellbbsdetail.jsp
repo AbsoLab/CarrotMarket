@@ -84,7 +84,7 @@
 }
 #replyContent{
 	/* width: 830px; */
-	width: 500px;
+	width: 550px;
 	margin: 5px 0px 10px 10px;
 	padding: 5px 10px;
 }
@@ -212,8 +212,8 @@ a { text-decoration:none; color: gray;}
 					<%
 					}
 					%>
-					<div style="margin: 0px 5px;"><a style="cursor:pointer" onclick="replyanswer(<%=rpbbs.getRid()%>)">답글</a></div>
-					<div><%=rpbbs.getRef()%>-<%=rpbbs.getStep()%>-<%=rpbbs.getDepth()%></div>
+					<div style="margin: 0px 5px;"><a style="cursor:pointer" onclick="sellreplyanswer(<%=rpbbs.getRid()%>)">답글</a></div>
+					
 				</div>
 			</div>	
 			<input id="ref" type="hidden" name="ref" value="<%=rpbbs.getRef()%>">
@@ -249,9 +249,9 @@ function answerbbs(cid) {
 function updatebbs(cid) {
 	location.href = "sellupdatebbs.do?cid=" + cid;
 }
-function replyanswer(rid){
+function sellreplyanswer(rid){
 	let cid = document.getElementById("cid").value;
-	location.href = "replyanswer.do?rid=" + rid + "&cid=" + cid;
+	location.href = "sellreplyanswer.do?rid=" + rid + "&cid=" + cid;
 	/* let ref = document.getElementById("ref").value;
 	let step = document.getElementById("step").value;
 	let depth = document.getElementById("depth").value;

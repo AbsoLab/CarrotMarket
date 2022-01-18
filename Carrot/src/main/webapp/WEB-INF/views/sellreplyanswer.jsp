@@ -22,7 +22,7 @@
 <div align="center">
 
 
-<form action="replyanswerAf.do?" method="POST">
+<form action="sellreplyanswerAf.do?" method="POST">
 	<input id="cid" type="hidden" name="cid" value="<%=cdto.getCid()%>">
 	<input id="uid" type="hidden" name="uid" value="<%=user.getUid()%>">	
 	<input id="ref" type="hidden" name="ref" value="<%=rdto.getRef()%>">

@@ -211,7 +211,7 @@ public class sellBoardController {
 	}
 	
 	// 해당 댓글의 답글 작성페이지로 이동
-	@RequestMapping(value = "replyanswer.do", method = RequestMethod.GET)
+	@RequestMapping(value = "sellreplyanswer.do", method = RequestMethod.GET)
 	public String replyanswer(int rid, int cid, Model model) {
 		logger.info("sellBoardController replyanswer() " + new Date());
 		System.out.println(cid);
@@ -222,11 +222,11 @@ public class sellBoardController {
 		ContentDto cdto = service.content(cid);
 		model.addAttribute("sellBoard", cdto);
 		
-		return "replyanswer";
+		return "sellreplyanswer";
 	}
 	
 	// 답글 작성완료 후 디테일로 이동
-	@RequestMapping(value = "replyanswerAf.do", method = RequestMethod.POST)
+	@RequestMapping(value = "sellreplyanswerAf.do", method = RequestMethod.POST)
 	public String replyanswerAf(int cid, ReplyDto dto) {
 		logger.info("sellBoardController replyanswerAf() " + new Date());
 		System.out.println("dto=" + dto);
