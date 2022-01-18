@@ -20,6 +20,9 @@ public class ContentDto {
         this.setBid(bid);
     }
 
+    public ContentDto() {
+	}
+    
     public ContentDto(int cid, String title, String content, Date writedate, int uid, int bid) {
         this.cid = cid;
         this.title = title;

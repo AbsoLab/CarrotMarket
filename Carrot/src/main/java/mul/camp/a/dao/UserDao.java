@@ -23,4 +23,7 @@ public interface UserDao {
 
     // 모든 유저의 정보 배열 반환
     public List<UserDto> getUserList();
+    
+    // 통합 검색으로 유저정보 반환
+    public List<UserDto> getTotal(String total);
 }

@@ -24,6 +24,12 @@ public interface UserService {
      // 회원 탈퇴
      public boolean deleteAccount(int uid);
      
-     // 유저 목록 (관리자 페이지)
+
+     // 관리자 함수 =================================
+
+     // 유저 목록
      public List<UserDto> userList();
+
+     // 유저 검색
+     public List<UserDto> getSearchList(String search);
 }

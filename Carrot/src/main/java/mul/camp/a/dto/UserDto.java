@@ -2,17 +2,22 @@ package mul.camp.a.dto;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class UserDto {
     
     private int uid         = -1;        
     private String id       = "";
     private String pw       = "";
     private String name     = "";
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date birthdate  = new Date();
     private String email    = "";
     private String phone    = "";
     private String location = "";
-
+    
+    public UserDto() {}
+    
     // 기본 생성자
     public UserDto(int uid, String id, String pw, String name, Date birthdate, String email, String phone, String location) {
         this.setUid(uid);

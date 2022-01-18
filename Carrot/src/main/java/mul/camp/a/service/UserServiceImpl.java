@@ -73,5 +73,11 @@ public class UserServiceImpl implements UserService {
         
         return dao.getUserList();
     }
+
+    @Override
+    public List<UserDto> getSearchList(String search) {
+        
+        return dao.getTotal(search);
+    }
     
 }

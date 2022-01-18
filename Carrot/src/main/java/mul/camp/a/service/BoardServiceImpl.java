@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import mul.camp.a.dao.BoardDao;
 import mul.camp.a.dao.ContentDao;
 import mul.camp.a.dao.ReplyDao;
+
+import mul.camp.a.dto.BoardDto;
 import mul.camp.a.dto.ContentDto;
 import mul.camp.a.dto.ReplyDto;
 
@@ -86,5 +88,19 @@ public class BoardServiceImpl implements BoardService {
         
         return replyDao.deleteReply(rid) > 0;
     }
+
+	@Override
+	public List<BoardDto> qnalist() {
+		
+		return boardDao.qnalist();
+	}
+
+	@Override
+	public List<ContentDto> qnaCont(int bid, String search) {
+		
+			return boardDao.qnaCont(bid, search);
+	}
+
+	
     
 }
