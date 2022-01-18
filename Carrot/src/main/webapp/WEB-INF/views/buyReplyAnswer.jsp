@@ -38,7 +38,7 @@
 	</table>
 	<h1>답글</h1>
 	
-	<form action="answerAf.do" method="get">
+	<form action="buyAnswerAf.do" method="get">
 	<input type="hidden" name ="ref" value="<%=reply.getRef() %>">
 	<input type="hidden" name ="step" value="<%=reply.getStep() %>">
 	<input type="hidden" name ="depth" value="<%=reply.getDepth() %>">

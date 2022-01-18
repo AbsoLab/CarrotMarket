@@ -47,7 +47,7 @@ if (clist == null || clist.size() == 0){
 	 <tr>
 	 	<th><%=i+1 %></th>
 	 	<td>
-	 		<a href="boardDetail.do?cid=<%=content.getCid()%>"> <!--상세글로 가기위해 cid 필요-->
+	 		<a href="buyBoardDetail.do?cid=<%=content.getCid()%>"> <!--상세글로 가기위해 cid 필요-->
 	 		<%=content.getTitle()%>
 	 		</a>
 	 	</td>
@@ -63,7 +63,7 @@ if (clist == null || clist.size() == 0){
 </div>
 <br>
 <div align="center">
-	<a href="boardWrite.do?bid=<%=bid%>">글쓰기</a>
+	<a href="buyBoardWrite.do?bid=<%=bid%>">글쓰기</a>
 </div>
 </body>
 </html>

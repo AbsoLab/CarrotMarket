@@ -33,7 +33,7 @@ int bid = (Integer)request.getAttribute("bid");
 <body>
 <div class=center>
 <h3>글쓰기</h3>
-<form id ="frm" action="boardWriteAf.do" method="post">
+<form id ="frm" action="buyBoardWriteAf.do" method="post">
   <div class="form-group">
   	<input type="hidden" name = "uid" value="1"> <!-- 수정필요 -->
   	<input type="hidden" name = "bid" value="<%=bid%>">

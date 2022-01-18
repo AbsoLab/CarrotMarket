@@ -16,7 +16,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form id="frm" action="updateReplyAf.do" method="post">
+<form id="frm" action="buyApdateReplyAf.do" method="post">
 <input type="hidden" name="cid" value="<%=dto.getCid() %>">
 <input type="hidden" name="rid" value="<%=dto.getRid() %>">
 	<div align="center">

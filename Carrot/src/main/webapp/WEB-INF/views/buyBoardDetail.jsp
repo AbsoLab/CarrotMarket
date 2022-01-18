@@ -74,7 +74,7 @@ public String arrow(int depth){
 	List<ReplyDto> rplist = (List<ReplyDto>)request.getAttribute("reply");
 	//댓글 창 구현
 %>	
- 	<form id="frm" action="addReply.do" method="post">
+ 	<form id="frm" action="buyAddReply.do" method="post">
  		<table class="table table-hover" style="width: 1000px">
  			<thead>
  				<th>작성자</th><th>내용</th><th>작성일</th><th>정보</th><th>삭제-수정-답글</th>
@@ -100,13 +100,13 @@ public String arrow(int depth){
 					<td><%=reply.getWritedate() %></td>
 					<td><%=reply.getRef()%> - <%=reply.getStep()%> - <%=reply.getDepth()%></td>
 					<td>
-						<a href="answer.do?rid=<%=reply.getRid()%>">답글</a>
+						<a href="buyAnswer.do?rid=<%=reply.getRid()%>">답글</a>
 						<%
 						if(reply.getUid()== 1){ // user.getUid() 대신 test를 위해 1대입
 												// 같아야만 수정 삭제 가능 
 							%>
-							<a href ="updateReply.do?rid=<%=reply.getRid()%>">수정</a>
-							<a href="deleteReply.do?rid=<%=reply.getRid()%>&&cid=<%=reply.getCid()%>">삭제</a>
+							<a href ="buyUpdateReply.do?rid=<%=reply.getRid()%>">수정</a>
+							<a href="buyDeleteReply.do?rid=<%=reply.getRid()%>&&cid=<%=reply.getCid()%>">삭제</a>
 							<%
 						}
 						%>
@@ -132,10 +132,10 @@ public String arrow(int depth){
 	</div>
 <script type="text/javascript">
 	function updateboard(cid){
-		location.href = "updateBoard.do?cid=" + cid;
+		location.href = "buyUpdateBoard.do?cid=" + cid;
 	}
 	function deleteboard(cid){
-		location.href = "deleteBoard.do?cid=" + cid;
+		location.href = "buyDeleteBoard.do?cid=" + cid;
 	}
 	function addreply(){
 		if($("#content").val() ==''){

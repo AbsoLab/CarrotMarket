@@ -3,7 +3,7 @@
     pageEncoding="UTF-8"%>
     
 <%
-	UserDto user = (UserDto)request.getAttribute("dto");
+	UserDto user = (UserDto)request.getAttribute("user");
 
 %>
 <!DOCTYPE html>
@@ -28,12 +28,7 @@
 		width: 600px;
 		height: 70px;
 	}
-	.center{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-	}
+	
 
 	button{
 		margin: 10px;
@@ -46,12 +41,12 @@
 </head>
 <body >
 
-<div  class="center">
-<h3 align="center" >당근 나라 회원 정보수정</h3>
+<div class="container row" style="float: none; margin:100 auto;">
+	<div class="col-md-3" style="float: none; margin:0 auto;">
 	<form class="form-horizontal" id="frm" action="updateUserInfo.do" method="post">
 		
 		<div class="form-group">
-		
+			<h3 align="center" >당근 나라 회원 정보수정</h3>
 				 <label for="id" class="col-sm-2 control-label">아이디</label>
 					<input type="hidden" name = "uid" value="<%=user.getUid()%>">
 					<span  class="form-control"><%=user.getId() %></span>
@@ -62,6 +57,16 @@
 				<label for="pwcheck" class="col-sm-2 control-label" style="width: 150px" >PW 확인</label>
 				<input  class="form-control" type="password" id = "pwcheck">
 				
+			</div>
+			<div class="form-group" >
+				<label for="pw" class="col-sm-2 control-label" style="width: 150px" >PW 변경</label>
+				<input  class="form-control" name ="pw" type="password" id = "pw">
+				
+			</div>
+			<div class="form-group" >
+				<label for="pwcheck" class="col-sm-2 control-label" style="width: 150px" >PW 체크</label>
+				<input  class="form-control" type="password" id = "pwdouble">
+				<div id="pwdoublcheck"></div>
 			</div>
 			<div class="form-group">
 				<label for="name" class="col-sm-2 control-label">이름</label>
@@ -149,6 +154,7 @@
 			</div>
 	</form>
 	</div>
+	</div>
 	<script type="text/javascript">
 	//이메일 입력방식 선택
 	$("#domain").change(function(){
@@ -162,6 +168,25 @@
 			}
 		});
 	});
+	// 변경할 비밀번호 일치 확인
+	$(function(){
+	    $('#pw').keyup(function(){
+	      $('#pwdoublcheck').html('');
+	    });
+
+	    $('#pwdouble').keyup(function(){
+
+	        if($('#pw').val() != $('#pwdouble').val()){
+	          $('#pwdoublcheck').html('비밀번호 일치하지 않음<br><br>');
+	          $('#pwdoublcheck').css('color', 'red');
+	        } else{
+	          $('#pwdoublcheck').html('비밀번호 일치함<br><br>');
+	          $('#pwdoublcheck').css('color', 'green');
+	        }
+
+	    });
+	});
+	
 	// 업데이트 버튼
 	function userUpdate(){
 		//alert('update'); 확인차

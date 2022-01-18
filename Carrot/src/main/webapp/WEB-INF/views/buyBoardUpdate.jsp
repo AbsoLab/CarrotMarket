@@ -17,7 +17,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form id="frm" action="updateboardAf.do" method="post">
+<form id="frm" action="buyUpdateboardAf.do" method="post">
 <input type="hidden" name="cid" value="<%=dto.getCid() %>">
 	<div align="center">
 	<table class="table table-bordered" style="width:1000px" >
