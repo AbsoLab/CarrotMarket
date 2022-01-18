@@ -39,6 +39,9 @@
 	<h1>답글</h1>
 	
 	<form action="answerAf.do" method="get">
+	<input type="hidden" name ="ref" value="<%=reply.getRef() %>">
+	<input type="hidden" name ="step" value="<%=reply.getStep() %>">
+	<input type="hidden" name ="depth" value="<%=reply.getDepth() %>">
 	<input type="hidden" name="rid" value="<%=reply.getRid() %>"> <!-- rid를 넘겨준다.  -->
 	<input type="hidden" name="cid" value="<%=reply.getCid() %>"> <!-- cid 넘겨준다 -->
 	

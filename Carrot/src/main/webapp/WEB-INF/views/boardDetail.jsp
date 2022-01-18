@@ -7,6 +7,24 @@
 <%
 	ContentDto detail = (ContentDto)request.getAttribute("detail");
 %>
+
+<%!
+// 답글의 depth와 image를 추가해 주는 함수
+// depth 1 = ' ' ->
+// depth 2 = '  '->
+public String arrow(int depth){
+	String res = "<img src='image/image1.png' width = '20px' height='20px'/>";
+	String nbsp = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"; //여백
+	
+	String ts = "";
+	for(int i = 0; i < depth; i ++){
+		ts += nbsp;
+	}
+	
+	return depth==0?"":ts + res;
+}
+
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -75,9 +93,12 @@
 %>
 				<tr>
 					<th><%=reply.getUid() %></th>
-					<td><%=reply.getContent() %></td>
+					<td>
+					<%=arrow(reply.getDepth()) %>
+					<%=reply.getContent() %>
+					</td>
 					<td><%=reply.getWritedate() %></td>
-					<td><%=reply.getRef()%> - <%=reply.getDepth()%> - <%=reply.getStep() %></td>
+					<td><%=reply.getRef()%> - <%=reply.getStep()%> - <%=reply.getDepth()%></td>
 					<td>
 						<a href="answer.do?rid=<%=reply.getRid()%>">답글</a>
 						<%

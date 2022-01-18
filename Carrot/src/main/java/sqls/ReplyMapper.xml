@@ -39,8 +39,7 @@
     <update id="addReplyStep" parameterType="mul.camp.a.dto.ReplyDto">
         UPDATE reply
         SET step = step + 1
-        WHERE ref=(SELECT * FROM(SELECT ref FROM reply  WHERE rid=#{rid})AS a) 
-        	AND step > (SELECT * FROM(SELECT step FROM reply  WHERE rid=#{rid})AS b)
+        WHERE ref=#{ref} AND step > #{step}
     </update>
     
 </mapper>
