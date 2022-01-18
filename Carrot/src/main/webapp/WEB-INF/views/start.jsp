@@ -1,10 +1,4 @@
-<<<<<<< HEAD:Carrot/src/main/webapp/WEB-INF/views/test.jsp
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-=======
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
->>>>>>> anna:Carrot/src/main/webapp/WEB-INF/views/start.jsp
 <!DOCTYPE html>
 <html style="font-size: 16px;">
 <head>
