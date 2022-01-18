@@ -27,6 +27,7 @@ public class AdminController {
 	@Autowired
 	UserService us;
 	
+	// 관리자 전용 페이지로 이동
 	@RequestMapping(value = "admin.do", method = RequestMethod.GET)
 	public String admin() {
 		logger.info("AdminController admin()" + new Date());
@@ -34,6 +35,7 @@ public class AdminController {
 		return "admin";
 	}
 	
+	// 통합검색
 	@RequestMapping(value = "admSearch.do", method = RequestMethod.GET)
 	public String admSearch(Model model, String total) {
 		logger.info("AdminController admSearch()" + new Date());
@@ -45,6 +47,7 @@ public class AdminController {
 		return "admin";
 	}
 	
+	// 선택한 회원 삭제
 	@ResponseBody
 	@RequestMapping(value = "admDel.do", method = RequestMethod.POST)
 	public String admDel(Model model, @RequestParam(value = "param[]") List<String> user) throws Exception{
@@ -70,6 +73,7 @@ public class AdminController {
 		}
 	}
 	
+	// 수정 페이지로 이동
 	@RequestMapping(value = "admUpdate.do", method = RequestMethod.GET)
 	public String admUpdate(Model model, int uid) {
 		logger.info("AdminController admUpdate()" + new Date());
@@ -82,6 +86,7 @@ public class AdminController {
 		return "adminupd";
 	}
 	
+	// 수정
 	@RequestMapping(value = "admUpdateAf.do", method = RequestMethod.GET)
 	public String admUpdateAf(Model model, UserDto user) {
 		logger.info("AdminController admUpdateAf()" + new Date());
@@ -92,7 +97,7 @@ public class AdminController {
 			System.out.println("게시글이 수정되었습니다.");
 			return "redirect:/admin.do";
 		}else {
-			return "adminupd";
+			return "admin";
 		}
 		
 		

@@ -30,6 +30,7 @@
 			<h3>회원관리</h3>
 			<hr>
 			<table>
+				<!-- 통합검색 -->
 				<tr>
 					<th>통합검색</th>
 					<td>
@@ -53,6 +54,8 @@
 					<th>폰번호</th>
 					<th>지역</th>
 				</tr>
+				
+				<!-- 검색한 리스트 출력 -->
 				<% if(total == null) {
 					
 				} else {%>
@@ -81,14 +84,16 @@
 		</div>
 	</div>
 
+<!-- 통합검색 버튼 -->
 <script type="text/javascript">
 function admSearch() {
 	let total = document.getElementById("total").value;
 	
-		location.href= "admSearch.do?total="+ total;
+	location.href= "admSearch.do?total="+ total;
 	
 };
 
+// 삭제할 회원 정보 선택후 삭제 버튼
 function selDel() {
 	var arrDel = new Array();
 	
@@ -114,6 +119,7 @@ function selDel() {
 	});
 };
 
+// 수정할 회원 선택후 수정 버튼
 function selUpd() {
 	var arrUpd = new Array();
 	if($("input[name='chkUser']:checked").length > 1) {
@@ -129,10 +135,6 @@ function selUpd() {
 		alert('수정할 회원을 선택해주세요.');
 	}
 	
-	
-	/* $.ajax({
-		url:
-	}) */
 };
 
 //나중에하기.

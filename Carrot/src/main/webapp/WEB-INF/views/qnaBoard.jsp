@@ -97,6 +97,7 @@ $(document).ready(function() {
 	});
 });
 
+// 첫 화면으로 이동
 $("#home").click(function() {
 	location.href="qnaBoard.do?bid=0";
 })

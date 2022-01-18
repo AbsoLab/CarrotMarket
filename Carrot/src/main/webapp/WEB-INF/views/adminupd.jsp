@@ -30,6 +30,7 @@
 				<th>지역</th>
 			</tr>
 			
+			<!-- 수정할 내용 -->
 			<tr>
 				<td><input type="text" name="uid" value="<%=user.getUid()%>"></td>
 				<td><input type="text" name="id" value="<%=user.getId()%>"></td>
