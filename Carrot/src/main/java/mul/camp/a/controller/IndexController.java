@@ -1,26 +1,23 @@
 package mul.camp.a.controller;
 
-import java.util.List;
+import java.util.Date;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-
-import mul.camp.a.dto.UserDto;
-import mul.camp.a.service.UserService;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class IndexController {
+	private static Logger logger = LoggerFactory.getLogger(IndexController.class);
     
-    @Autowired
-    UserService service;
+	// index에서 start로 이동
+    @RequestMapping(value = "start.do", method = RequestMethod.GET)
+	public String login() {
+		logger.info("IndexController start() " + new Date());
+		
+		return "start";
+	}
 
-    @GetMapping("test.do")
-    public String test() {
-    	
-    	List<UserDto> list = service.userList();
-
-        System.out.println("log: " + list.get(0));
-        return "test";
-    }
 }

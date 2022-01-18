@@ -15,6 +15,9 @@ public class ReplyDto {
     private int uid;
     private int cid;
     
+    public ReplyDto() {    	
+    }
+    
     public ReplyDto(String content, int ref, int uid, int cid) {
         this.setContent(content);
         this.setRef(ref);

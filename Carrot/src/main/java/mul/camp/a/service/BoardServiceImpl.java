@@ -34,6 +34,12 @@ public class BoardServiceImpl implements BoardService {
         
         return contentDao.getList(bid);
     }
+    
+    @Override
+	public List<ReplyDto> ReplyList(int cid) {
+    	
+		return replyDao.getReplyList(cid);
+	}
 
     @Override
     public ContentDto content(int cid) {
@@ -67,7 +73,7 @@ public class BoardServiceImpl implements BoardService {
 
     @Override
     public boolean writeReplyAnswer(ReplyDto dto) {
-
+    	System.out.println("1번여기까지는 오니?");
         replyDao.addStepCount(dto);
         return replyDao.addReplyAnswer(dto) > 0;
     }
@@ -83,5 +89,12 @@ public class BoardServiceImpl implements BoardService {
         
         return replyDao.deleteReply(rid) > 0;
     }
-    
+
+	@Override
+	public ReplyDto getReply(int cid) {
+		
+		return replyDao.getReply(cid);
+	}
+
+	    
 }

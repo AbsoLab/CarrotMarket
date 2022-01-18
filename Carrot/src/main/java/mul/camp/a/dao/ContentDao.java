@@ -20,4 +20,6 @@ public interface ContentDao {
 
     // cid(게시글)에 해당하는 게시글을 DB에서 제거
     public int deleteContent(int cid);
+    
+    // -------------------------------------------기능확인 임시 DB
 }
