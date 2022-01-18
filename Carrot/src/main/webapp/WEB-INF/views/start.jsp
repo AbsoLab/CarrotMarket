@@ -78,7 +78,7 @@
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
                             href="#" style="padding: 12px 0px;">판매게시판</a>
-                    </li>
+                    </li>                   
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
                             href="#" style="padding: 12px 0px;">공지사항</a>
@@ -101,7 +101,7 @@
                             <li class="u-nav-item">
                                 <a class="u-button-style u-nav-link" href="#"
                                                       style="padding: 10px 0px;">판매게시판</a>
-                            </li>
+                            </li>                               
                             <li class="u-nav-item">
                                 <a class="u-button-style u-nav-link" href="#"
                                                       style="padding: 10px 0px;">공지사항</a>
@@ -498,7 +498,7 @@
                     <path d="M42.595,0H17.405C14.976,0,13,1.977,13,4.405v51.189C13,58.023,14.976,60,17.405,60h25.189C45.024,60,47,58.023,47,55.595
 		            V4.405C47,1.977,45.024,0,42.595,0z M33,3h1c0.552,0,1,0.447,1,1s-0.448,1-1,1h-1c-0.552,0-1-0.447-1-1S32.448,3,33,3z M26,3h4
 		            c0.552,0,1,0.447,1,1s-0.448,1-1,1h-4c-0.552,0-1-0.447-1-1S25.448,3,26,3z M30,57c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4
-		            S32.206,57,30,57z M45,46H15V8h30V46z"></path></g></svg></span>;(02)222-2222
+		            S32.206,57,30,57z M45,46H15V8h30V46z"></path></g></svg></span>(02)222-2222
             </p>
             <p class="u-text u-text-5"><span class="u-file-icon u-icon u-icon-3">
                 <img src="./images/149989.png" alt=""></span>dfjoi@korea.com
