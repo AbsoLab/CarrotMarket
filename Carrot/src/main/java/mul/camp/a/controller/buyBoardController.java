@@ -1,7 +1,5 @@
 package mul.camp.a.controller;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
-
 import java.util.Date;
 import java.util.List;
 
@@ -9,21 +7,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import mul.camp.a.dao.ContentDao;
-import mul.camp.a.dto.BoardDto;
 import mul.camp.a.dto.ContentDto;
 import mul.camp.a.dto.ReplyDto;
 import mul.camp.a.service.BoardService;
 
 @Controller
-public class BoardController{
-	private static Logger logger = LoggerFactory.getLogger(BoardController.class);
+public class buyBoardController{
+	private static Logger logger = LoggerFactory.getLogger(buyBoardController.class);
 	
     @Autowired
     BoardService service;
