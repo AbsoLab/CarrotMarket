@@ -89,12 +89,12 @@ public class BoardServiceImpl implements BoardService {
     
 	@Override
 	public List<ReplyDto> replyList(int cid) {
-		List<ReplyDto> list = rdao.getReplyList(cid);
+		List<ReplyDto> list = replyDao.getReplyList(cid);
 		return list;
 	}
 	@Override
 	public ReplyDto getReply(int rid) {
-		ReplyDto dto = rdao.getReply(rid);
+		ReplyDto dto = replyDao.getReply(rid);
 		return dto;
 	}
 }

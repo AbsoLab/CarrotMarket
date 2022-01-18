@@ -10,6 +10,6 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="test.do">test</a>
+    <a href="buyBoard.do?bid=2">test</a>
 </body>
 </html>

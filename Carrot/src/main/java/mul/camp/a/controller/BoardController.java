@@ -33,7 +33,7 @@ public class BoardController{
     public String buyBoard(Model model, int bid) {
     	logger.info("BoardController buyBoard()" + new Date());
     	
-    	List<ContentDto> list = service.boardList(bid);
+    	List<ContentDto> list = service.contentList(bid);
     	model.addAttribute("boardlist", list);
     	model.addAttribute("bid",bid); //boardWrite.do로 넘어가기위해 필요 (구매게시판작성)
     	System.out.println(bid);
@@ -98,6 +98,7 @@ public class BoardController{
     @RequestMapping(value = "deleteBoard.do", method = RequestMethod.GET)
     public String deleteBoard(int cid) {
     	logger.info("BoardController deleteBoard()" + new Date());
+    	System.out.println("cid =" + cid);
     	boolean b = service.deleteContent(cid);
     	if(b) {
     		System.out.println("성공");
@@ -165,7 +166,7 @@ public class BoardController{
     public String answerAf(ReplyDto dto) {
     	logger.info("BoardController answer()" + new Date());
     	System.out.println(dto.toString());
-    	service.reply(dto);
+    	service.writeReplyAnswer(dto);
     	return "redirect:/boardDetail.do?cid=" + dto.getCid();
     }
   
