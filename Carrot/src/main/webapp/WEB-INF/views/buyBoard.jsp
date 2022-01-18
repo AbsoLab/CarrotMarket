@@ -1,4 +1,4 @@
-<%@page import="mul.camp.a.dto.ContentDto"%>
+	<%@page import="mul.camp.a.dto.ContentDto"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -17,6 +17,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style type="text/css">
+	table{
+		background-color:  orange; 
+	}
+	
+</style>
 </head>
 <body>
 <div align="center">
@@ -63,7 +69,7 @@ if (clist == null || clist.size() == 0){
 </div>
 <br>
 <div align="center">
-	<a href="buyBoardWrite.do?bid=<%=bid%>">글쓰기</a>
+	<a href="buyBoardWrite.do?bid=<%=bid%>" style="color: orange">글쓰기</a>
 </div>
 </body>
 </html>
