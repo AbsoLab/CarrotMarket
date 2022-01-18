@@ -26,7 +26,7 @@
 	
 	form div{
 		width: 600px;
-		height: 70px;
+		height: 80px;
 	}
 	
 
@@ -34,19 +34,22 @@
 		margin: 10px;
 	}
 	label, h3{
+		width : 600px;
 		color: orange;
+		margin-top: 20px;
 	}
 	
 </style>
 </head>
-<body >
+<body>
 
 <div class="container row" style="float: none; margin:100 auto;">
 	<div class="col-md-3" style="float: none; margin:0 auto;">
+	<h3 align="center">당근 나라 회원 정보수정</h3>
 	<form class="form-horizontal" id="frm" action="updateUserInfo.do" method="post">
 		
 		<div class="form-group">
-			<h3 align="center" >당근 나라 회원 정보수정</h3>
+			
 				 <label for="id" class="col-sm-2 control-label">아이디</label>
 					<input type="hidden" name = "uid" value="<%=user.getUid()%>">
 					<span  class="form-control"><%=user.getId() %></span>
