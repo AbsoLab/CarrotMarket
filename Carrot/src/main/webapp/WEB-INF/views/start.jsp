@@ -71,7 +71,7 @@
                 <ul class="u-nav u-spacing-30 u-unstyled u-nav-1">
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                            href="#" style="padding: 12px 0px;">구매게시판</a>
+                            href="buyBoard.do?bid=2" style="padding: 12px 0px;">구매게시판</a>
                     </li>
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
@@ -93,7 +93,7 @@
                         <div class="u-menu-close"></div>
                         <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
                             <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" href="#"
+                                <a class="u-button-style u-nav-link" href="buyBoard.do?bid=2"
                                                       style="padding: 10px 0px;">구매게시판</a>
                             </li>
                             <li class="u-nav-item">
@@ -137,7 +137,7 @@
                             <img src="./image/3.png" alt=""></span>
                         <h3 class="u-text u-text-3">구매게시판</h3>
                         <p class="u-text u-text-4">당근나라에서 구매하기</p>
-                        <a href="#"
+                        <a href="buyBoard.do?bid=2"
                            class="u-border-2 u-border-custom-color-2 u-border-hover-white u-btn u-btn-round u-button-style u-none u-radius-25 u-text-body-alt-color u-btn-1">구매게시판</a>
                     </div>
                 </div>
