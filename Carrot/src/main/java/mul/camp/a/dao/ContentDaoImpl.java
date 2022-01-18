@@ -24,7 +24,7 @@ public class ContentDaoImpl implements ContentDao {
 
     @Override
     public List<ContentDto>getList(int bid) {
-    	System.out.println("Dao : "+bid);
+    
         return session.selectList(NAMESPACE_GET_LIST, bid);
     }
 

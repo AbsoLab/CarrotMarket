@@ -33,8 +33,8 @@ public class BoardController {
 		List<ContentDto> boardlist = service.contentList(bid);
 		model.addAttribute("boardlist", boardlist);
 		model.addAttribute("bid", bid);
-		return "NoticeBoard";
 		
+		return "NoticeBoard";	
 	}
 	
 	@RequestMapping(value = "NoticeBoardWrite.do", method = RequestMethod.GET)
@@ -43,6 +43,7 @@ public class BoardController {
 		System.out.println("NoticeBoardWrite() cid :"+cid);
 		logger.info("BoardController BoardWrite() " + new Date());
 		model.addAttribute("cid",cid);
+		
 		return "NoticeBoardWrite";
 	}
 	
@@ -67,10 +68,10 @@ public class BoardController {
     	
     	logger.info("NoticeBoardController Detail()" + new Date());
     	ContentDto detail = service.content(cid);
-    	//List<ReplyDto> getReplyList = service.getReplyList(cid);
-    	//System.out.println(getReplyList.toString());
     	model.addAttribute("detail",detail);
-    	//model.addAttribute("getReplyList",getReplyList);
+    	
+    	List<ReplyDto> getreplyList = service.getReplyList(cid);
+    	model.addAttribute("getreplyList",getreplyList);
     	
     	return "NoticeBoardDetail";
     }
@@ -106,19 +107,17 @@ public class BoardController {
     	return "redirect:/NoticeBoard.do?bid=1";
     }
     
+	@RequestMapping(value = "ReplyWriteAf.do", method = RequestMethod.POST)
+	public String ReplyWriteAf(ReplyDto dto) {
+		
+		logger.info("NoticeBoardController ReplyWriteAf() " + new Date());
+		boolean b = service.writeReply(dto);
+		if(b == true) {
+			System.out.println("성공적으로 추가되었습니다");
+		}
+		return "redirect:/NoticeBoardDetail.do?cid="+dto.getCid();
+	}
     
-    
-    
-    @RequestMapping(value = "addReply.do", method = RequestMethod.POST)
-    public String addReply(ReplyDto dto) {
-    	logger.info("BoardController deleteBoard()" + new Date());
-    	boolean b = service.writeReply(dto);
-    	if(b) {
-    		System.out.println("성공");
-    	}else {
-    		System.out.println("실패");
-    	}
-    	return "redirect:/boardDetail.do?cid=" + dto.getCid();
-    }
+
 
 }

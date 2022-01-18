@@ -23,7 +23,7 @@ public class BoardServiceImpl implements BoardService {
 	ContentDao contentDao;
 	
 	@Autowired
-	ReplyDao rdao;
+	ReplyDao rDao;
 	
 	@Override
 	public List<String> boardList(){
@@ -67,34 +67,34 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Override
 	public List<ReplyDto>getReplyList(int cid){
-		List<ReplyDto>replylist = rdao.getReplyList(cid);
-		return replylist;
+		
+		return rDao.getReplyList(cid);
 	}
 
-	@Override
-	public ReplyDto getReply(int rid) {
-		ReplyDto dto = rdao.getReply(rid);
-		return dto;
-	}
 
 	@Override
 	public boolean writeReply(ReplyDto dto) {
-		int count = rdao.addReply(dto);
+		int count = rDao.addReply(dto);
 		return count > 0 ?true:false;
 	}
 
 	@Override
 	public boolean updateReply(ReplyDto dto) {
 		// TODO Auto-generated method stub
-		int count = rdao.updateReply(dto);
+		int count = rDao.updateReply(dto);
 		return count > 0 ?true:false;
 	}
 
 	@Override
 	public boolean deleteReply(int rid) {
 		// TODO Auto-generated method stub
-		int count = rdao.deleteReply(rid);
+		int count = rDao.deleteReply(rid);
 		return count > 0 ?true:false;
+	}
+	@Override
+	public ReplyDto getReply(int rid) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -10,7 +10,7 @@
 // depth 1 = ' '-> 
 // depth 2 = '  '->
 public String arrow(int depth){
-	String res = "└" ;
+	String res = "└";
 	String nbsp = "&nbsp;&nbsp;&nbsp;&nbsp;";	// 여백
 	
 	String ts = "";
@@ -20,6 +20,7 @@ public String arrow(int depth){
 	
 	return depth==0?"":ts + res;
 }
+
 %>
 
 <%
@@ -77,57 +78,90 @@ public String arrow(int depth){
 <%
 }
 %>
-<!-- 
-<% List<ReplyDto>replylist = (List<ReplyDto>)request.getAttribute("getReplyList"); %>
-<form id ="frm" action="addreply.do" method="post">
-<table><thead></thead>
-<tbody>
 
+
+<!-- 댓글 -->
 <%
-	if(replylist == null || replylist.size() == 0){
+	List<ReplyDto> replyList = (List<ReplyDto>)request.getAttribute("getreplyList");
 %>
-			<tr>
-				<td colspan="2">작성된 댓글이 없습니다</td> 
-			</tr>
+
+<!--   attribute  property   -->
+<table style="width: 1000px">
+<!-- <col width="30"><col width="200"><col width="80"> -->
+
+
+<tbody>
 <%
-	}else{
+if(replyList == null || replyList.size() == 0){
+	%>
+	<tr>
+		<td colspan="4">작성된 글이 없습니다</td> 
+	</tr>
+	<%
+}else{
+	
+	for(int i = 0;i < replyList.size(); i++){
+		ReplyDto reply = replyList.get(i);	
+	%>
+		<tr>	
+			<th> No <%=i+1 %></th>
+			<td>
+				UID : <%=reply.getUid() %>
+			</td>
 			
-		for(int i=0; i<replylist.size(); i++){
-			ReplyDto reply = replylist.get(i);
-%>
-			<tr>	
-				<th><%=i+1 %></th>
-				<td>아이디 : <%=reply.getUid()%></td>
-				<td>작성 날짜 : <%=reply.getWritedate()%> </td>
-			</tr>
-			<tr><td colspan="2"><%=reply.getContent() %></td>
-		<%	if(User.getUid()==reply.getUid()){ %>
-				<button type="button" onclick="updateReply(<%=reply.getRid() %>)">수정</button>
-				<button type="button" onclick="deleteReply(<%=reply.getRid() %>)">삭제</button>
-			</tr>
-		<%	}
+			<td> Date : <%=reply.getWritedate()%></td>
 		
-		}
-	} %>
+		<%
+		if(User.getUid()==reply.getUid()){
+		%>
+		<td><button type="button" onclick="">수정</button></td>
+		<td><button type="button" onclick="">삭제</button></td>
+<%		} %>
+		</tr>
+		<tr><td>내용</td><td colpan="3" width="300px"><%=reply.getContent() %></td></tr>
+<%	}
+} %>
+
 </tbody>
-<tfoot>
-<tr><th>아이디 : <%= User.getId() %> </th><td><input type="text" id="content"></td>
-<td colspan="2">
-		<button type="button" onclick="wirte()">댓글쓰기</button>
-</td></tr>
-</tfoot>
 </table>
-</form> -->
-</div>	
+<div>
+<br>
+<form id ="frm" action="ReplyWriteAf.do" method="post">
+<input type="hidden" name="cid" id="cid" value="<%=detail.getCid()%>">
+<input type="hidden" name="uid" id="uid" value="<%=User.getUid()%>">
+
+<table>
+<tr>
+<td> 아이디 </td>
+<td rowspan="2"><textarea cols="80" name="content" id="content" ></textarea><td>
+<td><button type="button"  onclick="ReplyWrite(<%=detail.getCid()%>)">쓰기</button><td></tr>
+<tr><td><%=User.getId() %><td></tr>
+</table>
+</form>
+</div>
+
+
+
+</div>
+	
 
 <!-- 삭제/수정 UID비교 후 버튼 표시 -->
 <script type="text/javascript">
+
 	function updateboard(cid){
 		location.href = "NoticeBoardUpdate.do?cid=" + cid;
 	}
 	function deleteboard(cid){
 		location.href = "NoticeBoardDelete.do?cid=" + cid;
 	}
+	
+	function ReplyWrite() {
+		if ($("#content").val() == ''){
+			alert('댓글에 내용 입력 해주세요');
+		}else{
+			$("#frm").submit();
+		}
+	} 
 </script>
 </body>
 </html>
