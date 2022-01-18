@@ -52,10 +52,9 @@ dt, #home {
 
 <!-- FAQ -->
 <div class="container">
-	<h3>좌측으로부터 우측(flex-row)</h3>
 	
 	<!-- FAQ 목록  -->
-	<div class="container">
+	
 	  	<div class="row row-cols-3 d-flex flex-row">
 		   	<%for (int i=0; i < qna.size(); i++) { 
 		   		BoardDto list = qna.get(i);
@@ -64,7 +63,7 @@ dt, #home {
 			<%} %>
 			
 	  	</div>
-	</div>
+	
 	
 	<!-- FAQ 내용 -->
 	<h3>자주 찾는 질문</h3>
@@ -104,13 +103,13 @@ $(document).ready(function() {
 // 첫 화면으로 이동
 $("#home").click(function() {
 	location.href="qnaBoard.do?bid=0";
-})
+});
 
 // FAQ 검색
 function searchQna() {
 	let search = document.getElementById("search").value;
 	location.href= "qnaBoard.do?search="+search + "&bid=1";
-}
+};
 
 </script>
 
