@@ -1,7 +1,6 @@
 package mul.camp.a.dto;
 
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -23,9 +22,6 @@ public class ContentDto implements Serializable{
         this.setUid(uid);
         this.setBid(bid);
     }
-
-    public ContentDto() {
-	}
     
     public ContentDto(int cid, String title, String content, Date writedate, int uid, int bid) {
         this.cid = cid;
