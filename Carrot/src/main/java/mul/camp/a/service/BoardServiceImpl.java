@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import mul.camp.a.dao.BoardDao;
+import mul.camp.a.dao.ContentDao;
 import mul.camp.a.dto.BoardDto;
 import mul.camp.a.dto.ContentDto;
 import mul.camp.a.dto.ReplyDto;
@@ -15,6 +16,8 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Autowired
 	BoardDao dao;
+	@Autowired
+	ContentDao cdao;
 	
 	@Override
 	public ContentDto[] boardList(int bid) {
@@ -30,8 +33,9 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public boolean writeContent(ContentDto dto) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		int n = cdao.addContent(dto);
+		return n>0 ? true:false;
 	}
 
 	@Override

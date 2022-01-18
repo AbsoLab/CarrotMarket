@@ -81,7 +81,11 @@ dt, #home {
 		<%} %>
 		</table>
 	</div>
+	<a href="otoBbsWrite.do">1:1 문의사항</a>
 </div>
+
+	
+	
 
 <script type="text/javascript">
 
