@@ -13,9 +13,15 @@ public interface BoardService {
 
     // bid(게시판)에 해당하는 글 목록 반환
     public List<ContentDto> contentList(int bid);
+    
+    // cid(글)에 해당하는 댓글 데이터 반환
+    public List<ReplyDto> replyList(int cid);
 
     // cid(글)에 해당하는 글 데이터 반환
     public ContentDto content(int cid);
+    
+    // rid(댓글)에 해당하는 댓글 데이터 반환
+    public ReplyDto getReply(int cid);
 
     // 글 작성
     public boolean writeContent(ContentDto dto);
@@ -25,12 +31,6 @@ public interface BoardService {
 
     // 글 삭제
     public boolean deleteContent(int cid);
-    
-    //댓글 리스트
-    public List<ReplyDto> replyList(int cid);
-    
-    //rid에 해당하는 댓글 데이터 반환
-    public ReplyDto getReply(int rid);
 
     // 댓글 작성
     public boolean writeReply(ReplyDto dto);

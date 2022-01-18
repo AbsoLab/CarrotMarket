@@ -72,7 +72,6 @@ public class BoardServiceImpl implements BoardService {
 
     @Override
     public boolean writeReplyAnswer(ReplyDto dto) {
-
         replyDao.addStepCount(dto);
         return replyDao.addReplyAnswer(dto) > 0;
     }
@@ -101,8 +100,6 @@ public class BoardServiceImpl implements BoardService {
 			return boardDao.qnaCont(bid, search);
 	}
 
-	
-    
 	@Override
 	public List<ReplyDto> replyList(int cid) {
 		List<ReplyDto> list = replyDao.getReplyList(cid);

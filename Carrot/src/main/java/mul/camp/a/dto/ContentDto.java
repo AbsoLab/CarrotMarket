@@ -15,6 +15,8 @@ public class ContentDto implements Serializable{
     private int bid;
     private List<ReplyDto> reply;
     
+    public ContentDto() {
+    }
     public ContentDto(String title, String content, int uid, int bid) {
         this.setTitle(title);
         this.setContent(content);
