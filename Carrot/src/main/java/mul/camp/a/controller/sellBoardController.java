@@ -73,7 +73,7 @@ public class sellBoardController {
 		
 		UserDto dto = new UserDto(1, "admin", "admin", "admin", new Date(), "admin", "admin", "admin");
 		
-		List<ReplyDto> reply = service.ReplyList(cid);
+		List<ReplyDto> reply = service.replyList(cid);
 		System.out.println(reply.toString());
 		
 		model.addAttribute("reply", reply);
