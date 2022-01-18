@@ -77,7 +77,7 @@ public class buyBoardController{
     	return "buyBoardUpdate";
     }
     //글 수정
-    @RequestMapping (value = "buyUpdateBoardAf.do", method = RequestMethod.POST)
+    @RequestMapping (value = "buyUpdateboardAf.do", method = RequestMethod.POST)
     public String updateAf(ContentDto dto) {
     	logger.info("BoardController updateAf()" + new Date());
     	boolean b = service.updateContent(dto);
