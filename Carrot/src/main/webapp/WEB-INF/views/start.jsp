@@ -539,7 +539,7 @@
 	                    c-1.4,4.3-4.3,7.9-8.1,10.1c3.7-0.4,7.3-1.4,10.6-2.9C98.9,32.3,95.7,35.5,92.2,38.2z"></path></svg></span>
             </a>
             <a class="u-social-url" title="instagram" target="_blank" href="https://instagram.com/name">
-            <spa class="u-icon u-social-icon u-social-instagram u-text-white u-icon-3">
+            <span class="u-icon u-social-icon u-social-instagram u-text-white u-icon-3">
                 <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style="">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-a97d"></use></svg>
                 <svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-a97d">
