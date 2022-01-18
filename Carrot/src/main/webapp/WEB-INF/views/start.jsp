@@ -159,7 +159,7 @@
                             <img src="./image/5.png" alt=""></span>
                         <h3 class="u-text u-text-7">문의사항</h3>
                         <p class="u-text u-text-8">당근나라에 문의하기</p>
-                        <a href="#"
+                        <a href="#contact"
                            class="u-border-2 u-border-custom-color-2 u-border-hover-white u-btn u-btn-round u-button-style u-none u-radius-25 u-text-body-alt-color u-btn-3">문의사항</a>
                     </div>
                 </div>
