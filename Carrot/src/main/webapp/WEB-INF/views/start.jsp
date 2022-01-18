@@ -506,7 +506,7 @@
         </div>
     </div>
     <h2 class="u-text u-text-body-color u-text-default-lg u-text-default-md u-text-default-xl u-text-6">
-        <span style="font-weight: 700;">아나바다팀에게 문의해주세요.</span>
+        <span style="font-weight: 700;">당근나라팀에게 문의해주세요.</span>
     </h2>
 </section>
 
