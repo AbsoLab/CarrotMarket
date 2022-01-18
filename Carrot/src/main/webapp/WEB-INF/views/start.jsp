@@ -115,7 +115,7 @@
             </div>
         </nav>
             <span class="u-border-2 u-border-black u-file-icon u-icon u-icon-circle u-spacing-5 u-text-black u-icon-1">
-            <img src="./images/8.png" data-href="#"></span>
+            <img src="./images/8.png" data-href="userInfo.do"></span>
     </div>
 </header>
 
