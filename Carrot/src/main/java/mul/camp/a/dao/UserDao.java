@@ -17,7 +17,7 @@ public interface UserDao {
 
     // uid(유저)에 해당하는 유저 정보 반환
     public UserDto getUser(int uid);
-
+    
     // id에 해당하는 유저 정보 반환
     public UserDto getUser(String id);
 
