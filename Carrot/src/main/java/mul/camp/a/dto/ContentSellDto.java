@@ -2,6 +2,7 @@ package mul.camp.a.dto;
 
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 public class ContentSellDto extends ContentDto {
 
@@ -14,7 +15,7 @@ public class ContentSellDto extends ContentDto {
         this.location = location;
     }
 
-    public ContentSellDto(int cid, String title, String content, Date writedate, int uid, int bid, ReplyDto[] reply, String[] src, String location) {
+    public ContentSellDto(int cid, String title, String content, Date writedate, int uid, int bid, List<ReplyDto> reply, String[] src, String location) {
         super(cid, title, content, writedate, uid, bid, reply);
         this.src = src;
         this.location = location;
@@ -38,6 +39,6 @@ public class ContentSellDto extends ContentDto {
 
     @Override
     public String toString() {
-        return "ContentSellDto [location=" + location + ", src=" + Arrays.toString(src) + "]";
+        return super.toString() + "ContentSellDto [location=" + location + ", src=" + Arrays.toString(src) + "]";
     }    
 }

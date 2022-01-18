@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,4 +9,4 @@
  <h1>처음 페이지</h1>
  <a href="buyBoard.do?bid=2">구매</a>
 </body>
-</html>
+</html>  

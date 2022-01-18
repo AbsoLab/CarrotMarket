@@ -10,44 +10,83 @@ import mul.camp.a.dao.ContentDao;
 import mul.camp.a.dao.ReplyDao;
 import mul.camp.a.dto.ContentDto;
 import mul.camp.a.dto.ReplyDto;
+
 @Service
-public class BoardServiceImpl implements BoardService{
-	
-	@Autowired
-	ContentDao cdao;
-	@Autowired
-	ReplyDao rdao;
-	
+public class BoardServiceImpl implements BoardService {
 
-	@Override
-	public List<ContentDto> boardList(int bid) {
-		List<ContentDto> boardlist = cdao.getList(bid);
-		return boardlist;
-	}
+    @Autowired
+    private BoardDao boardDao;
 
-	@Override
-	public ContentDto content(int cid) {
-		ContentDto dto = cdao.getContent(cid);
-		return dto;
-	}
+    @Autowired
+    private ContentDao contentDao;
 
-	@Override
-	public boolean writeContent(ContentDto dto) {
-		int count = cdao.addContent(dto);
-		return count > 0 ?true:false;
-	}
+    @Autowired
+    private ReplyDao replyDao;
 
-	@Override
-	public boolean updateContent(ContentDto dto) {
-		int count = cdao.updateContent(dto);
-		return count > 0 ?true:false;
-	}
+    @Override
+    public List<String> boardList() {
 
-	@Override
-	public boolean deleteContent(int cid) {
-		int count = cdao.deleteContent(cid);
-		return count > 0 ?true:false;
-	}
+        return boardDao.getBoardList();
+    }
+
+    @Override
+    public List<ContentDto> contentList(int bid) {
+        
+        return contentDao.getList(bid);
+    }
+
+    @Override
+    public ContentDto content(int cid) {
+
+        ContentDto item = contentDao.getContent(cid);
+        item.setReply(replyDao.getReplyList(cid));
+
+        return item;
+    }
+
+    @Override
+    public boolean writeContent(ContentDto dto) {
+
+        return contentDao.addContent(dto) > 0;
+    }
+
+    @Override
+    public boolean updateContent(ContentDto dto) {
+    
+        return contentDao.updateContent(dto) > 0;
+    }
+
+    @Override
+    public boolean deleteContent(int cid) {
+        
+        return contentDao.deleteContent(cid) > 0;
+    }
+
+    @Override
+    public boolean writeReply(ReplyDto dto) {
+        
+        return replyDao.addReply(dto) > 0;
+    }
+
+    @Override
+    public boolean writeReplyAnswer(ReplyDto dto) {
+
+        replyDao.addStepCount(dto);
+        return replyDao.addReplyAnswer(dto) > 0;
+    }
+
+    @Override
+    public boolean updateReply(ReplyDto dto) {
+        
+        return replyDao.updateReply(dto) > 0;
+    }
+
+    @Override
+    public boolean deleteReply(int rid) {
+        
+        return replyDao.deleteReply(rid) > 0;
+    }
+    
 	@Override
 	public List<ReplyDto> replyList(int cid) {
 		List<ReplyDto> list = rdao.getReplyList(cid);
@@ -58,38 +97,4 @@ public class BoardServiceImpl implements BoardService{
 		ReplyDto dto = rdao.getReply(rid);
 		return dto;
 	}
-
-	@Override
-	public boolean writeReply(ReplyDto dto) {
-		int count = rdao.addReply(dto);
-		return count > 0 ?true:false;
-	}
-
-	@Override
-	public boolean updateReply(ReplyDto dto) {
-		int count = rdao.updateReply(dto);
-		return count > 0 ?true:false;
-	}
-
-	@Override
-	public boolean deleteReply(int rid) {
-		int count = rdao.deleteReply(rid);
-		return count > 0 ?true:false;
-	}
-
-	@Override
-	public void reply(ReplyDto dto) {
-		int n = rdao.replyAnswerInsert(dto);
-		if (n == 0) {
-			System.out.println("실패");
-		}
-		n= rdao.updateReply(dto);
-		if (n == 0) {
-			System.out.println("실패");
-		}
-	}
-
-	
-	
-
 }

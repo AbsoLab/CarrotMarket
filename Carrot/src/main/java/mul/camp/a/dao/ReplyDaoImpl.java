@@ -18,8 +18,9 @@ public class ReplyDaoImpl implements ReplyDao {
     private final static String NAMESPACE_ADD_REPLY = NAMESPACE + "addReply";
     private final static String NAMESPACE_UPDATE_REPLY = NAMESPACE + "updateReply";
     private final static String NAMESPACE_DELETE_REPLY = NAMESPACE + "deleteReply";
-    private final static String NAMESPACE_REPLY_ANSER = NAMESPACE + "addReplyAnswer";
-    private final static String NAMESPACE_REPLY_UPDATE = NAMESPACE + "addReplyStep";
+    private final static String NAMESPACE_ADD_REPLY_ANSWER = NAMESPACE + "addReplyAnswer";
+    private final static String NAMESPACE_UPDATE_REPLY_STEP = NAMESPACE + "addReplyStep";
+    
     @Autowired
     private SqlSession session;
 
@@ -51,16 +52,16 @@ public class ReplyDaoImpl implements ReplyDao {
 
         return session.delete(NAMESPACE_DELETE_REPLY, rid);
     }
-	@Override
-	public int replyListUpdate(ReplyDto dto) {
-		
-		return session.update(NAMESPACE_REPLY_UPDATE, dto);
-	}
-	@Override
-	public int replyAnswerInsert(ReplyDto dto) {
-		
-		return session.insert(NAMESPACE_REPLY_ANSER, dto);
-	}
 
+    @Override
+    public int addReplyAnswer(ReplyDto dto) {
+        
+        return session.insert(NAMESPACE_ADD_REPLY_ANSWER, dto);
+    }
 
+    @Override
+    public int addStepCount(ReplyDto dto) {
+        
+        return session.update(NAMESPACE_UPDATE_REPLY_STEP, dto);
+    }
 }

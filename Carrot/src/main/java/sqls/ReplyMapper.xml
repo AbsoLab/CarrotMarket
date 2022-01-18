@@ -15,7 +15,7 @@
 
     <insert id="addReply" parameterType="mul.camp.a.dto.ReplyDto">
         INSERT INTO reply(content, writedate, ref, step, depth, uid, cid)
-        VALUES (#{content}, SYSDATE(), (SELECT IFNULL(MAX(ref) + 1, 0) FROM reply ALIAS_FOR_SUBQUERY), 0, 0, #{uid},#{cid})
+        VALUES (#{content}, SYSDATE(), (SELECT IFNULL(MAX(ref) + 1, 0) FROM reply ALIAS_FOR_SUBQUERY), 0, 0, #{uid}, #{cid})
     </insert>
 
     <update id="updateReply" parameterType="mul.camp.a.dto.ReplyDto">
@@ -33,11 +33,7 @@
     <!-- 댓글은 밑으로 갈수록 최신인걸로 둔다. 꽤 바껴야 할 수도 있음 -->
     <insert id="addReplyAnswer" parameterType="mul.camp.a.dto.ReplyDto">
         INSERT INTO reply(content, writedate, ref, step, depth, uid, cid)
-        VALUES (#{content}, SYSDATE(), 
-        (SELECT ref  FROM reply r WHERE rid=#{rid}),  <!--REF-->
-        (SELECT step FROM reply r WHERE rid=#{rid})+1, <!--step-->
-        (SELECT depth FROM reply r WHERE rid=#{rid})+1, <!--depth-->
-        #{uid}, #{cid})
+        VALUES (#{content}, SYSDATE(), #{ref}, #{step}+1, #{depth}+1, #{uid}, #{cid})
     </insert>
 
     <update id="addReplyStep" parameterType="mul.camp.a.dto.ReplyDto">

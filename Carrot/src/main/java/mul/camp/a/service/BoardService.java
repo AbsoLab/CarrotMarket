@@ -7,8 +7,11 @@ import mul.camp.a.dto.ReplyDto;
 
 public interface BoardService {
 
+    // 게시판 이름 목록 반환
+    public List<String> boardList();
+
     // bid(게시판)에 해당하는 글 목록 반환
-    public List<ContentDto> boardList(int bid);
+    public List<ContentDto> contentList(int bid);
 
     // cid(글)에 해당하는 글 데이터 반환
     public ContentDto content(int cid);
@@ -27,14 +30,16 @@ public interface BoardService {
     
     //rid에 해당하는 댓글 데이터 반환
     public ReplyDto getReply(int rid);
+
     // 댓글 작성
     public boolean writeReply(ReplyDto dto);
+
+    // 답글 작성
+    public boolean writeReplyAnswer(ReplyDto dto);
 
     // 댓글 수정
     public boolean updateReply(ReplyDto dto);
 
     // 댓글 삭제
     public boolean deleteReply(int rid);
-    // 답글 
-    public void reply(ReplyDto dto) ;
 }

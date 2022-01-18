@@ -3,6 +3,7 @@ package mul.camp.a.dto;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 public class ContentDto implements Serializable{
 	public ContentDto() {
@@ -15,8 +16,15 @@ public class ContentDto implements Serializable{
     private Date writedate;
     private int uid;
     private int bid;
-    private ReplyDto[] reply;
+    private List<ReplyDto> reply;
     
+    public ContentDto(String title, String content, int uid, int bid) {
+        this.setTitle(title);
+        this.setContent(content);
+        this.setUid(uid);
+        this.setBid(bid);
+    }
+
     public ContentDto(int cid, String title, String content, Date writedate, int uid, int bid) {
         this.cid = cid;
         this.title = title;
@@ -26,7 +34,7 @@ public class ContentDto implements Serializable{
         this.bid = bid;
     }
 
-    public ContentDto(int cid, String title, String content, Date writedate, int uid, int bid, ReplyDto[] reply) {
+    public ContentDto(int cid, String title, String content, Date writedate, int uid, int bid, List<ReplyDto> reply) {
         this.cid = cid;
         this.title = title;
         this.content = content;
@@ -84,17 +92,17 @@ public class ContentDto implements Serializable{
         this.bid = bid;
     }
 
-    public ReplyDto[] getReply() {
+    public List<ReplyDto> getReply() {
         return reply;
     }
 
-    public void setReply(ReplyDto[] reply) {
+    public void setReply(List<ReplyDto> reply) {
         this.reply = reply;
     }
 
     @Override
     public String toString() {
-        return "ContentDto [bid=" + bid + ", cid=" + cid + ", content=" + content + ", reply=" + Arrays.toString(reply)
+        return "ContentDto [bid=" + bid + ", cid=" + cid + ", content=" + content + ", reply=" + reply
                 + ", title=" + title + ", uid=" + uid + ", writedate=" + writedate + "]";
     }
 
