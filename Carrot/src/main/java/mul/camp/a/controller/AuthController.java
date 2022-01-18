@@ -23,8 +23,8 @@ public class AuthController {
         로그인, 로그아웃, 회원가입
     */
 	
-//	@Autowired
-//	UserService service;
+	@Autowired
+	UserService service;
 	
 	private static Logger logger = LoggerFactory.getLogger(AuthController.class);
 	
@@ -38,23 +38,18 @@ public class AuthController {
 	
 	// 회원정보 확인 후 로그인
 	@RequestMapping(value = "loginAf.do", method = RequestMethod.POST)
-	public String loginAf(Model model,/*UserDto dto,*/ HttpServletRequest req) {
+	public String loginAf(Model model, UserDto dto, HttpServletRequest req) {
 		logger.info("AuthController loginAf() " + new Date());
+		System.out.println("dto=" + dto);
 		
-		//ArrayList<UserDto> user = new ArrayList<UserDto>();
-		
-		UserDto dto = new UserDto(1, "admin", "admin", "admin", new Date(), "admin", "admin", "admin");
-
-		
-//		UserDto user = service.login(dto);
+		UserDto user = service.login(dto);
 		
 		// 로그인 성공시
-		if(dto != null) {
-			model.addAttribute("Ud", dto);
-			req.getSession().setAttribute("login", dto);
+		if(user != null) {
+			req.getSession().setAttribute("login", user);
 			System.out.println("로그인성공");
 			
-			return "main";
+			return "start";
 		}
 		else {	// 조금 더 보완필요
 			System.out.println("회원정보없음");
