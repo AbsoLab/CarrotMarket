@@ -4,13 +4,11 @@
 	display: flex;
 	justify-content:center;
 	margin-top : 100px;
-	/* border: 1px solid black; */
 }
 #loginBox{
 	display: flex;
 	justify-content:center;
 	margin-top : 20px;
-	/* border: 1px solid black; */
 }
 #loginBoxLine{
 	border: 1px solid orange;
@@ -44,6 +42,3 @@ img{
 }
 input:focus {outline:none;}
 a { text-decoration:none;} 
-div{
-	border: 1px solid black;
-}
