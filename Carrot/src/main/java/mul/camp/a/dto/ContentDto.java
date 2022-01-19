@@ -45,6 +45,17 @@ public class ContentDto implements Serializable{
         this.setId(id);
     }
 
+    public ContentDto(ContentDto dto) {
+        this.cid = dto.cid;
+        this.title = dto.title;
+        this.content = dto.content;
+        this.writedate = dto.writedate;
+        this.uid = dto.uid;
+        this.bid = dto.bid;
+        this.reply = dto.reply;
+        this.setId(dto.id);
+    }
+
     public int getCid() {
         return cid;
     }
