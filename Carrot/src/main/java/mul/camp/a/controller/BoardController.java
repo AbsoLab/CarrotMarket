@@ -58,31 +58,20 @@ public class BoardController {
 			return "otoBbsWrite";
 		}
 	
-		/*
-		 * @ResponseBody
-		 * 
-		 * @RequestMapping(value = "chkUserIdQna.do", method = RequestMethod.GET) public
-		 * String chkUserIdQna(Model model,int uid) {
-		 * logger.info("BoardController chkUserIdQna()" + new Date());
-		 * 
-		 * UserDto user = us.userInfo(uid); model.addAttribute("userInfo", user);
-		 * 
-		 * return "otoBbsWrite"; }
-		 */
-	
-	@RequestMapping(value = "otoBbsWriteAf.do", method = RequestMethod.POST)
-	public String otoBbsWriteAf(ContentDto dto) {
-		logger.info("BoardController otoBbsWriteAf()" + new Date());
-		System.out.println(dto.toString());
 		
-		boolean b = bs.writeContent(dto);
-		if(b==true) {
-			System.out.println("게시글이 작성되었습니다.");
-			return "qnaBoard";
+		@RequestMapping(value = "otoBbsWriteAf.do", method = RequestMethod.POST)
+		public String otoBbsWriteAf(ContentDto dto) {
+			logger.info("BoardController otoBbsWriteAf()" + new Date());
+			System.out.println(dto.toString());
+			
+			boolean b = bs.writeContent(dto);
+			if(b==true) {
+				System.out.println("게시글이 작성되었습니다.");
+				return "qnaBoard";
+			}
+			else {
+				return "otoBbsWrite.do.do";
+			}
+			
 		}
-		else {
-			return "otoBbsWrite.do.do";
-		}
-		
-	}
 }
