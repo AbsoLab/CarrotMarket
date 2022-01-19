@@ -28,6 +28,11 @@ int bid = (Integer)request.getAttribute("bid");
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <meta name="generator" content="Nicepage 4.2.6, nicepage.com">
+    <style type="text/css">
+    label{
+    	color: orange;
+    }
+    </style>
 </head>
 
 <header class="u-clearfix u-header u-header" id="sec-75b6">
@@ -136,11 +141,11 @@ int bid = (Integer)request.getAttribute("bid");
 
                         <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-block-30aa-29">
                             <div class="u-container-layout u-block-30aa-30">
-                                <h3 class="u-align-center u-text u-text-default u-block-30aa-31">글 작성</h3>
+                                <h3 style="color: orange;" class="u-align-center u-text u-text-default u-block-30aa-31">구매게시글 작성</h3>
 
                                
 <div>
-<h3>글쓰기</h3>
+
 <form id ="frm" action="buyBoardWriteAf.do" method="post">
   <div class="form-group">
   	<input type="hidden" name = "uid" value="1"> <!-- 수정필요 -->
@@ -152,7 +157,7 @@ int bid = (Integer)request.getAttribute("bid");
     <label for="content">내용</label>
     <textarea rows= "20" name = "content" class="form-control" id="content" placeholder="내용을 입력하세요"></textarea>
   </div>
-  <button type="button" class="btn btn-warning btn-lg" onclick="wirte()">글쓰기</button>
+  <button style="color: white; float: right;" type="button" class="btn btn-warning btn-lg" onclick="wirte()">글쓰기</button>
 
 </form>
 </div>
