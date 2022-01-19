@@ -139,7 +139,7 @@ int bid = (Integer)request.getAttribute("bid");
                                 <h3 class="u-align-center u-text u-text-default u-block-30aa-31">글 작성</h3>
 
                                
-<div class=center>
+<div>
 <h3>글쓰기</h3>
 <form id ="frm" action="buyBoardWriteAf.do" method="post">
   <div class="form-group">
