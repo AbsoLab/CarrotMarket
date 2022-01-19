@@ -8,6 +8,9 @@ public interface ReplyDao {
     
     // cid(게시글)에 해당하는 댓글 데이터 배열 반환
     public List<ReplyDto> getReplyList(int cid);
+    
+    // rid에 해당하는 댓글 반환
+    public ReplyDto getReply(int rid);
 
     // 입력받은 내용을 DB에 추가
     public int addReply(ReplyDto dto);

@@ -8,7 +8,10 @@ public interface UserDao {
     
     // 입력받은 내용을 DB에 추가
     public int addUser(UserDto dto);
-
+    
+    // 입력받은 아이디 중복 검색 
+    public int idchk(String id);
+    
     // 입력받은 내용으로 DB에 수정
     public int updateUser(UserDto dto);
 
@@ -17,7 +20,7 @@ public interface UserDao {
 
     // uid(유저)에 해당하는 유저 정보 반환
     public UserDto getUser(int uid);
-
+    
     // id에 해당하는 유저 정보 반환
     public UserDto getUser(String id);
 

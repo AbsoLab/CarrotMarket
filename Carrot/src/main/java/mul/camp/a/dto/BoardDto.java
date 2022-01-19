@@ -1,6 +1,8 @@
 package mul.camp.a.dto;
 
-public class BoardDto {
+import java.io.Serializable;
+
+public class BoardDto implements Serializable{
     
     private int bid;
     private String name;

@@ -3,8 +3,9 @@ package mul.camp.a.dto;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import java.io.Serializable;
 
-public class UserDto {
+public class UserDto implements Serializable {
     
     private int uid         = -1;        
     private String id       = "";

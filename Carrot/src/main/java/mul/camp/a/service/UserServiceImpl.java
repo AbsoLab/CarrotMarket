@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService {
             
             return null;
 
-        } else if (userDto.getId() == id && userDto.getPw() == pw) {
+        } else if (userDto.getId().equals(id) && userDto.getPw().equals(pw)) {
 
             return userDto;
 

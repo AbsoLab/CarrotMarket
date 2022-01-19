@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import mul.camp.a.dto.ContentDto;
+import mul.camp.a.dto.ContentSellDto;
 
 @Repository
 public class ContentDaoImpl implements ContentDao {
@@ -18,6 +19,7 @@ public class ContentDaoImpl implements ContentDao {
     private final static String NAMESPACE_ADD_CONTENT = NAMESPACE + "addContent";
     private final static String NAMESPACE_UPDATE_CONTENT = NAMESPACE + "updateContent";
     private final static String NAMESPACE_DELETE_CONTENT = NAMESPACE + "deleteContent";
+    private final static String NAMESPACE_GET_IMG_LIST = NAMESPACE + "getImg";
 
     @Autowired
     private SqlSession session;
@@ -31,7 +33,19 @@ public class ContentDaoImpl implements ContentDao {
     @Override
     public ContentDto getContent(int cid) {
 
-        return session.selectOne(NAMESPACE_GET_CONTENT, cid);
+        List<String> list = session.selectList(NAMESPACE_GET_IMG_LIST, cid);
+
+        // 사진이 없으면
+        if (list == null) {
+
+            return session.selectOne(NAMESPACE_GET_CONTENT, cid);
+
+        // 사진이 존재하면
+        } else {
+
+            ContentSellDto dto = new ContentSellDto(session.selectOne(NAMESPACE_GET_CONTENT, cid), list);
+            return dto;
+        }
     }
 
     @Override

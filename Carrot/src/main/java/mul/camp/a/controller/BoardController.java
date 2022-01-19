@@ -12,18 +12,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import mul.camp.a.dto.BoardDto;
 import mul.camp.a.dto.ContentDto;
 import mul.camp.a.dto.UserDto;
 import mul.camp.a.service.BoardService;
 import mul.camp.a.service.UserService;
 
+
 @Controller
 public class BoardController {
-	private static Logger logger = LoggerFactory.getLogger(IndexController.class);
+	
+	private static Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
 	@Autowired
-	BoardService bs;
+	BoardService service;
 	
 	@Autowired
 	UserService us;
@@ -74,4 +75,14 @@ public class BoardController {
 			}
 			
 		}
+	@RequestMapping(value = "noticeBoard.do", method = RequestMethod.GET)
+	public String bbslist(Model model) {
+		logger.info("BoardController Contentlist() " + new Date());
+		
+		List<ContentDto> list = service.contentList(1);
+		System.out.println(list.toString());
+		model.addAttribute("getList", list);
+		
+		return "noticeBoard";
+	}
 }
