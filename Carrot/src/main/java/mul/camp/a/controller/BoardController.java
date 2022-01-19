@@ -37,11 +37,9 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "NoticeBoardWrite.do", method = RequestMethod.GET)
-	public String NoticeBoardWrite(Model model,int cid){
+	public String NoticeBoardWrite(){
 		
-		System.out.println("NoticeBoardWrite() cid :"+cid);
 		logger.info("BoardController BoardWrite() " + new Date());
-		model.addAttribute("cid",cid);
 		
 		return "NoticeBoardWrite";
 	}
@@ -58,7 +56,7 @@ public class BoardController {
 			System.out.println("성공적으로 추가되었습니다");
 		}
 		
-		return "redirect:/NoticeBoard.do";
+		return "redirect:/NoticeBoard.do?bid=1";
 	}
 	
 	
@@ -98,6 +96,11 @@ public class BoardController {
     public String NoticeBoardDelete(int cid) {
     	
     	logger.info("NoticeBoardController update()" + new Date());
+    	
+    	boolean c = service.deleteContentReply(cid);
+    	if(c) {
+    		System.out.println("Cid : "+cid+"번 Reply 삭제");
+    	}
     	boolean b = service.deleteContent(cid);
     	if(b){
     		System.out.println("Cid : "+cid+"번 Board 삭제");
@@ -105,6 +108,7 @@ public class BoardController {
     	
     	return "redirect:/NoticeBoard.do?bid=1";
     }
+    
     
 	@RequestMapping(value = "ReplyWriteAf.do", method = RequestMethod.POST)
 	public String ReplyWriteAf(ReplyDto dto) {
@@ -114,6 +118,21 @@ public class BoardController {
 		if(b == true) {
 			System.out.println("성공적으로 추가되었습니다");
 		}
+		
 		return "redirect:/NoticeBoardDetail.do?cid="+dto.getCid();
 	}
+	
+	
+	@RequestMapping (value = "ReplyDelete.do", method = RequestMethod.GET)
+    public String ReplyDeleteDelete(int cid,int rid) {
+    
+    	logger.info("NoticeBoardController update()" + new Date());
+    	
+    	boolean c = service.deleteReply(rid);
+    	if(c) {
+    		System.out.println("rid : "+rid+"번 Reply 삭제");
+    	}
+    	    	
+    	return "redirect:/NoticeBoardDetail.do?cid="+cid;
+    }
 }

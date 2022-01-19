@@ -31,6 +31,9 @@ public interface BoardService {
 
     // 글 삭제
     public boolean deleteContent(int cid);
+    // 글삭제 시 안에있는댓글도 삭제
+    public boolean deleteContentReply(int cid);
+    
     // 댓글 작성
     public boolean writeReply(ReplyDto dto);
 

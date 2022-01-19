@@ -63,6 +63,13 @@ public class BoardServiceImpl implements BoardService {
         
         return contentDao.deleteContent(cid) > 0;
     }
+    
+    // 글삭제 시 안에있는댓글도 삭제
+    @Override
+    public boolean deleteContentReply(int cid) {
+        
+        return replyDao.deleteContentReply(cid) > 0;
+    }
 
     @Override
     public boolean writeReply(ReplyDto dto) {

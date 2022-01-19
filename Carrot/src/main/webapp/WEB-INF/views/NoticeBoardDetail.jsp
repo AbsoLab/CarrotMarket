@@ -89,8 +89,9 @@ public String arrow(int depth){
 <table style="width: 1000px">
 <!-- <col width="30"><col width="200"><col width="80"> -->
 
-
+<br><br><br>
 <tbody>
+
 <%
 if(replyList == null || replyList.size() == 0){
 	%>
@@ -110,17 +111,22 @@ if(replyList == null || replyList.size() == 0){
 			</td>
 			
 			<td> Date : <%=reply.getWritedate()%></td>
-		
+			
 		<%
 		if(User.getUid()==reply.getUid()){
 		%>
-		<td><button type="button" onclick="">수정</button></td>
-		<td><button type="button" onclick="">삭제</button></td>
+		
+			<td><a href="ReplyDelete.do?cid=<%=detail.getCid()%>&&rid=<%=reply.getRid()%>">삭제</a></td>
+       			
+		
 <%		} %>
-		</tr>
-		<tr><td>내용</td><td colpan="3" width="300px"><%=reply.getContent() %></td></tr>
+		
+		
+	<tr><td>내용</td><td colpan="3" width="300px"><%=reply.getContent() %></td> 	
+	
 <%	}
 } %>
+
 
 </tbody>
 </table>
@@ -134,14 +140,10 @@ if(replyList == null || replyList.size() == 0){
 <tr>
 <td> 아이디 </td>
 <td rowspan="2"><textarea cols="80" name="content" id="content" ></textarea><td>
-<td><button type="button"  onclick="ReplyWrite(<%=detail.getCid()%>)">쓰기</button><td></tr>
+<td><button type="button"  onclick="ReplyWrite()">쓰기</button><td></tr>
 <tr><td><%=User.getId() %><td></tr>
 </table>
 </form>
-</div>
-
-
-
 </div>
 	
 
@@ -161,8 +163,10 @@ if(replyList == null || replyList.size() == 0){
 		}else{
 			$("#frm").submit();
 		}
-	} 
+	}
 </script>
+
+
 </body>
 </html>
 

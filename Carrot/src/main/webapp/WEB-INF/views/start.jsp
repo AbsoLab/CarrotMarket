@@ -84,7 +84,7 @@
                     </li>                   
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                            href="#" style="padding: 12px 0px;">공지사항</a>
+                            href="NoticeBoard.do?bid=1" style="padding: 12px 0px;">공지사항</a>
                     </li>
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
