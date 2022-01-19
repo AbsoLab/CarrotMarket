@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import mul.camp.a.dto.ContentDto;
+import mul.camp.a.dto.ReplyDto;
 import mul.camp.a.service.BoardService;
 
 
@@ -68,7 +69,7 @@ public class BoardController {
     	ContentDto detail = service.content(cid);
     	model.addAttribute("detail",detail);
     	
-    	List<ReplyDto> getreplyList = service.getReplyList(cid);
+    	List<ReplyDto> getreplyList = service.replyList(cid);
     	model.addAttribute("getreplyList",getreplyList);
     	
     	return "NoticeBoardDetail";
