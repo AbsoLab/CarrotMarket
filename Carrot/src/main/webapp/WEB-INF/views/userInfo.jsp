@@ -362,6 +362,7 @@
                                         else{
                                             alert('비밀번호를 다시입력하세요');
                                         }
+                     
                                     }
 
                                     $(document).ready(function(){
