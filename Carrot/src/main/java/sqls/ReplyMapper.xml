@@ -4,7 +4,7 @@
 <mapper namespace="Reply">
     <select id="getReplyList" parameterType="int" resultType="mul.camp.a.dto.ReplyDto">
         SELECT *
-        FROM (SELECT rid, content, writedate, ref, step, depth, A.uid, cid, id FROM reply A LEFT JOIN user B ON A.uid = B.uid)
+        FROM (SELECT rid, content, writedate, ref, step, depth, A.uid, cid, id FROM reply A LEFT JOIN user B ON A.uid = B.uid) C
         WHERE cid=#{cid}
         ORDER BY REF DESC, STEP ASC
     </select>
