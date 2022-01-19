@@ -15,6 +15,7 @@ import mul.camp.a.dto.ContentDto;
 import mul.camp.a.dto.ReplyDto;
 import mul.camp.a.dto.UserDto;
 import mul.camp.a.service.BoardService;
+import mul.camp.a.service.UserService;
 
 @Controller
 public class sellBoardController {
@@ -23,6 +24,9 @@ public class sellBoardController {
 	
 	@Autowired
 	BoardService service;
+	
+	@Autowired
+	UserService uservice;
 	
 	@RequestMapping(value = "sellBoard.do", method = RequestMethod.GET)
 	public String sellBoard(Model model, int bid) {
@@ -41,6 +45,8 @@ public class sellBoardController {
 	@RequestMapping(value = "sellbbswrite.do", method = RequestMethod.GET)
 	public String sellbbsWrite() {
 		logger.info("sellBoardController sellbbsWrite() " + new Date());
+		
+//		userInfo
 		
 		return "sellbbswrite";
 	}
@@ -64,13 +70,13 @@ public class sellBoardController {
 	}
 	// 게시글 상세내용
 	@RequestMapping(value = "sellbbsdetail.do", method = RequestMethod.GET)
-	public String sellbbsdetail(Model model, int cid) {
+	public String sellbbsdetail(Model model, int cid, int uid) {
 		logger.info("sellBoardController sellbbsdetail() " + new Date());
 		System.out.println(cid);
 		
 		ContentDto cdto = service.content(cid);
 		
-		UserDto dto = new UserDto(1, "admin", "admin", "admin", new Date(), "admin", "admin", "admin");
+		UserDto dto = uservice.userInfo(uid);
 		
 		List<ReplyDto> reply = service.replyList(cid);
 		System.out.println(reply.toString());
@@ -105,7 +111,7 @@ public class sellBoardController {
 		
 		if(b == true) {
 			System.out.println("댓글 작성 완료");
-			return "redirect:/sellbbsdetail.do?cid="+cid;
+			return "redirect:/sellbbsdetail.do?cid="+cid+"&uid="+uid;
 		}
 		else {
 			return "redirect:/sellanswer.do";
@@ -131,12 +137,13 @@ public class sellBoardController {
 		
 		int bid = dto.getBid();
 		int cid = dto.getCid();
+		int uid = dto.getUid();
 		
 		boolean b = service.updateContent(dto);		
 
 		if(b == true) {
 			System.out.println("게시글 수정 완료");
-			return "redirect:/sellbbsdetail.do?bid=" + bid + "&cid=" + cid;
+			return "redirect:/sellbbsdetail.do?bid=" + bid + "&cid=" + cid + "&uid=" + uid;
 		}
 		else {
 			return "redirect:/sellupdatebbs.do";
@@ -176,7 +183,7 @@ public class sellBoardController {
 	
 	// 댓글 수정 후 디테일로
 	@RequestMapping(value = "sellupdatereplyAF.do", method = RequestMethod.GET)
-	public String sellupdatereplyAF(ReplyDto dto, int cid, int bid) {
+	public String sellupdatereplyAF(ReplyDto dto, int cid, int bid, int uid) {
 		logger.info("sellBoardController sellupdatereplyAF() " + new Date());
 		System.out.println("dto=" + dto);
 		
@@ -185,7 +192,7 @@ public class sellBoardController {
 		
 		if(b == true) {
 			System.out.println("댓글 수정 완료");
-			return "redirect:/sellbbsdetail.do?bid=3&cid=" + cid;
+			return "redirect:/sellbbsdetail.do?bid=3&cid=" + cid + "&uid=" + uid;
 		}
 		else {
 			return "redirect:/sellupdatereply.do";
@@ -194,14 +201,14 @@ public class sellBoardController {
 	
 	// 댓글 삭제
 	@RequestMapping(value = "selldeletereply.do", method = RequestMethod.GET)
-	public String selldeletereply(int rid, int cid) {
+	public String selldeletereply(int rid, int cid, int uid) {
 		logger.info("sellBoardController selldeletereply() " + new Date());
 		
 		boolean b = service.deleteReply(rid);
 		
 		if(b == true) {
 			System.out.println("댓글 삭제 완료");
-			return "redirect:/sellbbsdetail.do?bid=3&cid=" + cid;
+			return "redirect:/sellbbsdetail.do?bid=3&cid=" + cid + "&uid=" + uid;
 		}
 		else {
 			return "redirect:/selldeletereply.do";
@@ -226,7 +233,7 @@ public class sellBoardController {
 	
 	// 답글 작성완료 후 디테일로 이동
 	@RequestMapping(value = "sellreplyanswerAf.do", method = RequestMethod.POST)
-	public String replyanswerAf(int cid, ReplyDto dto) {
+	public String replyanswerAf(int cid, ReplyDto dto, int uid) {
 		logger.info("sellBoardController replyanswerAf() " + new Date());
 		System.out.println("dto=" + dto);
 		
@@ -234,7 +241,7 @@ public class sellBoardController {
 		
 		if(b == true) {
 			System.out.println("답글작성 완료");
-			return "redirect:/sellbbsdetail.do?bid=3&cid=" + cid;
+			return "redirect:/sellbbsdetail.do?bid=3&cid=" + cid + "&uid=" + uid;
 		}
 		else {
 			return "redirect:/replyanswer.do";

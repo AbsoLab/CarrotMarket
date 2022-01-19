@@ -60,7 +60,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public UserDto getUser(String id) {
-        
+        System.out.println(id);
         return session.selectOne(NAMESPACE_GET_USER_ID, id);
     }
 
@@ -78,5 +78,6 @@ public class UserDaoImpl implements UserDao {
 		System.out.println("dao total: "+total);
 		return session.selectList(NAMESPACE_GET_USER_LIST_T, total);
 	}
+	
     
 }
