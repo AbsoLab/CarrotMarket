@@ -31,9 +31,26 @@
     </init-param>
   	
   	<load-on-startup>1</load-on-startup>
-  	
   </servlet>
   
+  <!-- HTTP Method 제한 -->
+	<security-constraint>
+		<display-name>Forbidden</display-name>
+		<web-resource-collection>
+			<web-resource-name>Protected Context</web-resource-name>
+			<url-pattern>/*</url-pattern>
+			<http-method>HEAD</http-method>
+			<http-method>PUT</http-method>
+			<http-method>DELETE</http-method>
+			<http-method>TRACE</http-method>
+			<http-method>OPTIONS</http-method>
+			<http-method>PATCH</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name></role-name>
+		</auth-constraint>
+	</security-constraint>
+
   <servlet-mapping>
   	<servlet-name>dispatcherServlet</servlet-name>
   	<!-- <url-pattern>/</url-pattern> -->
