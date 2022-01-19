@@ -4,9 +4,9 @@
 <mapper namespace="User">
 
 	<!-- 로그인. 노지수작성 -->
-	<select id="getUserId" parameterType="mul.camp.a.dto.UserDto" resultType="mul.camp.a.dto.UserDto">
+	<select id="getUserId" parameterType="String" resultType="mul.camp.a.dto.UserDto">
 		SELECT * FROM user
-		WHERE id=#{id} AND pw=#{pw}
+		WHERE id=#{id}
 	</select>
 	
     <insert id="addUser" parameterType="mul.camp.a.dto.UserDto">

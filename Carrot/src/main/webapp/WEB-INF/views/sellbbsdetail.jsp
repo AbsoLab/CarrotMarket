@@ -148,23 +148,25 @@ a { text-decoration:none; color: gray;}
 				<%
 				 UserDto userinfo = (UserDto)request.getSession().getAttribute("login");
 				%>
+				
+				<div>판매게시판</div>
+				<div class="displayFlex">
 				<%
 				if(userinfo.getId().equals( user.getId() )){
 				%>
-				<div>판매게시판</div>
-				<div class="displayFlex">
 					<div class="btnDiv" style="cursor:pointer;" onclick="updatebbs(<%=cdto.getCid() %>)">수정</div>
 					<div class="btnDiv" style="cursor:pointer;" onclick="deletebbs(<%=cdto.getCid() %>)">삭제</div>
-				</div>
+				
 				<%
 				}
 				%>
+				</div>
 			</div>
 		</div>
 			
 			
 		<div class="content contentFrame">
-			<%=cdto.getUid() %>
+			<%=user.getId() %>
 		</div>
 			
 		<div class="content contentFrame">

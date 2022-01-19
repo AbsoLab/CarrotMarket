@@ -16,6 +16,7 @@ import mul.camp.a.dto.ContentDto;
 import mul.camp.a.dto.ReplyDto;
 import mul.camp.a.dto.UserDto;
 import mul.camp.a.service.BoardService;
+import mul.camp.a.service.UserService;
 
 @Controller
 public class sellBoardController {
@@ -24,6 +25,9 @@ public class sellBoardController {
 	
 	@Autowired
 	BoardService service;
+	
+	@Autowired
+	UserService uservice;
 	
 	@RequestMapping(value = "sellBoard.do", method = RequestMethod.GET)
 	public String sellBoard(Model model, int bid) {
@@ -42,6 +46,8 @@ public class sellBoardController {
 	@RequestMapping(value = "sellbbswrite.do", method = RequestMethod.GET)
 	public String sellbbsWrite() {
 		logger.info("sellBoardController sellbbsWrite() " + new Date());
+		
+//		userInfo
 		
 		return "sellbbswrite";
 	}
@@ -65,13 +71,13 @@ public class sellBoardController {
 	}
 	// 게시글 상세내용
 	@RequestMapping(value = "sellbbsdetail.do", method = RequestMethod.GET)
-	public String sellbbsdetail(Model model, int cid) {
+	public String sellbbsdetail(Model model, int cid, int uid) {
 		logger.info("sellBoardController sellbbsdetail() " + new Date());
 		System.out.println(cid);
 		
 		ContentDto cdto = service.content(cid);
 		
-		UserDto dto = new UserDto(1, "admin", "admin", "admin", new Date(), "admin", "admin", "admin");
+		UserDto dto = uservice.userInfo(uid);
 		
 		List<ReplyDto> reply = service.replyList(cid);
 		System.out.println(reply.toString());

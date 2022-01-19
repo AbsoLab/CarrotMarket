@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/* div{border: 1px solid orange;} */
+#whiteOneFrame{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 650px;
+	margin: 25px;
+	border-radius: 40px;
+	background-color: white;
+}
+#mainFrame{
+	width: 1050px;
+	height: 620px;
+	padding: 20px;
+	border-radius: 25px;
+}
+h2{color:rgb(33, 153, 33);}
+a{color:gray; text-decoration:none;}
+#writecontent{
+	width: 60px;
+	margin-right: 5px;
+}
+.spacebetween{
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid orange;
+	border-radius: 8px 8px 0px 0px;
+}
+.sellList{
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid orange;
+	border-top:none;
+}
+.no{width:70px; margin:3px 0px;}
+.title{width:500px; margin:3px 0px;}
+.writer{width:140px; margin:3px 0px;}
+.wrdate{width:230px; margin:3px 0px;}
