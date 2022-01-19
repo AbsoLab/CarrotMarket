@@ -1,9 +1,10 @@
 package mul.camp.a.dto;
 
-import java.util.Arrays;
+import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
-public class ContentDto {
+public class ContentDto implements Serializable{
     
     private int cid;
     private String title;
@@ -11,7 +12,18 @@ public class ContentDto {
     private Date writedate;
     private int uid;
     private int bid;
-    private ReplyDto[] reply;
+    private List<ReplyDto> reply;
+    private String id;
+    
+    public ContentDto() {
+    }
+
+    public ContentDto(String title, String content, int uid, int bid) {
+        this.setTitle(title);
+        this.setContent(content);
+        this.setUid(uid);
+        this.setBid(bid);
+    }
     
     public ContentDto(int cid, String title, String content, Date writedate, int uid, int bid) {
         this.cid = cid;
@@ -21,8 +33,10 @@ public class ContentDto {
         this.uid = uid;
         this.bid = bid;
     }
+    
+    
 
-    public ContentDto(int cid, String title, String content, Date writedate, int uid, int bid, ReplyDto[] reply) {
+    public ContentDto(int cid, String title, String content, Date writedate, int uid, int bid, List<ReplyDto> reply, String id) {
         this.cid = cid;
         this.title = title;
         this.content = content;
@@ -30,6 +44,7 @@ public class ContentDto {
         this.uid = uid;
         this.bid = bid;
         this.reply = reply;
+        this.setId(id);
     }
 
     public int getCid() {
@@ -80,17 +95,24 @@ public class ContentDto {
         this.bid = bid;
     }
 
-    public ReplyDto[] getReply() {
+    public List<ReplyDto> getReply() {
         return reply;
     }
 
-    public void setReply(ReplyDto[] reply) {
+    public void setReply(List<ReplyDto> reply) {
         this.reply = reply;
+    }
+
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
     }
 
     @Override
     public String toString() {
-        return "ContentDto [bid=" + bid + ", cid=" + cid + ", content=" + content + ", reply=" + Arrays.toString(reply)
+        return "ContentDto [bid=" + bid + ", cid=" + cid + ", content=" + content + ", reply=" + reply
                 + ", title=" + title + ", uid=" + uid + ", writedate=" + writedate + "]";
     }
 

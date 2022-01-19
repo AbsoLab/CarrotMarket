@@ -4,6 +4,12 @@
         
 <mapper namespace="User">
 
+	<!-- 로그인. 노지수작성 -->
+	<select id="getUserId" parameterType="mul.camp.a.dto.UserDto" resultType="mul.camp.a.dto.UserDto">
+		SELECT * FROM user
+		WHERE id=#{id} AND pw=#{pw}
+	</select>
+	
     <insert id="addUser" parameterType="mul.camp.a.dto.UserDto">
         INSERT INTO user (id, pw, name, birthdate, email, phone, location)
         VALUES (#{id}, #{pw}, #{name}, #{birthdate}, #{email}, #{phone}, #{location})
@@ -20,15 +26,14 @@
 	
     <update id="updateUser" parameterType="mul.camp.a.dto.UserDto">
         UPDATE user
-        SET pw=#{pw}, name=#{name}, birthdate=#{birthdate}, email=#{email}, phone=#{phone}, location=#{location}
+        SET pw=#{pw}, email=#{email}, phone=#{phone}, location=#{location}
         WHERE uid=#{uid}
     </update>
     
-    
-	
     <delete id="deleteUser" parameterType="int">
         DELETE FROM user
         WHERE uid=#{uid}
+        
     </delete>
 
     <select id="getUser" parameterType="int" resultType="mul.camp.a.dto.UserDto">
@@ -43,5 +48,18 @@
 
     <select id="getUserList" resultType="mul.camp.a.dto.UserDto">
         SELECT * FROM user
+    </select>
+    
+    <!-- 통합검색으로 유저 정보 반환. 노승현작성 -->
+    <select id="getTotal" parameterType="String" resultType="mul.camp.a.dto.UserDto">
+    SELECT uid, id, name, birthdate, email, phone, location 
+    FROM user
+    WHERE 
+    id = #{total} or
+    name = #{total} or
+    email = #{total} or
+    phone = #{total} or
+    location = #{total}
+    
     </select>
 </mapper>

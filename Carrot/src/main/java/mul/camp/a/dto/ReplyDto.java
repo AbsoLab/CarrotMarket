@@ -1,8 +1,9 @@
 package mul.camp.a.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class ReplyDto {
+public class ReplyDto implements Serializable{
     
     private int rid;
     private String content;
@@ -14,8 +15,25 @@ public class ReplyDto {
 
     private int uid;
     private int cid;
-    
-    public ReplyDto(int rid, String content, Date writedate, int ref, int step, int depth, int uid, int cid) {
+    private String id;
+
+
+    public ReplyDto() {	}
+
+    public ReplyDto(String content, int uid, int cid) {
+        this.setContent(content);
+        this.setUid(uid);
+        this.setCid(cid);
+    }
+
+    public ReplyDto(String content, int ref, int uid, int cid) {
+        this.setContent(content);
+        this.setRef(ref);
+        this.setUid(uid);
+        this.setCid(cid);
+    }
+
+    public ReplyDto(int rid, String content, Date writedate, int ref, int step, int depth, int uid, int cid, String id) {
         this.rid = rid;
         this.content = content;
         this.writedate = writedate;
@@ -24,6 +42,7 @@ public class ReplyDto {
         this.depth = depth;
         this.uid = uid;
         this.cid = cid;
+        this.setId(id);
     }
 
     public int getRid() {
@@ -73,6 +92,14 @@ public class ReplyDto {
     }
     public void setCid(int cid) {
         this.cid = cid;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     @Override

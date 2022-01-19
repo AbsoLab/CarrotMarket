@@ -81,6 +81,8 @@ select{  width :90px;  height:35px;  font-size:19px; }
 	
 	<!-- Day   -->  
 		<!-- <input type="text" name="dd" id="dd" size="2">&nbsp 일 &nbsp&nbsp -->
+	<tr><th valign="top" style="padding-left:100px; padding-right:40px; font-weight: bold; font-size: 25px; color: rgb(230, 126, 34); ">생년월일</th>
+	<td><input type="date" name="birthdate" id="birthdate">
 		
 	<!-- 체크 출력   -->
 		<p id="datecheck" style="font-size: 12px"></p><br><br></td></tr>

@@ -1,11 +1,13 @@
 package mul.camp.a.service;
 
+import java.util.List;
+
 import mul.camp.a.dto.UserDto;
 
 public interface UserService {
     
      // 로그인
-     public boolean login(UserDto dto);
+     public UserDto login(UserDto dto);
     
      // 회원가입
      public boolean register(UserDto dto);
@@ -22,6 +24,12 @@ public interface UserService {
      // 회원 탈퇴
      public boolean deleteAccount(int uid);
      
-     // 유저 목록 (관리자 페이지)
-     public UserDto[] userList();
+
+     // 관리자 함수 =================================
+
+     // 유저 목록
+     public List<UserDto> userList();
+
+     // 유저 검색
+     public List<UserDto> getSearchList(String search);
 }

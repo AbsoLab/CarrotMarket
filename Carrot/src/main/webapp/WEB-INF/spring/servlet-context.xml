@@ -10,6 +10,9 @@
 	<!-- spring MVC annotation(주석문, 지시문)을 사용하기 위한 설정 -->
 	<context:annotation-config />
 	
+	<!-- 이미지 삽입을 위한 설정 -->
+    <mvc:resources location="/resources/" mapping="/resources/**"/>
+	
 	<!-- view(html, jsp)의 위치를 설정, 확장자명 -->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/"></property>	<!-- views의 경로 -->
