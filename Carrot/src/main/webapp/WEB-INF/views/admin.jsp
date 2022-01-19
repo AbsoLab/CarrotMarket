@@ -180,7 +180,7 @@ th, td {
 						<th scope="col">이름</th>
 						<th scope="col">생년월일</th>
 						<th scope="col">이메일</th>
-						<th scope="col">폰번호</th>
+						<th scope="col">전화번호</th>
 						<th scope="col">지역</th>
 					</tr>
 					

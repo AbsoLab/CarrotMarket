@@ -126,35 +126,40 @@
 </header>
 <div class="container">
 <h3 class="fs-1" id="home"><b>회원 정보 수정</b></h3>
+<hr>
 	<form action="admUpdateAf.do" method="post">	
-		<table class="table table-striped table-hover table-bordered table-sm">
-			<tr>
-				<th scope="col">
-				 	<input type="checkbox" id="chkbox">
-				</th>
-				<th scope="col">회원번호</th>
-				<th scope="col">아이디</th>
-				<th scope="col">이름</th>
-				<th scope="col">생년월일</th>
-				<th scope="col">이메일</th>
-				<th scope="col">폰번호</th>
-				<th scope="col">지역</th>
-			</tr>
-			
-			<!-- 수정할 내용 -->
-			<tr>
-				<td class="col"><input type="text" name="uid" value="<%=user.getUid()%>"></td>
-				<td class="col"><input type="text" name="id" value="<%=user.getId()%>"></td>
-				<td class="col"><input type="text" name="name" value="<%=user.getName()%>"></td>
-				<td class="col"><input type="date" name="birthdate" value="<%=user.getBirthdate()%>"></td>
-				<td class="col"><input type="text" name="email" value="<%=user.getEmail()%>"></td>
-				<td class="col"><input type="text" name="phone" value="<%=user.getPhone()%>"></td>
-				<td class="col"><input type="text" name="location" value="<%=user.getLocation()%>"></td>
-			</tr>
-			<tr>
-				<th><input type="submit" value="수정하기"><th>
-			</tr>
-		</table>
+		<div class="input-group mb-3">
+			<span class="input-group-text" id="inputGroup-sizing-default">회원번호</span>
+			<input type="text" name="uid" style="background-color:#fff;" readonly  class="form-control" value="<%=user.getUid()%>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text"  id="inputGroup-sizing-default">아이디</span>
+			<input type="text" name="id" style="background-color:#fff;" readonly  class="form-control" value="<%=user.getId()%>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text"  id="inputGroup-sizing-default">이름</span>
+			<input type="text" name="name" class="form-control" value="<%=user.getName()%>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text"  id="inputGroup-sizing-default">생년월일</span>
+			<input type="date" name="birthdate" class="form-control" value="<%=user.getBirthdate()%>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text"  id="inputGroup-sizing-default">이메일</span>
+			<input type="text" name="email" class="form-control" value="<%=user.getEmail()%>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text"  id="inputGroup-sizing-default">전화번호</span>
+			<input type="text" name="phone" class="form-control" value="<%=user.getPhone()%>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text"  id="inputGroup-sizing-default">전화번호</span>
+			<input type="text" name="location" class="form-control" value="<%=user.getLocation()%>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+		</div>
+		<input type="submit" class="btn btn-secondary float-right" class="btn btn-secondary float-right" value="수정하기">
+		
+		
+		
 	</form>
 </div>
 <script type="text/javascript">
