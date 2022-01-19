@@ -25,7 +25,6 @@
     .forEach(toastNode => new Toast(toastNode))
 </script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="./css/buy.css" media="screen">
@@ -67,16 +66,6 @@
 <style>
 
 /* FAQ 목록 css */
-.d-flex {
-  background-color: rgba(255,0,0,.1);
-  margin-bottom: 2rem;
-}
-.d-flex > div {
-  background-color: #eee;
-  padding: .5em;
-  border: 1px solid #ccc;
-}
-
 .basic {
 	padding: 10px 0;
 }
@@ -197,62 +186,62 @@ textarea {
     </div>
 </header>
 
-<!-- FAQ 검색 -->
-<div class="container">
-	<h3 class="fs-1" id="home"><b>자주 묻는 질문</b></h3>
-	<!-- <div class="input-group input-group-sm mb-3">
-		<span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
-		<input type="text"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-		<button type="button" onclick="searchQna()">검색</button>
-	</div> -->
-		<div class="input-group mb-3">
-			<input style="border-color:#EC652D; border-width:2px;" type="text" id="search" list="browser" onkeyup="enterkey()" value="" class="form-control" placeholder="자주 묻는 질문 검색" aria-label="Recipient's username" aria-describedby="button-addon2">
-			<button style="border-color:#EC652D; border-width:2px;" class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="searchQna()">검색</button>
-		</div>
-		<datalist id="browser">
-		<option value="판매 금지 물품">
-		<option value="동네 생활 가이드">
-		<option value="비매너 평가를 하면 상대방이 알 수 있나요?">
-		<option value="당근마켓에서 지켜야 할 매너">
-		<option value="동네생활 가이드라인">
-		<option value="내가 쓴 게시글과 댓글은 어디서 볼 수 있나요?">
-		</datalist>
-	
-</div>
+	<!-- FAQ 검색 -->
+	<div class="container">
+		<h3 class="fs-1" id="home"><b>자주 찾는 질문</b></h3>
+		<!-- <div class="input-group input-group-sm mb-3">
+			<span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
+			<input type="text"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+			<button type="button" onclick="searchQna()">검색</button>
+		</div> -->
+			<div class="input-group mb-3">
+				<input style="border-color:#EC652D;" type="text" id="search" list="browser" onkeyup="enterkey()" value="" class="form-control" placeholder="자주 묻는 질문 검색" aria-label="Recipient's username" aria-describedby="button-addon2">
+				<button style="border-color:#EC652D;" class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="searchQna()">검색</button>
+			</div>
+			<datalist id="browser">
+			<option value="판매 금지 물품">
+			<option value="동네 생활 가이드">
+			<option value="비매너 평가를 하면 상대방이 알 수 있나요?">
+			<option value="당근마켓에서 지켜야 할 매너">
+			<option value="동네생활 가이드라인">
+			<option value="내가 쓴 게시글과 댓글은 어디서 볼 수 있나요?">
+			</datalist>
+		
+	</div>
 
-<!-- FAQ -->
-<div class="container">
+<!-- FAQ 목록,내용 -->
+	<div class="container">
+		
+		<!-- FAQ 목록  -->
 	
-	<!-- FAQ 목록  -->
-	<ul class="nav nav-tabs">
-		   	<%for (int i=0; i < qna.size(); i++) { 
-		   		BoardDto list = qna.get(i);
-		   	%>
-		    <li class="nav-item">
-		    <a href="qnaBoard.do?bid=<%=list.getBid()%>" class="nav-link" aria-current="page" style="color: #EC652D;"><b><%=list.getName() %></b></a>
-		    </li>
+		<ul class="nav nav-tabs">
+			   	<%for (int i=0; i < qna.size(); i++) { 
+			   		BoardDto list = qna.get(i);
+			   	%>
+			    <li class="nav-item">
+			    <a href="qnaBoard.do?bid=<%=list.getBid()%>" class="nav-link" aria-current="page" style="color: #EC652D;"><b><%=list.getName() %></b></a>
+			    </li>
+				<%} %>
+				 <li class="nav-item"><a href="http://localhost:8090/start.do?#contact" class="nav-link" aria-current="page" style="color: #EC652D;"><b>1:1 문의사항</b></a></li>
+		</ul>
+				
+		<!-- FAQ 내용 -->
+			<%for(int i=0; i < cont.size(); i++) { 
+				ContentDto conList = cont.get(i);
+			%>
+			
+			<details>
+				<summary class="basic"><%=conList.getTitle() %></summary>
+				<span class="slide"><textarea cols="148" readonly="readonly"><%=conList.getContent() %></textarea></span>
+			</details>
+			
+			<%-- <div>
+				<dt><%=conList.getTitle() %></dt>
+				<textarea rows="15" cols="148" readonly="readonly"><%=conList.getContent() %></textarea>
+			</div> --%>
 			<%} %>
-	</ul>
 	
-	<!-- FAQ 내용 -->
-		<table>
-		<%for(int i=0; i < cont.size(); i++) { 
-			ContentDto conList = cont.get(i);
-		%>
 		
-		<details>
-			<summary class="basic"><%=conList.getTitle() %></summary>
-			<span class="slide"><textarea cols="148" readonly="readonly"><%=conList.getContent() %></textarea></span>
-		</details>
-		
-		<%-- <div>
-			<dt><%=conList.getTitle() %></dt>
-			<textarea rows="15" cols="148" readonly="readonly"><%=conList.getContent() %></textarea>
-		</div> --%>
-		<%} %>
-		</table>
-	
-	<a href="otoBbsWrite.do" class="oto">1:1 문의사항</a>
 </div>
 
 
@@ -296,12 +285,12 @@ function searchQna() {
 	location.href= "qnaBoard.do?search="+search + "&bid=1";
 };
 
+
 function enterkey() {
 	if(window.event.keyCode == 13) {
 		searchQna();
 	};
 };
-
 
 
 </script>
