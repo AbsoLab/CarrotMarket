@@ -115,7 +115,7 @@
             </div>
         </nav>
             <span class="u-border-2 u-border-black u-file-icon u-icon u-icon-circle u-spacing-5 u-text-black u-icon-1">
-            <img src="./images/8.png" data-href="admin.do"></span>
+            <img src="./images/8.png" onclick="adminAjax()"></span>
     </div>
 </header>
 
@@ -551,5 +551,25 @@
         </div>
     </div>
 </footer>
+<script type="text/javascript">
+function adminAjax() {
+	$.ajax({
+		url:"chkAdmin.do",
+		type:"post",
+		data:{"uid":1},
+		success: function(rep) {
+			if(rep=='Y') {
+				location.href="admin.do";
+			} else {
+				alert('관리자만 접속할 수 있습니다.');
+			}
+			
+		},
+		error:function() {
+			alert('error');
+		}
+	})
+}
+</script>
 </body>
 </html>  

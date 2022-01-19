@@ -80,4 +80,10 @@ public class UserServiceImpl implements UserService {
         return dao.getTotal(search);
     }
     
+    // 관리자 확인
+    @Override
+    public int chkAdmin(int uid) {
+    	return dao.chkAdmin(uid);
+    }
+    
 }
