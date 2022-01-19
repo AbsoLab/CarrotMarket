@@ -23,6 +23,12 @@
   			/WEB-INF/spring/servlet-context.xml
   		</param-value>
   	</init-param>
+
+    <!-- 폴더 리스팅 방지 -->
+    <init-param>
+      <param-name>listings</param-name>
+      <param-value>false</param-value>
+    </init-param>
   	
   	<load-on-startup>1</load-on-startup>
   	
