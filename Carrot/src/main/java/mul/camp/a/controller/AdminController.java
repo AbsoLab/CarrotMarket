@@ -1,5 +1,6 @@
 package mul.camp.a.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -85,7 +86,7 @@ public class AdminController {
 	}
 	
 	// 수정
-	@RequestMapping(value = "admUpdateAf.do", method = RequestMethod.GET)
+	@RequestMapping(value = "admUpdateAf.do", method = RequestMethod.POST)
 	public String admUpdateAf(Model model, UserDto user) {
 		logger.info("AdminController admUpdateAf()" + new Date());
 		System.out.println(user.toString());

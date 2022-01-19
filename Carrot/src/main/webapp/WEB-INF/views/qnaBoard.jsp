@@ -27,6 +27,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <link rel="stylesheet" href="./css/buy.css" media="screen">
     <link rel="stylesheet" href="./css/nicepage.css" media="screen">
     <script class="u-script" type="text/javascript" src="./jquery/jquery.js" ></script>
@@ -182,7 +183,7 @@ textarea {
             </div>
         </nav>
             <span class="u-border-2 u-border-black u-file-icon u-icon u-icon-circle u-spacing-5 u-text-black u-icon-1">
-            <img src="./images/8.png" data-href="#"></span>
+            <img src="./images/8.png" data-href="admin.do"></span>
     </div>
 </header>
 
@@ -196,7 +197,7 @@ textarea {
 		</div> -->
 			<div class="input-group mb-3">
 				<input style="border-color:#EC652D;" type="text" id="search" list="browser" onkeyup="enterkey()" value="" class="form-control" placeholder="자주 묻는 질문 검색" aria-label="Recipient's username" aria-describedby="button-addon2">
-				<button style="border-color:#EC652D;" class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="searchQna()">검색</button>
+				<button style="border-color:#EC652D;" class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="searchQna()"><i class="bi bi-search"></i></button>
 			</div>
 			<datalist id="browser">
 			<option value="판매 금지 물품">
