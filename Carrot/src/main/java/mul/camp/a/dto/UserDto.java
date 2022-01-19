@@ -2,12 +2,15 @@ package mul.camp.a.dto;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class UserDto {
     
     private int uid         = -1;        
     private String id       = "";
     private String pw       = "";
     private String name     = "";
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date birthdate  = new Date();
     private String email    = "";
     private String phone    = "";

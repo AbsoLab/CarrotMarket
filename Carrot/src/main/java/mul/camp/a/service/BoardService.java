@@ -1,12 +1,14 @@
 package mul.camp.a.service;
 
+import java.util.List;
+
 import mul.camp.a.dto.ContentDto;
 import mul.camp.a.dto.ReplyDto;
 
 public interface BoardService {
 
     // bid(게시판)에 해당하는 글 목록 반환
-    public ContentDto[] boardList(int bid);
+    public List<ContentDto> boardList(int bid);
 
     // cid(글)에 해당하는 글 데이터 반환
     public ContentDto content(int cid);
