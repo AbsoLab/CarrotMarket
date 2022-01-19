@@ -198,22 +198,23 @@ a{
 		
 	</table>
 <%	
-	//UserDto user = (UserDto)request.getSession().getAttribute("login");
+	UserDto user = (UserDto)request.getSession().getAttribute("login");
  
-	if(1 == (detail.getUid())){ // user.getUid 를 1로 대체
+	if(user.getUid() == (detail.getUid())){ // user.getUid 를 1로 대체
 %>
 
 	<div align="center">
 	<button style="color: white;" class="btn btn-warning" type="button" onclick="updateboard(<%=detail.getCid()%>)">수정</button>
 	<button style="color: white;" class="btn btn-warning" type="button" onclick="deleteboard(<%=detail.getCid()%>)">삭제</button>
 	<br>
-	<a href="buyBoard.do?bid=2">목록으로 돌아가기</a>
+	
 	</div>
 <%
 	}
 	List<ReplyDto> rplist = (List<ReplyDto>)request.getAttribute("reply");
 	//댓글 창 구현
 %>	
+<a href="buyBoard.do?bid=2">목록으로 돌아가기</a>
  	<form id="frm" action="buyAddReply.do" method="post">
  		<table class="table" style="width: 680px">
  		<col width="15%"/><col width="40%"/><col width="20%"/><col width="40%"/>
@@ -242,7 +243,7 @@ a{
 					<td>
 						<a style="font-size: 7px" href="buyAnswer.do?rid=<%=reply.getRid()%>">답글</a>
 						<%
-						if(reply.getUid()== 1){ // user.getUid() 대신 test를 위해 1대입
+						if(reply.getUid()== user.getUid()){ // user.getUid() 대신 test를 위해 1대입
 												// 같아야만 수정 삭제 가능 
 							%>
 							<a style="font-size: 7px" href ="buyUpdateReply.do?rid=<%=reply.getRid()%>">수정</a>

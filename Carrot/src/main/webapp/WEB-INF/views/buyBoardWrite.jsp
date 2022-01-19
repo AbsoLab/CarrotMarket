@@ -6,7 +6,7 @@
 <%
 //bid ,session에서 사용자 정보를 산출 
 int bid = (Integer)request.getAttribute("bid");
-//UserDto user = (UserDto)request.getSession().getAttribute("login");//test를 위해 주석처리
+UserDto user = (UserDto)request.getSession().getAttribute("login");//test를 위해 주석처리
 %>
 <!DOCTYPE html>
 <html style="font-size: 16px;">
@@ -148,7 +148,7 @@ int bid = (Integer)request.getAttribute("bid");
 
 <form id ="frm" action="buyBoardWriteAf.do" method="post">
   <div class="form-group">
-  	<input type="hidden" name = "uid" value="1"> <!-- 수정필요 -->
+  	<input type="hidden" name = "uid" value="<%=user.getUid()%>"> <!-- 수정필요 -->
   	<input type="hidden" name = "bid" value="<%=bid%>">
     <label for="title">제목</label>
     <input type="text" name = "title" class="form-control" id="title" placeholder="제목을 입력하세요">

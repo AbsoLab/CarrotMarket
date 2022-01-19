@@ -11,6 +11,7 @@
 	List<ContentDto> clist = (List<ContentDto>)request.getAttribute("boardlist");
 	int bid = (Integer)request.getAttribute("bid");
 	SimpleDateFormat sdformat = new SimpleDateFormat("yyyy/MM/dd");
+	UserDto user = (UserDto)request.getSession().getAttribute("login");
 	 
 %>
 
@@ -191,9 +192,15 @@ if (clist == null || clist.size() == 0){
 </table>
 
 <br>
+<%
+	if(user != null){
+%>
 <div align="center">
 	<a href="buyBoardWrite.do?bid=<%=bid%>" style="color: green;">글쓰기</a>
 </div>
+<%
+	}
+%>
                             </div>
                         </div>
                     </div>

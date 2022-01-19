@@ -175,8 +175,8 @@
 	
 <div class="form-group">
     <label for="writer">작성자</label>
-    <input type="hidden" name = uid value="1"><!--세션의 유아이디를 넘겨줘야함--> 
-    <input type="text" name = "id" class="form-control" id="id" value="admin" readonly="readonly"><%-- <%=user.getId() %> --%>
+    <input type="hidden" name = uid value="<%=user.getUid()%>"><!--세션의 유아이디를 넘겨줘야함--> 
+    <input type="text" name = "id" class="form-control" id="id" value="<%=user.getId() %>" readonly="readonly"><%-- <%=user.getId() %> --%>
   </div>
 	
 	 <div class="form-group">
