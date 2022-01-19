@@ -15,9 +15,11 @@ public class ReplyDto implements Serializable{
 
     private int uid;
     private int cid;
+    private String id;
+
 
     public ReplyDto() {	}
-    
+
     public ReplyDto(String content, int uid, int cid) {
         this.setContent(content);
         this.setUid(uid);
@@ -31,7 +33,7 @@ public class ReplyDto implements Serializable{
         this.setCid(cid);
     }
 
-    public ReplyDto(int rid, String content, Date writedate, int ref, int step, int depth, int uid, int cid) {
+    public ReplyDto(int rid, String content, Date writedate, int ref, int step, int depth, int uid, int cid, String id) {
         this.rid = rid;
         this.content = content;
         this.writedate = writedate;
@@ -40,6 +42,7 @@ public class ReplyDto implements Serializable{
         this.depth = depth;
         this.uid = uid;
         this.cid = cid;
+        this.setId(id);
     }
 
     public int getRid() {
@@ -89,6 +92,14 @@ public class ReplyDto implements Serializable{
     }
     public void setCid(int cid) {
         this.cid = cid;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     @Override
