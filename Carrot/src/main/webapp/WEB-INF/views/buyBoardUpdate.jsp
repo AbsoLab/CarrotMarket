@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="mul.camp.a.dto.ContentDto"%>
 <%@page import="java.util.List"%>
 <%@page import="mul.camp.a.dto.UserDto"%>
@@ -5,6 +6,7 @@
 
 <%
 	ContentDto dto = (ContentDto)request.getAttribute("content");
+	SimpleDateFormat sdformat = new SimpleDateFormat("yyyy/MM/dd");
 %>
 
 <!DOCTYPE html>
@@ -153,7 +155,7 @@
 		</tr>
 		<tr>
 			<th>작성일</th>
-			<td><%=dto.getWritedate() %></td>
+			<td><%=sdformat.format(dto.getWritedate()) %></td>
 		</tr>
 	
 		<tr>

@@ -1,3 +1,7 @@
+<%@page import="java.util.Calendar"%>
+<%@page import="java.time.Month"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="mul.camp.a.dto.ContentDto"%>
 <%@page import="java.util.List"%>
 <%@page import="mul.camp.a.dto.UserDto"%>
@@ -6,6 +10,8 @@
 <%
 	List<ContentDto> clist = (List<ContentDto>)request.getAttribute("boardlist");
 	int bid = (Integer)request.getAttribute("bid");
+	SimpleDateFormat sdformat = new SimpleDateFormat("yyyy/MM/dd");
+	 
 %>
 
 <!DOCTYPE html>
@@ -145,7 +151,7 @@
  <col width="30"><col width="200"><col width="80"> 
 <thead>
 <tr>
-	<th>번호</th><th>제목</th><th>작성자</th>
+	<th>번호</th><th>제목</th><th>작성자</th><th>작성일</th>
 </tr>
 </thead>
 
@@ -170,7 +176,11 @@ if (clist == null || clist.size() == 0){
 	 		<%=content.getTitle()%>
 	 		</a>
 	 	</td>
-	 	<td align="center"><%=content.getUid()%></td>
+	 	<td align="center"><%=content.getId()%></td>
+	 	<%
+	 	
+	 	%>
+	 	<td><%= sdformat.format(content.getWritedate())%></td>
 	 </tr>
 <% 	
 	}

@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="mul.camp.a.dto.ReplyDto"%>
 <%@page import="mul.camp.a.dto.ContentDto"%>
 <%@page import="java.util.List"%>
@@ -7,6 +8,7 @@
 <%
 	ReplyDto reply = (ReplyDto)request.getAttribute("reply");
 	UserDto user = (UserDto)request.getSession().getAttribute("login");
+	SimpleDateFormat sdformat = new SimpleDateFormat("yyyy/MM/dd");
 %>
 <!DOCTYPE html>
 <html style="font-size: 16px;">
@@ -147,7 +149,7 @@
 		</tr>
 		<tr>
 			<th>작성일</th>
-			<td><%=reply.getWritedate() %></td>
+			<td><%=sdformat.format(reply.getWritedate())%></td>
 		</tr>
 		<tr>
 			<th>댓글</th>

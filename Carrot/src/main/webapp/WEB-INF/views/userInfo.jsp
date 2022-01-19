@@ -1,9 +1,10 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="mul.camp.a.dto.UserDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%
 	UserDto user = (UserDto)request.getAttribute("user");
-
+	SimpleDateFormat sdformat = new SimpleDateFormat("yyyy/MM/dd");
 %>
 
 <!DOCTYPE html>
@@ -197,7 +198,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="birth" class="col-sm-2 control-label">생년월일</label>
-                                                <span  class="form-control"><%=user.getBirthdate() %></span>
+                                                <span  class="form-control"><%=sdformat.format(user.getBirthdate()) %></span>
                                             </div>
                                             <div class="form-group">
                                                 <label for="birth" class="col-sm-2 control-label">이메일</label>

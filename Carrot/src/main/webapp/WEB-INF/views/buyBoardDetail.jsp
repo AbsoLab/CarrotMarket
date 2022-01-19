@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="mul.camp.a.dto.ReplyDto"%>
 <%@page import="mul.camp.a.dto.ContentDto"%>
 <%@page import="java.util.List"%>
@@ -6,6 +7,7 @@
 
 <%
 	ContentDto detail = (ContentDto)request.getAttribute("detail");
+	SimpleDateFormat sdformat = new SimpleDateFormat("yyyy/MM/dd");
 %>
 
 <%!
@@ -163,7 +165,7 @@ public String arrow(int depth){
 	<col width="100px">
 		<tr>
 			<th>작성자</th>
-			<td><%=detail.getUid() %></td>
+			<td><%=detail.getId() %></td>
 		</tr>
 		<tr>
 			<th>제목</th>
@@ -171,7 +173,7 @@ public String arrow(int depth){
 		</tr>
 		<tr>
 			<th>작성일</th>
-			<td><%=detail.getWritedate() %></td>
+			<td><%= sdformat.format(detail.getWritedate())%></td>
 		</tr>
 		
 		<tr>
@@ -217,7 +219,7 @@ public String arrow(int depth){
 					<%=arrow(reply.getDepth()) %>
 					<%=reply.getContent() %>
 					</td>
-					<td><%=reply.getWritedate() %></td>
+					<td><%= sdformat.format(reply.getWritedate()) %></td>
 					<td><%=reply.getRef()%> - <%=reply.getStep()%> - <%=reply.getDepth()%></td>
 					<td>
 						<a href="buyAnswer.do?rid=<%=reply.getRid()%>">답글</a>
