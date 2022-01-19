@@ -145,7 +145,7 @@
 	<col width="100px">
 		<tr>
 			<th>작성자</th>
-			<td><%=reply.getUid() %></td>
+			<td><%=reply.getId() %></td>
 		</tr>
 		<tr>
 			<th>작성일</th>
