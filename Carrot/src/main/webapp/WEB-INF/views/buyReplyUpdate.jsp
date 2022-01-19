@@ -29,6 +29,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <meta name="generator" content="Nicepage 4.2.6, nicepage.com">
+    <style type="text/css">
+    label, h3{
+    	color: orange;
+    }
+    </style>
 </head>
 
 <header class="u-clearfix u-header u-header" id="sec-75b6">

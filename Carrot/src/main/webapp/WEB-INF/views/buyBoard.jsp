@@ -142,13 +142,13 @@
 
                         <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-block-30aa-29">
                             <div class="u-container-layout u-block-30aa-30">
-                                <h3 class="u-align-center u-text u-text-default u-block-30aa-31">구매게시판</h3>
+                                <h3 style="color: orange;" class="u-align-center u-text u-text-default u-block-30aa-31">구매게시판</h3>
 
                                
 
 <br> <br>
 <table class="table table-hover" style="width: 660px; text-align:center;">
- <col width="30"><col width="200"><col width="80"> 
+ <col width="10%"><col width="50%"><col width="10%"> <col width="10%">
 <thead>
 <tr>
 	<th>번호</th><th>제목</th><th>작성자</th><th>작성일</th>
@@ -172,7 +172,7 @@ if (clist == null || clist.size() == 0){
 	 <tr>
 	 	<th><%=i+1 %></th>
 	 	<td>
-	 		<a href="buyBoardDetail.do?cid=<%=content.getCid()%>"> <!--상세글로 가기위해 cid 필요-->
+	 		<a style="color: orange;" href="buyBoardDetail.do?cid=<%=content.getCid()%>"> <!--상세글로 가기위해 cid 필요-->
 	 		<%=content.getTitle()%>
 	 		</a>
 	 	</td>
@@ -192,7 +192,7 @@ if (clist == null || clist.size() == 0){
 
 <br>
 <div align="center">
-	<a href="buyBoardWrite.do?bid=<%=bid%>" style="color: orange">글쓰기</a>
+	<a href="buyBoardWrite.do?bid=<%=bid%>" style="color: green;">글쓰기</a>
 </div>
                             </div>
                         </div>
