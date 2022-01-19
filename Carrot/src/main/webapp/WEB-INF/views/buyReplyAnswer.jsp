@@ -30,6 +30,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <meta name="generator" content="Nicepage 4.2.6, nicepage.com">
+    <style type="text/css">
+    	label, th, h3{
+    		color: orange;
+    		
+    	}
+    </style>
 </head>
 
 <header class="u-clearfix u-header u-header" id="sec-75b6">
@@ -138,7 +144,7 @@
 
                         <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-block-30aa-29">
                             <div class="u-container-layout u-block-30aa-30">
-                                <h3 class="u-align-center u-text u-text-default u-block-30aa-31">댓글</h3>
+                                <h3  class="u-align-center u-text u-text-default u-block-30aa-31">댓글</h3>
 
                                
 <table class="table table-bordered" style="width:660px" >
@@ -157,7 +163,7 @@
 		</tr>
 		
 	</table>
-	<h1>답글</h1>
+	<h3 class="u-align-center u-text u-text-default u-block-30aa-31">답글</h3>
 	
 	<form action="buyAnswerAf.do" method="get">
 	<input type="hidden" name ="ref" value="<%=reply.getRef() %>">
@@ -167,26 +173,19 @@
 	<input type="hidden" name="cid" value="<%=reply.getCid() %>"> <!-- cid 넘겨준다 -->
 	
 	
-	<table class="table table-bordered" style="width: 660px">
-<tr>
-	<th>UID</th>
-	<td>
-		<input type="text" name="uid" size="70px" value="1" readonly="readonly"> <!-- 교체해줘야함 user.getUid() -->
-	</td>
-</tr>
-<tr>
-	<th>내용</th>
-	<td>
-		<textarea rows="20" cols="60" name="content"></textarea>
-	</td>
-</tr>
-<tr>
-	<td colspan="2">
-		<input type="submit" value="글쓰기" >
-	</td>
-</tr>
+<div class="form-group">
+    <label for="writer">작성자</label>
+    <input type="hidden" name = uid value="1"><!--세션의 유아이디를 넘겨줘야함--> 
+    <input type="text" name = "id" class="form-control" id="id" value="admin" readonly="readonly"><%-- <%=user.getId() %> --%>
+  </div>
+	
+	 <div class="form-group">
+    <label for="content">답글내용</label>
+    <textarea rows= "20" name = "content" class="form-control" id="content" placeholder="내용을 입력하세요"></textarea>
+  </div>
 
-</table>
+	
+		<input class="btn btn-warning btn-lg" style="color:white; float: right;" type="submit" value="글쓰기" >
 
 	
 	</form>
