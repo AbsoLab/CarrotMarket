@@ -110,4 +110,10 @@ public class BoardServiceImpl implements BoardService {
 		ReplyDto dto = replyDao.getReply(rid);
 		return dto;
 	}
+	
+	//qna 문의사항 업로드용
+	@Override
+	public boolean fileContent(ContentDto dto) {
+		return contentDao.fileContent(dto) > 0;
+	}
 }

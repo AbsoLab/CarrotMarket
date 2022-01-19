@@ -48,6 +48,7 @@ public interface BoardService {
     public List<BoardDto> qnalist();
     public List<ContentDto> qnaCont(int bid, String search);
     
-    
+    //qna 문의사항 업로드용
+    public boolean fileContent(ContentDto dto);
     
 }

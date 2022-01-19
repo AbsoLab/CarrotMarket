@@ -31,6 +31,13 @@
     </init-param>
   	
   	<load-on-startup>1</load-on-startup>
+  	
+  	<!-- fileupload multipart-config maxSize set -->
+	<multipart-config>
+		<max-file-size>104857600</max-file-size> <!-- 10MB limit -->
+		<max-request-size>104857600</max-request-size>
+		<file-size-threshold>0</file-size-threshold>
+	</multipart-config>
   </servlet>
   
   <!-- HTTP Method 제한 -->
@@ -89,7 +96,8 @@
   	<filter-name>encodingFilter</filter-name>
   	<url-pattern>/*</url-pattern>
   </filter-mapping>
-
+	
+	
   <!-- xss 필터 -->
   <filter>
     <filter-name>xssEscapeServletFilter</filter-name>

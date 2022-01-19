@@ -19,8 +19,9 @@
 <h1>1:1 문의사항</h1>
 <div align="center">
 
-	<form action="otoBbsWriteAf.do" method="post">
-	
+	<form action="otoBbsWriteAf.do" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="bid" value="1">
+		<input type="hidden" name="uid" value="1">
 		<table border="1" style="width:1000px">
 			<tr>
 				<th>아이디</th>
@@ -43,7 +44,7 @@
 				<tr>
 					<th>첨부파일</th>
 					<td>
-						<input type="file" class="custom-input">
+						<input type="file" name="uploadFile" class="custom-input">
 					</td>
 				</tr>
 				<tr>

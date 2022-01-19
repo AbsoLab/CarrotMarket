@@ -22,4 +22,6 @@ public interface ContentDao {
     public int deleteContent(int cid);
     
     // -------------------------------------------기능확인 임시 DB
+    // qna 문의사항 업로드용
+    public int fileContent(ContentDto dto);
 }

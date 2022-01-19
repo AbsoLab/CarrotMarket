@@ -105,6 +105,10 @@ textarea {
 	padding: 10px 0px;
 	margin: 30px 0px;
 }
+
+li {
+	cursor: pointer;
+}
 </style>
 </head>
 <body>
