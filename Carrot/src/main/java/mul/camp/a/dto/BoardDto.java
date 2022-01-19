@@ -7,6 +7,9 @@ public class BoardDto implements Serializable{
     private int bid;
     private String name;
     
+    public BoardDto() {
+	}
+    
     public BoardDto(int bid, String name) {
         this.bid = bid;
         this.name = name;

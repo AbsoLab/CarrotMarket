@@ -11,9 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
 import mul.camp.a.dto.ContentDto;
-import mul.camp.a.dto.ReplyDto;
 import mul.camp.a.service.BoardService;
 
 
@@ -117,7 +115,4 @@ public class BoardController {
 		}
 		return "redirect:/NoticeBoardDetail.do?cid="+dto.getCid();
 	}
-    
-
-
 }

@@ -3,20 +3,23 @@ package mul.camp.a.dto;
 import java.io.Serializable;
 import java.util.Date;
 
-public class UserDto implements Serializable{
+import org.springframework.format.annotation.DateTimeFormat;
+import java.io.Serializable;
+
+public class UserDto implements Serializable {
     
     private int uid;        
     private String id       = "";
     private String pw       = "";
     private String name     = "";
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date birthdate  = new Date();
     private String email    = "";
     private String phone    = "";
     private String location = "";
     
-    public UserDto(){
-    	
-    }
+    public UserDto() {}
+    
     // 기본 생성자
     public UserDto(int uid, String id, String pw, String name, Date birthdate, String email, String phone, String location) {
         this.setUid(uid);

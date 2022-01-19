@@ -19,7 +19,8 @@ public class UserDaoImpl implements UserDao {
     private final static String NAMESPACE_GET_USER = NAMESPACE + "getUser";
     private final static String NAMESPACE_GET_USER_ID = NAMESPACE + "getUserId";
     private final static String NAMESPACE_GET_USER_LIST = NAMESPACE + "getUserList";
-
+    private final static String NAMESPACE_GET_USER_LIST_T = NAMESPACE + "getTotal";	// 노승현 작성
+    
     @Autowired
     SqlSession session;
 
@@ -38,12 +39,6 @@ public class UserDaoImpl implements UserDao {
     	
 		return count;
 	}
-    
-    @Override
-	public UserDto login(UserDto dto) {
-		return session.selectOne(NAMESPACE + "login", dto);
-	}
-    
     
     @Override
     public int updateUser(UserDto dto) {
@@ -75,6 +70,11 @@ public class UserDaoImpl implements UserDao {
         return session.selectList(NAMESPACE_GET_USER_LIST);
     }
 
-	
+    // 통합 검색으로 유저정보 반환
+	@Override
+	public List<UserDto> getTotal(String total) {
+		System.out.println("dao total: "+total);
+		return session.selectList(NAMESPACE_GET_USER_LIST_T, total);
+	}
     
 }
