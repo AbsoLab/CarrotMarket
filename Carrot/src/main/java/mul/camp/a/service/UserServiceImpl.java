@@ -21,16 +21,13 @@ public class UserServiceImpl implements UserService {
         String pw = dto.getPw();
 
         UserDto userDto = dao.getUser(id);
-        System.out.println("id=" + id + "/pw=" +pw);
-        System.out.println("userdto=" + dto);
-        System.out.println(userDto);
 
         // 아이디가 틀림
         if (userDto == null) {
             
             return null;
 
-        } else if (id.equals(userDto.getId()) && pw.equals(userDto.getPw())) {
+        } else if (userDto.getId().equals(id) && userDto.getPw().equals(pw)) {
 
             return userDto;
 

@@ -21,10 +21,6 @@ public class UserController {
 	@Autowired
 	UserService service;
     
-    /*
-        유저 정보 불러오기, 정보 수정, 회원 탈퇴
-    */
-		
 	//유저 정보 불러오기
 	@RequestMapping(value = "userInfo.do", method = RequestMethod.GET)
 	public String userinfo(Model model, HttpServletRequest req) {
@@ -38,6 +34,7 @@ public class UserController {
 		
 		return "userInfo";
 	}
+
 	//정보 수정
 	@RequestMapping(value = "updateUserInfo.do", method = RequestMethod.POST)
 	public String updateUser(UserDto dto) {
@@ -52,6 +49,7 @@ public class UserController {
 		}
 		return "start";
 	}
+	
 	//회원 탈퇴
 	@RequestMapping(value ="deleteAccount.do", method = RequestMethod.GET)
 	public String deleteAccount(HttpServletRequest req) {
