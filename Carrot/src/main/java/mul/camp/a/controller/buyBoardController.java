@@ -53,7 +53,7 @@ public class buyBoardController{
     	}else {
     		System.out.println("실패");
     	}
-    	return "redirect:/buyBuyBoard.do?bid=2"; // 구매게시판으로 가기위함
+    	return "redirect:/buyBoard.do?bid=2"; // 구매게시판으로 가기위함
     }
     //상세글
     @RequestMapping(value = "buyBoardDetail.do", method = RequestMethod.GET)
