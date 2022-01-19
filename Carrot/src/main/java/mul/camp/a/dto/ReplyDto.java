@@ -15,9 +15,8 @@ public class ReplyDto implements Serializable{
 
     private int uid;
     private int cid;
-    public ReplyDto() {
-		// TODO Auto-generated constructor stub
-	}
+
+    public ReplyDto() {	}
     
     public ReplyDto(String content, int uid, int cid) {
         this.setContent(content);

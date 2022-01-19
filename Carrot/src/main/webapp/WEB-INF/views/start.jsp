@@ -1,5 +1,10 @@
+<%@page import="mul.camp.a.dto.UserDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+// session에서 사용자 정보를 산출
+ UserDto user = (UserDto)request.getSession().getAttribute("login");
+%> 
 <html style="font-size: 16px;">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,7 +80,7 @@
                     </li>
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                            href="#" style="padding: 12px 0px;">판매게시판</a>
+                            href="sellBoard.do?bid=3" style="padding: 12px 0px;">판매게시판</a>
                     </li>                   
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
@@ -97,7 +102,7 @@
                                                       style="padding: 10px 0px;">구매게시판</a>
                             </li>
                             <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" href="#"
+                                <a class="u-button-style u-nav-link" href="sellBoard.do?bid=3"
                                                       style="padding: 10px 0px;">판매게시판</a>
                             </li>                               
                             <li class="u-nav-item">
@@ -115,7 +120,7 @@
             </div>
         </nav>
             <span class="u-border-2 u-border-black u-file-icon u-icon u-icon-circle u-spacing-5 u-text-black u-icon-1">
-            <img src="./images/8.png" data-href="userInfo.do"></span>
+            <img src="./images/8.png" data-href="login.do"></span>
     </div>
 </header>
 
@@ -147,7 +152,7 @@
                             <img src="./image/4.png" alt=""></span>
                         <h3 class="u-text u-text-5">판매게시판</h3>
                         <p class="u-text u-text-6">당근나라에서 판매하기</p>
-                        <a href="#"
+                        <a href="sellBoard.do?bid=3"
                            class="u-border-2 u-border-custom-color-2 u-border-hover-white u-btn u-btn-round u-button-style u-none u-radius-25 u-text-body-alt-color u-btn-2">판매게시판</a>
                     </div>
                 </div>
