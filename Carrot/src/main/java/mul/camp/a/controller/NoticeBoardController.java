@@ -17,9 +17,9 @@ import mul.camp.a.service.BoardService;
 
 
 @Controller
-public class BoardController {
+public class NoticeBoardController {
 	
-	private static Logger logger = LoggerFactory.getLogger(BoardController.class);
+	private static Logger logger = LoggerFactory.getLogger(NoticeBoardController.class);
 
 	@Autowired
 	BoardService service;
