@@ -234,7 +234,7 @@ public class sellBoardController {
 	
 	// 답글 작성완료 후 디테일로 이동
 	@RequestMapping(value = "sellreplyanswerAf.do", method = RequestMethod.POST)
-	public String replyanswerAf(int cid, ReplyDto dto) {
+	public String replyanswerAf(int cid, ReplyDto dto, int uid) {
 		logger.info("sellBoardController replyanswerAf() " + new Date());
 		System.out.println("dto=" + dto);
 		
@@ -242,7 +242,7 @@ public class sellBoardController {
 		
 		if(b == true) {
 			System.out.println("답글작성 완료");
-			return "redirect:/sellbbsdetail.do?bid=3&cid=" + cid;
+			return "redirect:/sellbbsdetail.do?bid=3&cid=" + cid + "&uid=" + uid;
 		}
 		else {
 			return "redirect:/replyanswer.do";
