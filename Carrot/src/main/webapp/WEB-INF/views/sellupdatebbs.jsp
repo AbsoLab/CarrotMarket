@@ -57,10 +57,11 @@ textarea:focus {outline:none;}
 	<div id="mainFrame">			
 		<form id="frm" action="sellupdatebbsAF.do" method="get">
 			<input type="hidden" name="cid" value="<%=cdto.getCid()%>">
+			<input type="hidden" name="bid" value="<%=cdto.getUid()%>">
 			<input type="hidden" name="bid" value="3">
 			
 			<div class="content contentFrame">
-				<%=cdto.getUid() %>
+				<%=cdto.getId() %>
 			</div>
 				
 			<div class="content contentFrame">

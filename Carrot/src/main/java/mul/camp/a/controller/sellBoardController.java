@@ -112,7 +112,7 @@ public class sellBoardController {
 		
 		if(b == true) {
 			System.out.println("댓글 작성 완료");
-			return "redirect:/sellbbsdetail.do?cid="+cid;
+			return "redirect:/sellbbsdetail.do?cid="+cid+"&uid="+uid;
 		}
 		else {
 			return "redirect:/sellanswer.do";
@@ -138,12 +138,13 @@ public class sellBoardController {
 		
 		int bid = dto.getBid();
 		int cid = dto.getCid();
+		int uid = dto.getUid();
 		
 		boolean b = service.updateContent(dto);		
 
 		if(b == true) {
 			System.out.println("게시글 수정 완료");
-			return "redirect:/sellbbsdetail.do?bid=" + bid + "&cid=" + cid;
+			return "redirect:/sellbbsdetail.do?bid=" + bid + "&cid=" + cid + "&uid=" + uid;
 		}
 		else {
 			return "redirect:/sellupdatebbs.do";
@@ -183,7 +184,7 @@ public class sellBoardController {
 	
 	// 댓글 수정 후 디테일로
 	@RequestMapping(value = "sellupdatereplyAF.do", method = RequestMethod.GET)
-	public String sellupdatereplyAF(ReplyDto dto, int cid, int bid) {
+	public String sellupdatereplyAF(ReplyDto dto, int cid, int bid, int uid) {
 		logger.info("sellBoardController sellupdatereplyAF() " + new Date());
 		System.out.println("dto=" + dto);
 		
@@ -192,7 +193,7 @@ public class sellBoardController {
 		
 		if(b == true) {
 			System.out.println("댓글 수정 완료");
-			return "redirect:/sellbbsdetail.do?bid=3&cid=" + cid;
+			return "redirect:/sellbbsdetail.do?bid=3&cid=" + cid + "&uid=" + uid;
 		}
 		else {
 			return "redirect:/sellupdatereply.do";
@@ -201,14 +202,14 @@ public class sellBoardController {
 	
 	// 댓글 삭제
 	@RequestMapping(value = "selldeletereply.do", method = RequestMethod.GET)
-	public String selldeletereply(int rid, int cid) {
+	public String selldeletereply(int rid, int cid, int uid) {
 		logger.info("sellBoardController selldeletereply() " + new Date());
 		
 		boolean b = service.deleteReply(rid);
 		
 		if(b == true) {
 			System.out.println("댓글 삭제 완료");
-			return "redirect:/sellbbsdetail.do?bid=3&cid=" + cid;
+			return "redirect:/sellbbsdetail.do?bid=3&cid=" + cid + "&uid=" + uid;
 		}
 		else {
 			return "redirect:/selldeletereply.do";

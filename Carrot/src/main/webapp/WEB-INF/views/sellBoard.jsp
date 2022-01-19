@@ -1,9 +1,11 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="mul.camp.a.dto.ContentDto"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
 List<ContentDto> sellBbs = (List<ContentDto>)request.getAttribute("sellBoard");
+SimpleDateFormat sdformat = new SimpleDateFormat("yyyy/MM/dd");
 %>
 <html style="font-size: 16px;">
 <head>
@@ -149,9 +151,10 @@ List<ContentDto> sellBbs = (List<ContentDto>)request.getAttribute("sellBoard");
 						<div class="sellList">
 							<div class="no"><%=i+1 %></div>
 							<div class="title" align="left"><a href="sellbbsdetail.do?cid=<%=bbs.getCid()%>&uid=<%=bbs.getUid()%>"><%=bbs.getTitle() %></a></div>
-							<div class="writer"><%=bbs.getUid() %></div>
-							<div class="wrdate"><%=bbs.getWritedate()%></div>
+							<div class="writer"><%=bbs.getId() %></div>
+							<div class="wrdate"><%= sdformat.format(bbs.getWritedate())%></div>
 						</div>
+						
 					
 					
 								<%-- <tr>

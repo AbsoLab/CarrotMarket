@@ -62,6 +62,7 @@ textarea:focus {outline:none;}
 		<form id="frm" action="sellupdatereplyAF.do" method="get">
 			<input type="hidden" name="cid" value="<%=cdto.getCid()%>">
 			<input type="hidden" name="rid" value="<%=rdto.getRid()%>">
+			<input type="hidden" name="uid" value="<%=userinfo.getUid()%>">
 			<input type="hidden" name="bid" value="3">
 			
 			<div class="content contentFrame">
