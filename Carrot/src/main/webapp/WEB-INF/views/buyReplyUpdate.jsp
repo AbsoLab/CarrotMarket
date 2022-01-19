@@ -140,36 +140,28 @@
                                 <h3 class="u-align-center u-text u-text-default u-block-30aa-31">댓글 수정</h3>
 
                                
-<form id="frm" action="buyApdateReplyAf.do" method="post">
+<form id="frm" action="buyUpdateReplyAf.do" method="post">
 <input type="hidden" name="cid" value="<%=dto.getCid() %>">
 <input type="hidden" name="rid" value="<%=dto.getRid() %>">
-	<div align="center">
-	<table class="table table-bordered" style="width:660px" >
-	<col width="100px">
-		<tr>
-			<th>작성자</th>
-			<td><%=dto.getUid() %></td>
-		</tr>
-		<tr>
-			<th>작성일</th>
-			<td><%=sdformat.format(dto.getWritedate())%></td>
-		</tr>
+		<div class="form-group">
+	<label for="writer">작성자</label>
+		<input class="form-control type="text" readonly="readonly" name="id" id="id" value="<%=dto.getId() %>" >
+		</div>
+		  <div class="form-group">
+	<label for="writer">작성일</label>
+		<input class="form-control type="text" readonly="readonly" name="writedate" id="writedate" value="<%=sdformat.format(dto.getWritedate()) %>" >
+		</div>
+		<div class="form-group">
+    <label for="content">내용</label>
+    <textarea rows= "20" name = "content" class="form-control" id="content" ><%=dto.getContent() %></textarea>
+  	</div>
 	
-		<tr>
-			<th>내용</th>
-			<td><textarea id="content" name="content" rows="15" cols="60"><%=dto.getContent() %></textarea></td>	
-		</tr>
-		<tr >
-			<td colspan="2">
-			<button type="button" onclick="update()">수정 완료</button>
-			</td>
-		</tr>
-	</table>
-	</div>
+		
+			<button class="btn btn-warning btn-lg" style="color: white; float: right;" type="button" onclick="update()">수정 완료</button>
 	</form>
 <script type="text/javascript">
 function update(){
-	 if ($("#content").val().trim() == ''){
+	 if ($("#content").val() == ''){
 		alert('수정할 댓글을 작성해주세요');
 	}
 	else{
