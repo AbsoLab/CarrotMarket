@@ -29,7 +29,7 @@ public String arrow(int depth){
 %>
 
 <!DOCTYPE html>
-<html style="font-size: 16px;">
+<html style="font-size: 15px;">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
@@ -48,6 +48,21 @@ public String arrow(int depth){
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <meta name="generator" content="Nicepage 4.2.6, nicepage.com">
+    <style type="text/css">
+    th{
+    	color: orange;
+    	text-align: center;
+    }
+    .table td{
+    	text-align: center;
+    }
+   
+a{
+	color: green;
+}
+    
+    </style>
+
 </head>
 
 <header class="u-clearfix u-header u-header" id="sec-75b6">
@@ -156,29 +171,29 @@ public String arrow(int depth){
 
                         <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-block-30aa-29">
                             <div class="u-container-layout u-block-30aa-30">
-                                <h3 class="u-align-center u-text u-text-default u-block-30aa-31">상세글</h3>
+                                <h3 style="color: orange;" class="u-align-center u-text u-text-default u-block-30aa-31">구매합니다</h3>
 
                                
 
 
-		<table class="table table-bordered" style="width:660px" >
-	<col width="100px">
+		<table class="table table-bordered"  style="width:660px; border-radius: 10px;" >
+		<col width="20%">
 		<tr>
 			<th>작성자</th>
-			<td><%=detail.getId() %></td>
+			<td style="text-align: left"><%=detail.getId() %></td>
 		</tr>
 		<tr>
 			<th>제목</th>
-			<td><%=detail.getTitle() %></td>
+			<td style="text-align: left"><%=detail.getTitle() %></td>
 		</tr>
 		<tr>
 			<th>작성일</th>
-			<td><%= sdformat.format(detail.getWritedate())%></td>
+			<td style="text-align: left"><%= sdformat.format(detail.getWritedate())%></td>
 		</tr>
 		
 		<tr>
 			<th>내용</th>
-			<td><textarea readonly rows="15" cols="60"><%=detail.getContent() %></textarea></td>	
+			<td style="text-align: left" width="400px" height="300px"><%=detail.getContent() %></td>	
 		</tr>
 		
 	</table>
@@ -187,19 +202,23 @@ public String arrow(int depth){
  
 	if(1 == (detail.getUid())){ // user.getUid 를 1로 대체
 %>
-	<button type="button" onclick="updateboard(<%=detail.getCid()%>)">수정</button>
-	<button type="button" onclick="deleteboard(<%=detail.getCid()%>)">삭제</button>
+
+	<div align="center">
+	<button style="color: white;" class="btn btn-warning" type="button" onclick="updateboard(<%=detail.getCid()%>)">수정</button>
+	<button style="color: white;" class="btn btn-warning" type="button" onclick="deleteboard(<%=detail.getCid()%>)">삭제</button>
 	<br>
 	<a href="buyBoard.do?bid=2">목록으로 돌아가기</a>
+	</div>
 <%
 	}
 	List<ReplyDto> rplist = (List<ReplyDto>)request.getAttribute("reply");
 	//댓글 창 구현
 %>	
  	<form id="frm" action="buyAddReply.do" method="post">
- 		<table class="table table-hover" style="width: 660px">
+ 		<table class="table" style="width: 680px">
+ 		<col width="15%"/><col width="40%"/><col width="20%"/><col width="40%"/>
  			<thead>
- 				<th>작성자</th><th>내용</th><th>작성일</th><th>정보</th><th>삭제-수정-답글</th>
+ 				<th>작성자</th><th>내용</th><th>작성일</th><th></th>
  			</thead>
  			<tbody>
  <%
@@ -213,22 +232,21 @@ public String arrow(int depth){
  		for(int i=0; i < rplist.size(); i++){
  			ReplyDto reply = rplist.get(i);
 %>
-				<tr>
-					<th><%=reply.getUid() %></th>
+				<tr >
+					<td><%=reply.getId() %></td>
 					<td>
 					<%=arrow(reply.getDepth()) %>
 					<%=reply.getContent() %>
 					</td>
 					<td><%= sdformat.format(reply.getWritedate()) %></td>
-					<td><%=reply.getRef()%> - <%=reply.getStep()%> - <%=reply.getDepth()%></td>
 					<td>
-						<a href="buyAnswer.do?rid=<%=reply.getRid()%>">답글</a>
+						<a style="font-size: 7px" href="buyAnswer.do?rid=<%=reply.getRid()%>">답글</a>
 						<%
 						if(reply.getUid()== 1){ // user.getUid() 대신 test를 위해 1대입
 												// 같아야만 수정 삭제 가능 
 							%>
-							<a href ="buyUpdateReply.do?rid=<%=reply.getRid()%>">수정</a>
-							<a href="buyDeleteReply.do?rid=<%=reply.getRid()%>&&cid=<%=reply.getCid()%>">삭제</a>
+							<a style="font-size: 7px" href ="buyUpdateReply.do?rid=<%=reply.getRid()%>">수정</a>
+							<a style="font-size: 7px" href="buyDeleteReply.do?rid=<%=reply.getRid()%>&&cid=<%=reply.getCid()%>">삭제</a>
 							<%
 						}
 						%>
@@ -243,8 +261,8 @@ public String arrow(int depth){
  			<tfoot>
  				<input type="hidden" name = "uid" value="1"><!-- user.getUid 를 1로 대체 -->
  				<input type="hidden" name = "cid" value = "<%=detail.getCid()%>">
- 				<td colspan="3"><textarea id ="content" name="content" rows="10" cols="60"></textarea></td>
- 				<td><button type="button" onclick="addreply()">댓글작성</button></td>
+ 				<td colspan="3"><textarea id ="content" name="content" rows="5" cols="70"></textarea></td>
+ 				<td><button style="color: white;" class="btn btn-warning" type="button" onclick="addreply()">댓글작성</button></td>
  			</tfoot>
  		</table>
  			
