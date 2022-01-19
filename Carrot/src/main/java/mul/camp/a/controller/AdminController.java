@@ -26,20 +26,19 @@ public class AdminController {
 	@Autowired
 	UserService us;
 	
+	// 관리자 전용 페이지로 이동
 	@RequestMapping(value = "admin.do", method = RequestMethod.GET)
 	public String admin() {
 		logger.info("AdminController admin()" + new Date());
 		
-		
 			return "admin";
-	
 	}
 	
-	// 관리자 전용 페이지로 이동
+	// 관리자 uid 확인
 	@ResponseBody
 	@RequestMapping(value = "chkAdmin.do", method = RequestMethod.POST)
 	public String chkAdmin(int uid) {
-		logger.info("AdminController admin()" + new Date());
+		logger.info("AdminController chkAdmin()" + new Date());
 		
 		// uid 확인
 		int count = us.chkAdmin(uid);

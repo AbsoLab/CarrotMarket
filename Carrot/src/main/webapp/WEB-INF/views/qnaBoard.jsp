@@ -223,7 +223,7 @@ textarea {
 			    <a href="qnaBoard.do?bid=<%=list.getBid()%>" class="nav-link" aria-current="page" style="color: #EC652D;"><b><%=list.getName() %></b></a>
 			    </li>
 				<%} %>
-				 <li class="nav-item"><a href="http://localhost:8090/start.do?#contact" class="nav-link" aria-current="page" style="color: #EC652D;"><b>1:1 문의사항</b></a></li>
+				<li class="nav-link" aria-current="page" style="color: #EC652D;" onclick="otoQna()"><b>1:1 문의사항</b></li>
 		</ul>
 				
 		<!-- FAQ 내용 -->
@@ -242,7 +242,6 @@ textarea {
 			</div> --%>
 			<%} %>
 	
-		
 </div>
 
 
@@ -293,6 +292,11 @@ function enterkey() {
 	};
 };
 
+//1:1문의사항
+function otoQna() {
+	location.href= "otoBbsWrite.do?uid=2"; // 나중에 로그인 정보에서 받은 uid로 수정해야함.
+		
+};
 
 </script>
 

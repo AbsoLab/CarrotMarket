@@ -556,7 +556,7 @@ function adminAjax() {
 	$.ajax({
 		url:"chkAdmin.do",
 		type:"post",
-		data:{"uid":1},
+		data:{"uid":1},	// 나중에 1은 로그인 후 model로 받아온 uid를 집어 넣어야함.
 		success: function(rep) {
 			if(rep=='Y') {
 				location.href="admin.do";

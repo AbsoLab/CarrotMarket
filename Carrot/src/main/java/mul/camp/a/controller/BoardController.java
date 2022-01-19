@@ -10,10 +10,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import mul.camp.a.dto.BoardDto;
 import mul.camp.a.dto.ContentDto;
+import mul.camp.a.dto.UserDto;
 import mul.camp.a.service.BoardService;
+import mul.camp.a.service.UserService;
 
 @Controller
 public class BoardController {
@@ -21,6 +24,9 @@ public class BoardController {
 	
 	@Autowired
 	BoardService bs;
+	
+	@Autowired
+	UserService us;
 	
 	
 	// QnA(FAQ) 컨트롤러
@@ -42,12 +48,27 @@ public class BoardController {
 			return "qnaBoard";
 		}
 	
-	@RequestMapping(value = "otoBbsWrite.do", method = RequestMethod.GET)
-	public String otoBbsWrite() {
-		logger.info("BoardController otoBbsWrite()" + new Date());
-		
-		return "otoBbsWrite";
-	}
+		@RequestMapping(value = "otoBbsWrite.do", method = RequestMethod.GET)
+		public String otoBbsWrite(Model model, int uid) {
+			logger.info("BoardController otoBbsWrite()" + new Date());
+			
+			UserDto user = us.userInfo(uid);
+			model.addAttribute("userInfo", user);
+			
+			return "otoBbsWrite";
+		}
+	
+		/*
+		 * @ResponseBody
+		 * 
+		 * @RequestMapping(value = "chkUserIdQna.do", method = RequestMethod.GET) public
+		 * String chkUserIdQna(Model model,int uid) {
+		 * logger.info("BoardController chkUserIdQna()" + new Date());
+		 * 
+		 * UserDto user = us.userInfo(uid); model.addAttribute("userInfo", user);
+		 * 
+		 * return "otoBbsWrite"; }
+		 */
 	
 	@RequestMapping(value = "otoBbsWriteAf.do", method = RequestMethod.POST)
 	public String otoBbsWriteAf(ContentDto dto) {

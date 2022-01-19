@@ -1,5 +1,9 @@
+<%@page import="mul.camp.a.dto.UserDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	UserDto user = (UserDto)request.getAttribute("userInfo");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +25,7 @@
 			<tr>
 				<th>아이디</th>
 				<td>
-					<input type="text" name="id" size="70px" value="" readonly="readonly">
+					<input type="text" name="id" size="70px" value="<%=user.getId() %>" readonly="readonly">
 				</td>
 				</tr>
 				<tr>
@@ -57,7 +61,7 @@
 $(".custom-input").on("change", function() {
 	let fileName = $(this).val().split("\\").pop();
 	$(this).siblings(".custom-input").addClass("selected").html(fileName);
-});
+});	// 이름을 바꿔서 넘겨줌.
 
 </script>
 
