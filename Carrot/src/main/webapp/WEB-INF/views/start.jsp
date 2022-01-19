@@ -1,5 +1,11 @@
+<<<<<<< HEAD:Carrot/src/main/webapp/WEB-INF/views/start.jsp
 <%@page import="mul.camp.a.dto.UserDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+=======
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+>>>>>>> 57d20da7271de3142a6d039d60fe35bee087355d:Carrot/src/main/webapp/WEB-INF/views/test.jsp
 <!DOCTYPE html>
 <%
 // session에서 사용자 정보를 산출
