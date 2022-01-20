@@ -61,4 +61,11 @@
     location = #{total}
     
     </select>
+    
+    <!-- 관리자 계정인지 확인 -->
+    <select id="chkAdmin" parameterType="int" resultType="int">
+        SELECT count(*)
+        FROM user
+        WHERE 1 = #{uid}
+    </select>
 </mapper>

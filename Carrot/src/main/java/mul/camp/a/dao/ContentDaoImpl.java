@@ -20,7 +20,8 @@ public class ContentDaoImpl implements ContentDao {
     private final static String NAMESPACE_UPDATE_CONTENT = NAMESPACE + "updateContent";
     private final static String NAMESPACE_DELETE_CONTENT = NAMESPACE + "deleteContent";
     private final static String NAMESPACE_GET_IMG_LIST = NAMESPACE + "getImg";
-
+    private final static String NAMESPACE_GET_FILE_LIST = NAMESPACE + "fileContent";
+    
     @Autowired
     private SqlSession session;
 
@@ -64,6 +65,12 @@ public class ContentDaoImpl implements ContentDao {
     public int deleteContent(int cid) {
         
         return session.delete(NAMESPACE_DELETE_CONTENT, cid);
+    }
+    
+    //qna 문의사항 업로드용
+    @Override
+    public int fileContent(ContentDto dto) {
+    	return session.insert(NAMESPACE_GET_FILE_LIST, dto);
     }
     
 }
