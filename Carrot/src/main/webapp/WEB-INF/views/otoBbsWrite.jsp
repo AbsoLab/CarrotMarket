@@ -159,7 +159,7 @@ overflow-y:hidden;
 		
 		<div class="input-group">
 			<span class="input-group-text">문의 내용</span>
-			<textarea class="form-control" rows="15" aria-label="With textarea"></textarea>
+			<textarea class="form-control" name="content"rows="15" aria-label="With textarea"></textarea>
 		</div>
 		<div class="mb-3" style="margin-top:15px;">
 			<input class="form-control" type="file" name="uploadFile" id="formFile">
