@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="user">
+
+<insert id="adduser" parameterType="mul.camp.a.dto.UserDto">
+	INSERT INTO user( ID, PW, NAME, BIRTHDATE, EMAIL, PHONE, LOCATION, UID)
+	VALUES( #{id}, #{pwd}, #{name}, #{birthdate+1}, #{email}, #{phone}, #{location}, (select case count(*) when 0 then 1 else max(uid) + 1 end))
+</insert>
+
+<!-- parameterType : Java의 데이터를 가져와서  Sql에 저장 =해당 타입 값  -->
+<!-- resultType : Sql에 데이터를 가져와 저장 해당 타입에 저장 =해당 타입 값 -->
+<!-- java.lang.Stirng = String // java.lang.Integer = Interger -->
+<select id="idchk" parameterType="String" resultType="Integer">
+	<!-- SQL값을 가져오기-->
+	<!-- SQL 멤버 테이블에서 ID(#ID) 값을 비교해서 ID이 중복될때 카운트 숫자값 표현-->
+	SELECT COUNT(*)
+	FROM user
+	WHERE ID=#{id}
+</select>
+
+</mapper>

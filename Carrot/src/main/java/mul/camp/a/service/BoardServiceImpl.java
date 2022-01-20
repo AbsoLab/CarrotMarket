@@ -63,6 +63,13 @@ public class BoardServiceImpl implements BoardService {
         
         return contentDao.deleteContent(cid) > 0;
     }
+    
+    // 글삭제 시 안에있는댓글도 삭제
+    @Override
+    public boolean deleteContentReply(int cid) {
+        
+        return replyDao.deleteContentReply(cid) > 0;
+    }
 
     @Override
     public boolean writeReply(ReplyDto dto) {
@@ -109,5 +116,11 @@ public class BoardServiceImpl implements BoardService {
 	public ReplyDto getReply(int rid) {
 		ReplyDto dto = replyDao.getReply(rid);
 		return dto;
+	}
+	
+	//qna 문의사항 업로드용
+	@Override
+	public boolean fileContent(ContentDto dto) {
+		return contentDao.fileContent(dto) > 0;
 	}
 }

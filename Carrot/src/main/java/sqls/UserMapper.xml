@@ -5,9 +5,9 @@
 <mapper namespace="User">
 
 	<!-- 로그인. 노지수작성 -->
-	<select id="getUserId" parameterType="mul.camp.a.dto.UserDto" resultType="mul.camp.a.dto.UserDto">
+	<select id="getUserId" parameterType="String" resultType="mul.camp.a.dto.UserDto">
 		SELECT * FROM user
-		WHERE id=#{id} AND pw=#{pw}
+		WHERE id=#{id}
 	</select>
 	
     <insert id="addUser" parameterType="mul.camp.a.dto.UserDto">
@@ -33,6 +33,7 @@
     <delete id="deleteUser" parameterType="int">
         DELETE FROM user
         WHERE uid=#{uid}
+        
     </delete>
 
     <select id="getUser" parameterType="int" resultType="mul.camp.a.dto.UserDto">
@@ -60,5 +61,12 @@
     phone = #{total} or
     location = #{total}
     
+    </select>
+    
+    <!-- 관리자 계정인지 확인 -->
+    <select id="chkAdmin" parameterType="int" resultType="int">
+        SELECT count(*)
+        FROM user
+        WHERE 1 = #{uid}
     </select>
 </mapper>

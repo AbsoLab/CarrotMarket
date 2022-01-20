@@ -29,4 +29,7 @@ public interface UserDao {
     
     // 통합 검색으로 유저정보 반환
     public List<UserDto> getTotal(String total);
+    
+    // 관리자 계정 확인
+    public int chkAdmin(int uid);
 }

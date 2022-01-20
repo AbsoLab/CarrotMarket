@@ -1,0 +1,146 @@
+@charset "UTF-8";
+#whiteOneFrame{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: auto;
+	margin: 25px;
+	border-radius: 40px;
+	background-color: white;
+}
+#mainFrame{
+	width: 1050px;
+	height: auto;
+	margin: 15px 0px;
+	padding: 20px;
+	border-radius: 25px;
+}
+h2{color:rgb(33, 153, 33);}
+#upAndDel{
+	display: flex;
+	justify-content: right;
+	align-items: center;
+	padding: 5px 10px;
+	height: 40px;
+}
+#contenttitleFrame{
+	display: flex;
+	justify-content: left;
+	margin: 10px 0x;
+	padding: 5px 10px;
+	border: 2px solid orange;
+	border-bottom:1px solid orange;
+	border-radius: 8px 8px 0px 0px;
+}
+#ContentFrame{
+	display: flex;
+	justify-content: left;
+	margin: 10px 0x;
+	padding: 5px 10px;
+	border: 2px solid orange;
+	border-top:1px solid orange;
+	border-radius: 0px 0px 8px 8px;
+}
+#CtitleFrame{
+	display: flex;
+	justify-content: left;
+	margin: 10px 0x;
+	padding: 5px 10px;
+	border: 2px solid orange;
+	border-bottom: none;
+	border-top: none;
+}
+.writeinfo{
+	width: 80px;
+	margin-right: 10px;
+	padding: 0px 5px;
+	text-align: left;
+	border-right: 1px solid orange;
+}
+.contentinfo{
+	width: 900px;
+	text-align: left;
+	padding: 0px 5px;
+}
+#Ccontentframe{
+	width: 900px;
+	height: 400px;
+	text-align: left;
+	padding: 0px 5px;
+}
+.ContentFrame{
+	margin: 10px 0x;
+	padding: 5px 10px;
+	border: 1px solid orange;
+}
+#replyFrame{
+	margin-top: 30px;
+}
+#replytitle{
+	text-align: left;
+	margin-left: 10px;
+}
+#replycontent{
+	width: 650px;
+	height: 30px;
+	text-align: left;
+	padding: 0px 5px;
+}
+#Rwriteframetop{
+	margin: 10px 0x;
+	padding: 5px;
+	border: 2px solid orange;
+	border-bottom: none;
+	border-radius: 8px 8px 0px 0px;
+}
+.Rwriteframe{
+	display: flex;
+	justify-content: space-between;
+	margin: 0px 0x 10px 0px;
+	padding: 5px 10px;
+	border: 2px solid orange;
+	border-bottom: none;
+	border-top: none;
+}
+#UpDelReply{
+	width: 115px;
+}
+#Rwriteinfo{
+	width: 200px;
+	margin-right: 10px;
+	padding: 0px 5px;
+	text-align: left;
+	border-right: 1px solid orange;
+}
+#bottomBtnframe{
+	display: flex;
+	justify-content: space-between;
+	border: 2px solid orange;
+	border-top: none;
+	border-radius: 0px 0px 8px 8px;
+}
+#listBtnframe{
+	display: flex;
+	justify-content: space-between;
+}
+#listBtn{
+	width:70px;
+	margin: 5px 10px 5px 20px;
+	border: 1px solid green;
+	border-radius: 3px;
+	background-color: orange;
+}
+#replyBtn{
+	margin: 5px 10px 5px 20px;
+	border: 1px solid green;
+	border-radius: 3px;
+	background-color: orange;
+}
+.btnDiv{
+	margin-left: 10px;
+	border: 1px solid green;
+	border-radius: 3px;
+	background-color: rgb(72, 214, 143);
+}
+a{text-decoration:none; color: gray;} 
+

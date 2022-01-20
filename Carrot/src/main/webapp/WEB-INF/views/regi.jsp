@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -50,32 +50,39 @@ select{  width :90px;  height:35px;  font-size:19px; }
 		<p id="namecheck" style="font-size: 12px"></p><br><br></td></tr>
 		
 <!-- 생년월일 화면 테이블   -->			
-	<tr><th valign="top" style="padding-left:100px; padding-right:40px; font-weight: bold; font-size: 25px; color: rgb(230, 126, 34); ">생년월일</th>
-	<td><input type="hidden" name="birthdate" id="birthdate">
 	
-	<!-- Year   -->		
+     
+
+  
+	<tr><th valign="top" style="padding-left:100px; padding-right:40px; font-weight: bold; font-size: 25px; color: rgb(230, 126, 34); ">생년월일</th>
+
+	<td><input type="date" name="birthdate" id="birthdate"><br>
+	<!--Year
+		<td><input type="hidden" name="birthdate" id="birthdate">  		
 	<input type="hidden" name="birthdate" id="birthdate">
 		<input type="text" name="yy" id="yy" size="10">&nbsp년 &nbsp&nbsp
 	
-	<!-- Month   -->
+	Month  
 		<select id="mm" class="mm" aria-labe="월"> 
 			<option value="">월</option>
-		    <option value="01">1</option>
-		    <option value="02">2</option>
-		    <option value="03">3</option>
-		    <option value="04">4</option>
-		    <option value="05">5</option>
-		    <option value="06">6</option>
-		    <option value="07">7</option>
-		    <option value="08">8</option>
-		    <option value="09">9</option>
+		    <option value="01">01</option>
+		    <option value="02">02</option>
+		    <option value="03">03</option>
+		    <option value="04">04</option>
+		    <option value="05">05</option>
+		    <option value="06">06</option>
+		    <option value="07">07</option>
+		    <option value="08">08</option>
+		    <option value="09">09</option>
 		    <option value="10">10</option>
 		    <option value="11">11</option>
 		    <option value="12">12</option>
-	   	</select> &nbsp월&nbsp&nbsp
+	   	</select> &nbsp월&nbsp&nbsp 
 	
 	<!-- Day   -->  
-		<input type="text" name="dd" id="dd" size="2">&nbsp 일 &nbsp&nbsp
+		<!-- <input type="text" name="dd" id="dd" size="2">&nbsp 일 &nbsp&nbsp -->
+	<tr><th valign="top" style="padding-left:100px; padding-right:40px; font-weight: bold; font-size: 25px; color: rgb(230, 126, 34); ">생년월일</th>
+	<td><input type="date" name="birthdate" id="birthdate">
 		
 	<!-- 체크 출력   -->
 		<p id="datecheck" style="font-size: 12px"></p><br><br></td></tr>
@@ -177,12 +184,10 @@ select{  width :90px;  height:35px;  font-size:19px; }
 		// 지역, 전화번호, 날짜 = 따로 입력 받은 부분 합치기
 		let arealocal =(($("#area").val())+($("#local").val()));
 		let pt = (($("#p1").val())+'-'+($("#p2").val())+'-'+($("#p3").val()));
-		let date = new Date($("#yy").val(),$("#mm").val()-1,$("#dd").val());
 		
 		// 값 넣기
 		$("input#phone").val(pt);
 		$("input#location").val(arealocal);
-		$("input#birthdate").val(date);
 		
 		// 체크
 		let pwcheck = false;
@@ -219,19 +224,9 @@ select{  width :90px;  height:35px;  font-size:19px; }
 				namecheck=true;
 			}
 			
-			if((1900>($("#yy").val())) || (($("#yy").val())>((new Date()).getFullYear()))){
+			if($("#birthdate").val()==''){
 				$("#datecheck").css("color", "#ff0000");
-				$("#datecheck").html("0000년을 잘못 입력");
-				datecheck=false;
-			}
-			else if((1>($("#dd").val())) || (($("#dd").val())>31)){
-				$("#datecheck").css("color", "#ff0000");
-				$("#datecheck").html("00일을 잘못 입력");
-				datecheck=false;
-			}
-			else if(($("#mm").val())==''){
-				$("#datecheck").css("color", "#ff0000");
-				$("#datecheck").html("월을 선택해주세요");
+				$("#datecheck").html("생년월일을 선택해주세요");
 				datecheck=false;
 			}
 			else{

@@ -32,4 +32,7 @@ public interface UserService {
 
      // 유저 검색
      public List<UserDto> getSearchList(String search);
+     
+     // 관리자 확인
+     public int chkAdmin(int uid);
 }

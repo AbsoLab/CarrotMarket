@@ -27,7 +27,7 @@
     </update>
 
     <delete id="deleteContent" parameterType="int">
-        DELETE FROM content
+        DELETE FROM content        
         WHERE cid=#{cid}
     </delete>
 
@@ -36,4 +36,10 @@
         SELECT src FROM img
         WHERE cid=#{cid}
     </select>
+    
+    <!-- qna 문의사항 파일업로드 -->
+    <insert id="fileContent" parameterType="mul.camp.a.dto.ContentDto">
+    	INSERT INTO content(title, content, uid, bid, filename)
+    	VALUE(#{title},#{content},#{uid},#{bid},#{fileName})
+    </insert>
 </mapper>

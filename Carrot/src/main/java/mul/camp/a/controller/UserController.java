@@ -25,9 +25,9 @@ public class UserController {
 	@RequestMapping(value = "userInfo.do", method = RequestMethod.GET)
 	public String userinfo(Model model, HttpServletRequest req) {
 		logger.info("UserController userinfo()" + new Date());
-		//UserDto  dto = (UserDto)req.getSession().getAttribute("login");//세션값으로 uid 불러오기
-		//int uid = dto.getUid();
-		int uid = 1; //test 용
+		UserDto  dto = (UserDto)req.getSession().getAttribute("login");//세션값으로 uid 불러오기
+		int uid = dto.getUid();
+		
 		UserDto user = service.userInfo(uid);
 		//System.out.println(user.toString());
 		model.addAttribute("user",user);

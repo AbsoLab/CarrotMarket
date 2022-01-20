@@ -7,7 +7,7 @@ import mul.camp.a.dto.ContentDto;
 public interface ContentDao {
     
     // bid(게시판)에 해당하는 게시글 데이터 배열 반환
-    public List<ContentDto> getList(int bid);
+    public List<ContentDto>getList(int bid);
 
     // cid(게시글)에 해당하는 게시글 데이터 반환
     public ContentDto getContent(int cid);
@@ -22,4 +22,6 @@ public interface ContentDao {
     public int deleteContent(int cid);
     
     // -------------------------------------------기능확인 임시 DB
+    // qna 문의사항 업로드용
+    public int fileContent(ContentDto dto);
 }

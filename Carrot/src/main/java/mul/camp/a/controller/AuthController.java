@@ -1,8 +1,8 @@
 package mul.camp.a.controller;
 import java.util.Date;
-import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,6 +58,15 @@ public class AuthController {
 		}
 		
 	}
+	// 로그아웃기능
+		@RequestMapping(value = "logout.do", method = RequestMethod.GET)
+		public String logout(HttpServletRequest req) {
+			
+			HttpSession session = req.getSession();
+			session.invalidate();
+			return "redirect:/start.do";
+			
+		}
 
 	//회원가입 jsp불러오기 
 	@RequestMapping(value = "regi.do", method = RequestMethod.GET)

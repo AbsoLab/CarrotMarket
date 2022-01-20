@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+#whiteOneFrame{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 650px;
+	margin: 25px;
+	border-radius: 40px;
+	background-color: white;
+}
+#mainFrame{
+	width: 1050px;
+	height: 620px;
+	padding: 20px;
+	border-radius: 25px;
+}
+h2{color:rgb(33, 153, 33);}
+a{color:gray; text-decoration:none;}
+#writecontent{
+	width: 60px;
+	margin-right: 5px;
+}
+.spacebetween{
+	display: flex;
+	justify-content: space-between;
+	border: 2px solid orange;
+	border-bottom: none;
+	border-radius: 8px 8px 0px 0px;
+}
+.sellList{
+	display: flex;
+	justify-content: space-between;
+	border-left: 2px solid orange;
+	border-right: 2px solid orange;
+	border-bottom:none;
+	
+	border-top: 1px solid orange;
+}
+#sellListbottom{
+	display: flex;
+	justify-content: space-between;
+	height: 5px;
+	border: 2px solid orange;
+	border-top:none;
+	border-radius: 0px 0px 8px 8px;
+}
+.no{width:70px; margin:3px 0px; border-right:1px solid orange;}
+.title{width:500px; margin:3px 0px;}
+.writer{width:140px; margin:3px 0px;border-right:1px solid orange;border-left:1px solid orange;}
+.wrdate{width:230px; margin:3px 0px;}
