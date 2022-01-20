@@ -65,11 +65,11 @@
                     </li>
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                           href="#" style="padding: 12px 0px;">공지사항</a>
+                           href="NoticeBoard.do?bid=1" style="padding: 12px 0px;">공지사항</a>
                     </li>
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                           href="#contact" style="padding: 12px 0px;">문의사항</a>
+                           href="qnaBoard.do?bid=0" style="padding: 12px 0px;">문의사항</a>
                     </li>
                 </ul>
             </div>
@@ -87,11 +87,11 @@
                                    style="padding: 10px 0px;">판매게시판</a>
                             </li>
                             <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" href="#"
+                                <a class="u-button-style u-nav-link" href="NoticeBoard.do?bid=1"
                                    style="padding: 10px 0px;">공지사항</a>
                             </li>
                             <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" href="contact"
+                                <a class="u-button-style u-nav-link" href="qnaBoard.do?bid=0"
                                    style="padding: 10px 0px;">문의사항</a>
                             </li>
                         </ul>
