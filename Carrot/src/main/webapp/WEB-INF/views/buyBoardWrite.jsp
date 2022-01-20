@@ -37,7 +37,7 @@ UserDto user = (UserDto)request.getSession().getAttribute("login");//test를 위
 
 <header class="u-clearfix u-header u-header" id="sec-75b6">
     <div class="u-clearfix u-sheet u-sheet-1">
-        <a href="https://nicepage.com/website-templates" class="u-image u-logo u-image-1" data-image-width="354"
+        <a href="start.do" class="u-image u-logo u-image-1" data-image-width="354"
            data-image-height="255">
             <img src="./images/logo.png" class="u-logo-image u-logo-image-1">
         </a>
@@ -69,15 +69,15 @@ UserDto user = (UserDto)request.getSession().getAttribute("login");//test를 위
                     </li>
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                           href="#" style="padding: 12px 0px;">판매게시판</a>
+                           href="sellBoard.do?bid=3" style="padding: 12px 0px;">판매게시판</a>
                     </li>
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                           href="#" style="padding: 12px 0px;">공지사항</a>
+                           href="NoticeBoard.do?bid=1" style="padding: 12px 0px;">공지사항</a>
                     </li>
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                           href="#contact" style="padding: 12px 0px;">문의사항</a>
+                           href="qnaBoard.do?bid=0" style="padding: 12px 0px;">문의사항</a>
                     </li>
                 </ul>
             </div>
@@ -87,19 +87,19 @@ UserDto user = (UserDto)request.getSession().getAttribute("login");//test를 위
                         <div class="u-menu-close"></div>
                         <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
                             <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" href="#"
+                                <a class="u-button-style u-nav-link" href="buyBoard.do?bid=2"
                                    style="padding: 10px 0px;">구매게시판</a>
                             </li>
                             <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" href="#"
+                                <a class="u-button-style u-nav-link" href="sellBoard.do?bid=3"
                                    style="padding: 10px 0px;">판매게시판</a>
                             </li>
                             <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" href="#"
+                                <a class="u-button-style u-nav-link" href="NoticeBoard.do?bid=1"
                                    style="padding: 10px 0px;">공지사항</a>
                             </li>
                             <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" href="contact"
+                                <a class="u-button-style u-nav-link" href="qnaBoard.do?bid=0"
                                    style="padding: 10px 0px;">문의사항</a>
                             </li>
                         </ul>
@@ -109,7 +109,11 @@ UserDto user = (UserDto)request.getSession().getAttribute("login");//test를 위
             </div>
         </nav>
         <span class="u-border-2 u-border-black u-file-icon u-icon u-icon-circle u-spacing-5 u-text-black u-icon-1">
-            <img src="./images/8.png" data-href="#"></span>
+                        <img src="./images/8.png" data-href=<% if(user != null){ %>
+                                                    "userInfo.do"
+                                                <%}else{%>
+                                                    "login.do"
+                                                <%}%>></span>
     </div>
 </header>
 

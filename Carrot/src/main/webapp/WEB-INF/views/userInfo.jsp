@@ -31,7 +31,7 @@
 
 <header class="u-clearfix u-header u-header" id="sec-75b6">
     <div class="u-clearfix u-sheet u-sheet-1">
-        <a href="https://nicepage.com/website-templates" class="u-image u-logo u-image-1" data-image-width="354"
+        <a href="start.do" class="u-image u-logo u-image-1" data-image-width="354"
            data-image-height="255">
             <img src="./images/logo.png" class="u-logo-image u-logo-image-1">
         </a>
@@ -59,19 +59,19 @@
                 <ul class="u-nav u-spacing-30 u-unstyled u-nav-1">
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                           href="#" style="padding: 12px 0px;">구매게시판</a>
+                           href="buyBoard.do?bid=2" style="padding: 12px 0px;">구매게시판</a>
                     </li>
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                           href="#" style="padding: 12px 0px;">판매게시판</a>
+                           href="sellBoard.do?bid=3" style="padding: 12px 0px;">판매게시판</a>
                     </li>
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                           href="#" style="padding: 12px 0px;">공지사항</a>
+                           href="NoticeBoard.do?bid=1" style="padding: 12px 0px;">공지사항</a>
                     </li>
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                           href="#contact" style="padding: 12px 0px;">문의사항</a>
+                           href="qnaBoard.do?bid=0" style="padding: 12px 0px;">문의사항</a>
                     </li>
                 </ul>
             </div>
@@ -81,19 +81,19 @@
                         <div class="u-menu-close"></div>
                         <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
                             <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" href="#"
+                                <a class="u-button-style u-nav-link" href="buyBoard.do?bid=2"
                                    style="padding: 10px 0px;">구매게시판</a>
                             </li>
                             <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" href="#"
+                                <a class="u-button-style u-nav-link" href="sellBoard.do?bid=3"
                                    style="padding: 10px 0px;">판매게시판</a>
                             </li>
                             <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" href="#"
+                                <a class="u-button-style u-nav-link" href="NoticeBoard.do?bid=1"
                                    style="padding: 10px 0px;">공지사항</a>
                             </li>
                             <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" href="contact"
+                                <a class="u-button-style u-nav-link" href="qnaBoard.do?bid=0"
                                    style="padding: 10px 0px;">문의사항</a>
                             </li>
                         </ul>
@@ -103,7 +103,11 @@
             </div>
         </nav>
         <span class="u-border-2 u-border-black u-file-icon u-icon u-icon-circle u-spacing-5 u-text-black u-icon-1">
-            <img src="./images/8.png" data-href="#"></span>
+                        <img src="./images/8.png" data-href=<% if(user != null){ %>
+                                                    "userInfo.do"
+                                                <%}else{%>
+                                                    "login.do"
+                                                <%}%>></span>
     </div>
 </header>
 
@@ -135,7 +139,7 @@
 
                         <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-block-30aa-29">
                             <div class="u-container-layout u-block-30aa-30">
-                                <h3 class="u-align-center u-text u-text-default u-block-30aa-31">회원가입</h3>
+                                <h3 class="u-align-center u-text u-text-default u-block-30aa-31">당근 나라 회원 정보수정</h3>
 
                                 <style type="text/css">
                                     body{
@@ -166,7 +170,7 @@
                                 <body>
 
                                 
-                                        <h3 align="center">당근 나라 회원 정보수정</h3>
+                                        
                                         <form class="form-horizontal" id="frm" action="updateUserInfo.do" method="post">
 
                                             <div class="form-group">
@@ -205,10 +209,15 @@
 
                                                 <input type="hidden" id ="email" name="email">
                                                 <div  class="form-control">
-                                                    <input  type="text" id = "mail_id" value="<%=user.getEmail().split("@")[0]%>">
+                                                <%
+                                                	String email = user.getEmail();
+                                                	if(email != null){
+                                                		if(email.contains("@")){
+                                                %>
+                                                	<input  type="text" id = "mail_id" value="<%=user.getEmail().split("@")[0]%>">
                                                     @
                                                     <input  type="text" id = "mail_domain" disabled value="<%=user.getEmail().split("@")[1]%>">
-                                                    <select id = "domain">
+                                                	<select id = "domain">
                                                         <option value="1">직접입력</option>
                                                         <option value="naver.com" selected>naver.com</option>
                                                         <option value="daum.net">daum.net</option>
@@ -225,6 +234,15 @@
                                                         <option value="hanmir.com">hanmir.com</option>
                                                         <option value="paran.com">paran.com</option>
                                                     </select>
+                                                <% 
+                                                		}else{
+                                                %>			
+                                                		<input name="email" value="<%=user.getEmail()%>">
+                                                <% 			
+                                                		}
+                                                	}
+                                                %>
+                                                    
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -249,7 +267,9 @@
                                                 <label for="location" class="col-sm-2 control-label">주소</label>
                                                 <input type="hidden" id="location" name="location">
                                                 <div class="form-control">
-                                                    <select id="local1">
+                                                
+                                          		<input name="location" type="text" value="<%=user.getLocation()%>">
+                                                   <%--  <select id="local1">
                                                         <option value="서울특별시">서울특별시</option>
                                                         <option value="인천광역시">인천광역시</option>
                                                         <option value="대전광역시">대전광역시</option>
@@ -267,14 +287,15 @@
                                                         <option value="경상남도">경상남도</option>
                                                         <option value="제주도">제주도</option>
                                                     </select>
-                                                    <input type="text" id="local2" placeholder="군/구를 작성해주세요" value="<%=user.getLocation().split("/")[1]%>">
+                                                    <input type="text" id="local2" placeholder="군/구를 작성해주세요" value="<%=user.getLocation().split("/")[1]%>"> --%>
                                                 </div>
                                             </div>
                                             <div class="form-group" align="center">
 
                                                 <button type="button" class="btn btn-warning btn-lg" style="background-color: orange; color: white;" onclick="userUpdate()">회원정보 수정</button>
                                                 <button type="button" class="btn btn-warning btn-lg" style="background-color: orange; color: white;" onclick="userDelete()">회원탈퇴</button>
-
+                                                <br>
+												<a href="logout.do">로그아웃</a>
                                             </div>
                                         </form>
                                
@@ -371,7 +392,17 @@
 
                                         $("#local1").val("<%=user.getLocation().split("/")[0]%>").prop("selected", true);
 
-                                        $("#domain").val("<%=user.getEmail().split("@")[1]%>").prop("selected", true);
+                                        <%
+                                     
+                                        	if(email != null){
+                                        		if(email.contains("@")){
+                                        			%>
+                                        			 $("#domain").val("<%=user.getEmail().split("@")[1]%>").prop("selected", true);
+                                        			 <%
+                                        		}
+                                        	}
+                                        %>
+                                        
 
 
                                     })
