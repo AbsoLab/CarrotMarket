@@ -54,9 +54,7 @@ select{  width :90px;  height:35px;  font-size:19px; }
      
 
   
-	<tr><th valign="top" style="padding-left:100px; padding-right:40px; font-weight: bold; font-size: 25px; color: rgb(230, 126, 34); ">생년월일</th>
-
-	<td><input type="date" name="birthdate" id="birthdate"><br>
+	
 	<!--Year
 		<td><input type="hidden" name="birthdate" id="birthdate">  		
 	<input type="hidden" name="birthdate" id="birthdate">
