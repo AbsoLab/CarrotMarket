@@ -1,3 +1,4 @@
+<%@page import="mul.camp.a.dto.UserDto"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="mul.camp.a.dto.ContentDto"%>
 <%@page import="java.util.List"%>
@@ -6,6 +7,7 @@
 <%
 List<ContentDto> sellBbs = (List<ContentDto>)request.getAttribute("sellBoard");
 SimpleDateFormat sdformat = new SimpleDateFormat("yyyy/MM/dd");
+UserDto user = (UserDto)request.getSession().getAttribute("login");
 %>
 <html style="font-size: 16px;">
 <head>
@@ -18,7 +20,7 @@ SimpleDateFormat sdformat = new SimpleDateFormat("yyyy/MM/dd");
     <title>당근나라</title>
     <link rel="stylesheet" href="./css/buy.css" media="screen">
     <link rel="stylesheet" href="./css/nicepage.css" media="screen">
-    <link rel="stylesheet" href="./css/sellBoardList.css?after">
+    <link rel="stylesheet" href="./css/sellBoardList.css?afters">
     <script class="u-script" type="text/javascript" src="./jquery/jquery.js" ></script>
     <script class="u-script" type="text/javascript" src="./jquery/nicepage.js" ></script>
     <meta name="generator" content="Nicepage 4.2.6, nicepage.com">
@@ -97,7 +99,12 @@ SimpleDateFormat sdformat = new SimpleDateFormat("yyyy/MM/dd");
             </div>
         </nav>
         <span class="u-border-2 u-border-black u-file-icon u-icon u-icon-circle u-spacing-5 u-text-black u-icon-1">
-            <img src="./images/8.png" data-href="userInfo.do"></span>
+            <img src="./images/8.png" data-href=<% if(user != null){ %>
+													"userinfo.do"
+												<%}else{%>
+													"login.do"
+												<%}%>></span>
+            
     </div>
 </header>
 
@@ -110,7 +117,15 @@ SimpleDateFormat sdformat = new SimpleDateFormat("yyyy/MM/dd");
 					
 					<h2>판매게시판</h2>
 					<div align="right">
-						<div id="writecontent"><a href="sellbbswrite.do">글쓰기</a></div>
+						<div id="writecontent">
+							<a <% if(user != null){ %>
+									href="sellbbswrite.do"
+								<%}else{%>
+									href="login.do"
+								<%}%>>
+								글쓰기
+							</a>
+						</div>
 					</div>
 					
 					<div class="spacebetween">
@@ -133,7 +148,15 @@ SimpleDateFormat sdformat = new SimpleDateFormat("yyyy/MM/dd");
 					
 						<div class="sellList">
 							<div class="no"><%=i+1 %></div>
-							<div class="title" align="left"><a href="sellbbsdetail.do?cid=<%=bbs.getCid()%>&uid=<%=bbs.getUid()%>"><%=bbs.getTitle() %></a></div>
+							<div class="title" align="left">
+								<a <% if(user != null){ %>
+										href="sellbbsdetail.do?cid=<%=bbs.getCid()%>&uid=<%=bbs.getUid()%>"
+									<%}else{%>
+										href="login.do"
+									<%}%>>
+									<%=bbs.getTitle() %>
+								</a>
+							</div>
 							<div class="writer"><%=bbs.getId() %></div>
 							<div class="wrdate"><%= sdformat.format(bbs.getWritedate())%></div>
 						</div>
