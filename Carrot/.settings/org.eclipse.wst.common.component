@@ -6,6 +6,7 @@
     
     <wb-module deploy-name="Carrot-0.0.1-SNAPSHOT">
                                                 
+<<<<<<< HEAD
         
         
         
@@ -14,21 +15,37 @@
                                                 
         
         
+=======
         
         
+        
+>>>>>>> 14ae5b72f0507dbac6d1bc1158d224e845a66a6f
+        
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+                                                
+        
+<<<<<<< HEAD
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
                                                 
         
+=======
+>>>>>>> 14ae5b72f0507dbac6d1bc1158d224e845a66a6f
         
         
         
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+<<<<<<< HEAD
                                         
         
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/annotations"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+=======
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/annotations"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-test-sources/test-annotations"/>
+>>>>>>> 14ae5b72f0507dbac6d1bc1158d224e845a66a6f
                                                 
         
         

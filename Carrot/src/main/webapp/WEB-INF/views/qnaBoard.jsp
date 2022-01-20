@@ -314,7 +314,9 @@ function enterkey() {
 
 //1:1문의사항
 function otoQna() {
-	location.href= "otoBbsWrite.do?uid=<%=user.getUid()%>"; // 나중에 로그인 정보에서 받은 uid로 수정해야함.
+	location.href= "otoBbsWrite.do?uid=<%if(user==null) { %>1 <%}else {%> <%=user.getId()%> <%}%>"
+			
+	; // 나중에 로그인 정보에서 받은 uid로 수정해야함.
 		
 };
 
