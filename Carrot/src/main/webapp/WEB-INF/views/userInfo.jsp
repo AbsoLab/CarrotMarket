@@ -245,24 +245,42 @@
                                                     
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="phone" class="col-sm-2 control-label">핸드폰</label>
-                                                <input type="hidden" name ="phone" id="phone">
-                                                <div  class="form-control">
-                                                    <select id= phone1>
-                                                        <option selected="selected" value="010">010</option>
-                                                        <option value="011">011</option>
-                                                        <option value="016">016</option>
-                                                        <option value="017">017</option>
-                                                        <option value="018">018</option>
-                                                        <option value="019">019</option>
-                                                    </select>
-                                                    -
-                                                    <input type="text" id ="phone2" maxlength="4" size="4" value="<%=user.getPhone().split("-")[1]%>">
-                                                    -
-                                                    <input type="text" id ="phone3" maxlength="4" size="4" value="<%=user.getPhone().split("-")[2]%>">
+                                            <%
+                                            	String phone = user.getPhone();
+                                            	if(phone != null && phone != ""){
+                                            		
+                                            	%>
+                                            		<div class="form-group">
+                                                    <label for="phone" class="col-sm-2 control-label">핸드폰</label>
+                                                    <input type="hidden" name ="phone" id="phone">
+                                                    <div  class="form-control">
+                                                        <select id= phone1>
+                                                            <option selected="selected" value="010">010</option>
+                                                            <option value="011">011</option>
+                                                            <option value="016">016</option>
+                                                            <option value="017">017</option>
+                                                            <option value="018">018</option>
+                                                            <option value="019">019</option>
+                                                        </select>
+                                                        -
+                                                        <input type="text" id ="phone2" maxlength="4" size="4" value="<%=user.getPhone().split("-")[1]%>">
+                                                        -
+                                                        <input type="text" id ="phone3" maxlength="4" size="4" value="<%=user.getPhone().split("-")[2]%>">
+                                                    </div>
                                                 </div>
-                                            </div>
+                                                
+                                               <% 
+                                            	}else{
+        
+                                            	%>
+                                            		<div class="form-group">
+                                            		<label for="phone" class="col-sm-2 control-label">핸드폰</label>
+                                            		<input class="form-control" type="text" name="phone" value="<%=user.getPhone()%>">
+                                            		</div>
+                                            	<% 	
+                                            	}
+                                            %>
+                                            
                                             <div class="form-group">
                                                 <label for="location" class="col-sm-2 control-label">주소</label>
                                                 <input type="hidden" id="location" name="location">

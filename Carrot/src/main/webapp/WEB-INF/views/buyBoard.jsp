@@ -177,7 +177,11 @@ if (clist == null || clist.size() == 0){
 	 <tr>
 	 	<th><%=i+1 %></th>
 	 	<td>
-	 		<a style="color: orange;" href="buyBoardDetail.do?cid=<%=content.getCid()%>"> <!--상세글로 가기위해 cid 필요-->
+	 		<a style="color: orange;" <% if(user != null){ %>
+                              href="buyBoardDetail.do?cid=<%=content.getCid()%>"
+                           <% }else{ %>
+                              href="login.do"
+                           <% } %>> <!--상세글로 가기위해 cid 필요-->
 	 		<%=content.getTitle()%>
 	 		</a>
 	 	</td>
