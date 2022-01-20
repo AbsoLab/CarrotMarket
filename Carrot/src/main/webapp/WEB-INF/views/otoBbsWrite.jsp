@@ -3,6 +3,7 @@
     pageEncoding="UTF-8"%>
 <%
 	UserDto user = (UserDto)request.getAttribute("userInfo");
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -79,23 +80,33 @@ overflow-y:hidden;
                 </a>
             </div>
             <div class="u-custom-menu u-nav-container">
-                <ul class="u-nav u-spacing-30 u-unstyled u-nav-1">
+               <ul class="u-nav u-spacing-30 u-unstyled u-nav-1">
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                            href="#" style="padding: 12px 0px;">구매게시판</a>
+                            href="buyBoard.do?bid=2" style="padding: 12px 0px;">구매게시판</a>
                     </li>
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                            href="#" style="padding: 12px 0px;">판매게시판</a>
+                            href="sellBoard.do?bid=3" style="padding: 12px 0px;">판매게시판</a>
                     </li>                   
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                            href="#" style="padding: 12px 0px;">공지사항</a>
+                            href="NoticeBoard.do?bid=1" style="padding: 12px 0px;">공지사항</a>
                     </li>
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
                             href="qnaBoard.do?bid=0" style="padding: 12px 0px;">문의사항</a><!-- #contact -->
                     </li>
+                    <%
+                            if (user != null && user.getUid() == 1) {
+                            %>
+                           	<li class="u-nav-item">
+                                <a class="u-button-style u-nav-link" href="contact" style="padding: 10px 0px;">관리자모드</a>
+                            </li>
+                            
+                            <%
+                            }
+                            %>
                 </ul>
             </div>
             <div class="u-custom-menu u-nav-container-collapse">
@@ -126,7 +137,7 @@ overflow-y:hidden;
             </div>
         </nav>
             <span class="u-border-2 u-border-black u-file-icon u-icon u-icon-circle u-spacing-5 u-text-black u-icon-1">
-            <img src="./images/8.png" data-href="admin.do"></span>
+            <img src="./images/8.png" data-href="login.do"></span>
     </div>
 </header>
 	<h1>1:1 문의사항</h1>
