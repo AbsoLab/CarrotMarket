@@ -1,3 +1,4 @@
+<%@page import="mul.camp.a.dto.UserDto"%>
 <%@page import="mul.camp.a.dto.BoardDto"%>
 <%@page import="java.util.List"%>
 <%@page import="mul.camp.a.dto.ContentDto"%>
@@ -6,6 +7,10 @@
 <%
 	List<BoardDto> qna = (List<BoardDto>)request.getAttribute("qna");
 	List<ContentDto> cont = (List<ContentDto>)request.getAttribute("qnaCont");
+
+	// session에서 사용자 정보를 산출
+	 UserDto user = (UserDto)request.getSession().getAttribute("login");
+
 %>
 <!DOCTYPE html>
 <html>
@@ -153,10 +158,17 @@ li {
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
                             href="#" style="padding: 12px 0px;">공지사항</a>
                     </li>
-                    <li class="u-nav-item">
-                        <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                            href="qnaBoard.do?bid=0" style="padding: 12px 0px;">문의사항</a><!-- #contact -->
-                    </li>
+                    <%
+                            if (user != null && user.getUid() == 1) {
+                            %>
+                           	<li class="u-nav-item">
+                                <a class="u-button-style u-nav-link" href="admin.do" style="padding: 10px 0px;">관리자모드</a>
+                            </li>
+                            
+                            <%
+                            }
+                            %>
+
                 </ul>
             </div>
             <div class="u-custom-menu u-nav-container-collapse">
