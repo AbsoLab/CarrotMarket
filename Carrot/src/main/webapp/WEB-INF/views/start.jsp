@@ -90,6 +90,10 @@
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
                             href="qnaBoard.do?bid=0" style="padding: 12px 0px;">문의사항</a><!-- #contact -->
                     </li>
+                    <li class="u-nav-item">
+                        <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
+                            href="#contact" style="padding: 12px 0px;">관리자모드</a>
+                    </li>                    
                 </ul>
             </div>
             <div class="u-custom-menu u-nav-container-collapse">
@@ -113,6 +117,10 @@
                                 <a class="u-button-style u-nav-link" href="contact"
                                                       style="padding: 10px 0px;">문의사항</a>
                             </li>
+                            <li class="u-nav-item">
+                                <a class="u-button-style u-nav-link" href="contact"
+                                                      style="padding: 10px 0px;">관리자모드</a>
+                            </li>                            
                         </ul>
                     </div>
                 </div>
