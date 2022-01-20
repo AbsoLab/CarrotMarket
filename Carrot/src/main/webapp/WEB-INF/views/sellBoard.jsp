@@ -18,14 +18,14 @@ SimpleDateFormat sdformat = new SimpleDateFormat("yyyy/MM/dd");
     <title>당근나라</title>
     <link rel="stylesheet" href="./css/buy.css" media="screen">
     <link rel="stylesheet" href="./css/nicepage.css" media="screen">
-    <link rel="stylesheet" href="./css/sellBoardList.css">
+    <link rel="stylesheet" href="./css/sellBoardList.css?after">
     <script class="u-script" type="text/javascript" src="./jquery/jquery.js" ></script>
     <script class="u-script" type="text/javascript" src="./jquery/nicepage.js" ></script>
     <meta name="generator" content="Nicepage 4.2.6, nicepage.com">
 
 <header class="u-clearfix u-header u-header" id="sec-75b6">
     <div class="u-clearfix u-sheet u-sheet-1">
-        <a href="https://nicepage.com/website-templates" class="u-image u-logo u-image-1" data-image-width="354"
+        <a href="start.do" class="u-image u-logo u-image-1" data-image-width="354"
            data-image-height="255">
             <img src="./images/logo.png" class="u-logo-image u-logo-image-1">
         </a>
@@ -53,11 +53,11 @@ SimpleDateFormat sdformat = new SimpleDateFormat("yyyy/MM/dd");
                 <ul class="u-nav u-spacing-30 u-unstyled u-nav-1">
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                           href="#" style="padding: 12px 0px;">구매게시판</a>
+                           href="buyBoard.do?bid=2" style="padding: 12px 0px;">구매게시판</a>
                     </li>
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                           href="#" style="padding: 12px 0px;">판매게시판</a>
+                           href="sellBoard.do?bid=3" style="padding: 12px 0px;">판매게시판</a>
                     </li>
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
@@ -75,11 +75,11 @@ SimpleDateFormat sdformat = new SimpleDateFormat("yyyy/MM/dd");
                         <div class="u-menu-close"></div>
                         <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
                             <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" href="#"
+                                <a class="u-button-style u-nav-link" href="buyBoard.do?bid=2"
                                    style="padding: 10px 0px;">구매게시판</a>
                             </li>
                             <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" href="#"
+                                <a class="u-button-style u-nav-link" href="sellBoard.do?bid=3"
                                    style="padding: 10px 0px;">판매게시판</a>
                             </li>
                             <li class="u-nav-item">
@@ -97,7 +97,7 @@ SimpleDateFormat sdformat = new SimpleDateFormat("yyyy/MM/dd");
             </div>
         </nav>
         <span class="u-border-2 u-border-black u-file-icon u-icon u-icon-circle u-spacing-5 u-text-black u-icon-1">
-            <img src="./images/8.png" data-href="#"></span>
+            <img src="./images/8.png" data-href="userInfo.do"></span>
     </div>
 </header>
 
@@ -107,28 +107,12 @@ SimpleDateFormat sdformat = new SimpleDateFormat("yyyy/MM/dd");
 
 	<div id="whiteOneFrame">
 			<div id="mainFrame">
-					<!-- <div class="searchDiv">
-						<div>
-							<select id="choice">
-								<option value="title">제목</option>
-								<option value="content">내용</option>
-							</select>
-						</div>
-						<div id="textDiv">
-							<input type="text" id="search" value="" class="textBox">
-						</div>
-						<div id="searchBox">
-							<button type="button" onclick="searchBbs()">검색</button>
-							<div onclick="searchBbs()" style="cursor:pointer;" id="searchIn">검색</div>
-						</div>
-					</div> -->
 					
 					<h2>판매게시판</h2>
 					<div align="right">
 						<div id="writecontent"><a href="sellbbswrite.do">글쓰기</a></div>
 					</div>
-						<!-- attribute = property: 1000px -->
-					<!-- <col width="30"><col width="200"><col width="80"> -->
+					
 					<div class="spacebetween">
 						<div class="no"></div>
 						<div class="title">제목</div>
@@ -136,7 +120,6 @@ SimpleDateFormat sdformat = new SimpleDateFormat("yyyy/MM/dd");
 						<div class="wrdate">작성일</div>
 					</div>
 					
-					<tbody>
 					<%
 					if(sellBbs == null || sellBbs.size() == 0){
 					%>
@@ -154,25 +137,12 @@ SimpleDateFormat sdformat = new SimpleDateFormat("yyyy/MM/dd");
 							<div class="writer"><%=bbs.getId() %></div>
 							<div class="wrdate"><%= sdformat.format(bbs.getWritedate())%></div>
 						</div>
-						
-					
-					
-								<%-- <tr>
-									<th><%=i+1 %></th>			
-									
-									<td>
-										<a href="sellbbsdetail.do?cid=<%=bbs.getCid() %>"><%=bbs.getTitle() %></a>
-									</td>
-									
-									
-									<td><%=bbs.getWritedate()%></td>
-									<td align="center"><%=bbs.getUid() %></td>
-								</tr> --%>
 							 
 					<%
 						}
 					}
 					%>
+					<div id="sellListbottom"></div>
 					
 			
 		</div>
