@@ -27,7 +27,7 @@
     </update>
 
     <delete id="deleteContent" parameterType="int">
-        DELETE FROM content
+        DELETE FROM content        
         WHERE cid=#{cid}
     </delete>
 

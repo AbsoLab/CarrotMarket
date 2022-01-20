@@ -26,8 +26,8 @@ public class ContentDaoImpl implements ContentDao {
     private SqlSession session;
 
     @Override
-    public List<ContentDto> getList(int bid) {
-
+    public List<ContentDto>getList(int bid) {
+    
         return session.selectList(NAMESPACE_GET_LIST, bid);
     }
 

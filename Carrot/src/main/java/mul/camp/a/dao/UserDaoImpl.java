@@ -71,8 +71,6 @@ public class UserDaoImpl implements UserDao {
         return session.selectList(NAMESPACE_GET_USER_LIST);
     }
 
-	
-    
     // 통합 검색으로 유저정보 반환
 	@Override
 	public List<UserDto> getTotal(String total) {

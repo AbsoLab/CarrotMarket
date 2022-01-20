@@ -93,14 +93,4 @@ public class BoardController {
 			}
 			
 		}
-	@RequestMapping(value = "noticeBoard.do", method = RequestMethod.GET)
-	public String bbslist(Model model) {
-		logger.info("BoardController Contentlist() " + new Date());
-		
-		List<ContentDto> list = service.contentList(1);
-		System.out.println(list.toString());
-		model.addAttribute("getList", list);
-		
-		return "noticeBoard";
-	}
 }

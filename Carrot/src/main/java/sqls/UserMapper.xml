@@ -33,6 +33,7 @@
     <delete id="deleteUser" parameterType="int">
         DELETE FROM user
         WHERE uid=#{uid}
+        
     </delete>
 
     <select id="getUser" parameterType="int" resultType="mul.camp.a.dto.UserDto">

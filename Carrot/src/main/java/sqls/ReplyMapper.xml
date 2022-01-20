@@ -25,7 +25,13 @@
         SET content=#{content}
         WHERE rid=#{rid}
     </update>
-
+	
+	<delete id="contentReplydelete" parameterType="int">
+        DELETE FROM reply
+        WHERE cid=#{cid}
+    </delete>
+	
+	
     <delete id="deleteReply" parameterType="int">
         DELETE FROM reply
         WHERE rid=#{rid}

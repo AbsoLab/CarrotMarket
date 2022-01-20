@@ -2,10 +2,14 @@ package mul.camp.a.dao;
 
 import java.util.List;
 
+
 import mul.camp.a.dto.ReplyDto;
 
 public interface ReplyDao {
     
+	//게시글 나릴때 안에 리플 삭제
+    public int deleteContentReply(int cid);
+	
     // cid(게시글)에 해당하는 댓글 데이터 배열 반환
     public List<ReplyDto> getReplyList(int cid);
     

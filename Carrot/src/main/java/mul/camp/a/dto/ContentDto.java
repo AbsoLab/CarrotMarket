@@ -41,6 +41,8 @@ public class ContentDto implements Serializable{
         this.fileName = fileName;
         this.uploadFile = uploadFile;
     }
+    
+    
 
     public ContentDto(int cid, String title, String content, Date writedate, int uid, int bid, List<ReplyDto> reply, String id) {
         this.cid = cid;
