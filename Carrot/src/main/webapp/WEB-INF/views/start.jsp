@@ -90,10 +90,16 @@
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
                             href="qnaBoard.do?bid=0" style="padding: 12px 0px;">문의사항</a><!-- #contact -->
                     </li>
+                    <%
+                            if (user != null && user.getUid() == 1) {
+                            %>
                     <li class="u-nav-item">
                         <a class="u-border-3 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-button-style u-nav-link u-text-active-black u-text-black u-text-hover-custom-color-2"
-                            href="#contact" style="padding: 12px 0px;">관리자모드</a>
+                            href="admin.do" style="padding: 12px 0px;">관리자모드</a>
                     </li>                    
+                    <%
+                            }
+                            %>
                 </ul>
             </div>
             <div class="u-custom-menu u-nav-container-collapse">
@@ -110,17 +116,24 @@
                                                       style="padding: 10px 0px;">판매게시판</a>
                             </li>                               
                             <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" href="#"
+                                <a class="u-button-style u-nav-link" href="noticeBoard.do"
                                                       style="padding: 10px 0px;">공지사항</a>
                             </li>
                             <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" href="contact"
+                                <a class="u-button-style u-nav-link" href="qnaBoard.do"
                                                       style="padding: 10px 0px;">문의사항</a>
                             </li>
-                            <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" href="contact"
-                                                      style="padding: 10px 0px;">관리자모드</a>
-                            </li>                            
+                            <%
+                            if (user != null && user.getUid() == 1) {
+                            %>
+                           	<li class="u-nav-item">
+                                <a class="u-button-style u-nav-link" href="admin.do" style="padding: 10px 0px;">관리자모드</a>
+                            </li>
+                            
+                            <%
+                            }
+                            %>
+                                                        
                         </ul>
                     </div>
                 </div>
@@ -128,7 +141,13 @@
             </div>
         </nav>
             <span class="u-border-2 u-border-black u-file-icon u-icon u-icon-circle u-spacing-5 u-text-black u-icon-1">
-            <img src="./images/8.png" data-href="login.do"></span>
+            <img src="./images/8.png" data-href=
+            <%if (user == null) {%>
+            	"login.do"
+            <%} else {%>
+            	"userInfo.do"
+            <%}%>
+            ></span>
     </div>
 </header>
 
