@@ -4,9 +4,6 @@ import java.io.Serializable;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
-
-
-public class UserDto {
 import java.io.Serializable;
 
 public class UserDto implements Serializable {

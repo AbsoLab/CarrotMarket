@@ -87,7 +87,7 @@ UserDto User = (UserDto)request.getSession().getAttribute("login");
 </table>
 </div>
 <br>
-<%if(User.getId().equals("admin")){%>
+<%if(User != null && User.getId().equals("admin")){%>
 	<div align="center">
 		<a href="NoticeBoardWrite.do">글쓰기</a>
 <%}else{
