@@ -100,7 +100,7 @@ UserDto user = (UserDto)request.getSession().getAttribute("login");
         </nav>
         <span class="u-border-2 u-border-black u-file-icon u-icon u-icon-circle u-spacing-5 u-text-black u-icon-1">
             <img src="./images/8.png" data-href=<% if(user != null){ %>
-													"userinfo.do"
+													"userInfo.do"
 												<%}else{%>
 													"login.do"
 												<%}%>></span>
