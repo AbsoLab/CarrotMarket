@@ -60,9 +60,12 @@ public class UserController {
 		boolean b = service.deleteAccount(uid);
 		if (b) {
 			System.out.println("업데이트");
+			//회원 삭제 완료시 세션값 초기화
+			req.getSession().invalidate();
 		}else {
 			System.out.println("실패");
 		}
+		
 		return "start";
 	}
 }

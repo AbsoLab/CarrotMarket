@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import mul.camp.a.dto.ContentDto;
 import mul.camp.a.dto.ReplyDto;
 import mul.camp.a.service.BoardService;
+import mul.camp.a.service.UserService;
 
 @Controller
 public class buyBoardController{
@@ -21,12 +22,11 @@ public class buyBoardController{
 	
     @Autowired
     BoardService service;
-    
+    UserService userService;
     //bid를 통해 구매게시판의 글 리스트 
     @RequestMapping(value = "buyBoard.do", method = RequestMethod.GET)
     public String buyBoard(Model model, int bid) {
     	logger.info("BoardController buyBoard()" + new Date());
-    	
     	List<ContentDto> list = service.contentList(bid);
     	model.addAttribute("boardlist", list);
     	model.addAttribute("bid",bid); //boardWrite.do로 넘어가기위해 필요 (구매게시판작성)
@@ -53,7 +53,7 @@ public class buyBoardController{
     	}else {
     		System.out.println("실패");
     	}
-    	return "redirect:/buyBuyBoard.do?bid=2"; // 구매게시판으로 가기위함
+    	return "redirect:/buyBoard.do?bid=2"; // 구매게시판으로 가기위함
     }
     //상세글
     @RequestMapping(value = "buyBoardDetail.do", method = RequestMethod.GET)
@@ -77,7 +77,7 @@ public class buyBoardController{
     	return "buyBoardUpdate";
     }
     //글 수정
-    @RequestMapping (value = "buyUpdateBoardAf.do", method = RequestMethod.POST)
+    @RequestMapping (value = "buyUpdateboardAf.do", method = RequestMethod.POST)
     public String updateAf(ContentDto dto) {
     	logger.info("BoardController updateAf()" + new Date());
     	boolean b = service.updateContent(dto);
