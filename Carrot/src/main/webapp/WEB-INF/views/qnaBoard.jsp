@@ -269,16 +269,16 @@ li {
 <script type="text/javascript">
 
 // FAQ 내용 접었다 펴기
-/*  $(document).ready(function() {
-	$("textarea").hide();
-	$("dt").click(function() {
-		if($(this).next().css("display")=="none") {	/* this는 dt를 의미. next는 다음태그인 dt가 css display가 none 일때와 같을때를 의미. */
-		/*	$(this).next().slideDown("fast");
-		} else {
-			$(this).next().slideUp("fast");
-		}
+/* 
+$("textarea").hide();
+$("dt").click(function() {
+	if($(this).next().css("display")=="none") {	/* this는 dt를 의미. next는 다음태그인 dt가 css display가 none 일때와 같을때를 의미. */
+	/*	$(this).next().slideDown("fast");
+	} else {
+		$(this).next().slideUp("fast");
+	}
 	});
-});  */
+ */
 
 // 첫 화면으로 이동
 $("#home").click(function() {
